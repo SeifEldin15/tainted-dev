@@ -1,0 +1,12 @@
+export { default as UndercoverIcon } from "./Undercover";
+export { default as BarrierIcon } from "./Barrier";
+export { default as TimeIcon } from "./Time";
+export { default as StarterIcon } from "./Starter";
+export { default as BuildingIcon } from "./Building";
+export { default as PlanetIcon } from "./Planet";
+export { default as SchoolBusIcon } from "./SchoolBus";
+export { default as TimeWithBookIcon } from "./TimeWithBook";
+export { default as TargetIcon } from "./Target";
+export { default as ContactIcon } from "./Contact";
+export { default as GivingATMCardIcon } from "./GivingATMCard";
+export { default as CryptoCoinsIcon } from "./CryptoCoins";
