@@ -11,7 +11,7 @@ export default function Home() {
       <div className="w-full flex justify-center relative pointer-events-none">
       </div>
       <Header />
-     
+      <Hero />
     </div>
   );
 }
