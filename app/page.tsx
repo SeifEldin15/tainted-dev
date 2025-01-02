@@ -1,3 +1,4 @@
+"use client"
 import { Header, Hero, Features, Pricing } from "@/components/landing";
 import ServiceView from "@/components/landing/ServiceView";
 import Footer from "@/components/landing/footer";
