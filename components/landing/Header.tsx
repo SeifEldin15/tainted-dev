@@ -1,56 +1,96 @@
-import { HeaderOptions, HeaderOptionTypes } from "@/constants/Strings";
-import Image from "next/image";
-import React from "react";
-import { Button } from "../ui/button";
-import Link from "next/link";
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
 
 const Header = () => {
-  return (
-    <div id="home" className="px-2 z-40 relative">
-      <div className="mx-auto w-full max-w-[1400px] px-2">
-        <div className="h-[60px] flex flex-row items-center justify-between">
-          {/* Logo */}
-          <div className="w-[140px]">
-            <div className="relative w-fit">
-              <a href="https://eclipseproxy.com">
-                <Image
-                    alt="Eclise Logo"
-                    className="w-[150px]"
-                    src="/logo-text-side.png"
-                    width={600}
-                    height={160}
-                    draggable="false"
-                />
-              </a>
-            </div>
-          </div>
-          {/* Options */}
-          <div className="text-sm flex-row items-center gap-4 hidden sm:flex">
-            {HeaderOptions?.map(
-              ({ name, path }: HeaderOptionTypes, index: number) => (
-                <Link key={index} href={path}>
-                  <div className="hover:text-brand">{name}</div>
-                </Link>
-              )
-            )}
-          </div>
-          {/* Login / Register */}
-          <div className="flex flex-row justify-between w-[140px]">
-            <Link href="/register">
-              <Button variant="ghost" size="sm">
-                Register
-              </Button>
-            </Link>
-            <Link href="/login">
-              <Button variant="brand" size="sm">
-                Login
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const navItems = [
+    { label: 'Home', href: '/' },
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Troubleshoot', href: '/troubleshoot' },
+    { label: 'Changelog', href: '/changelog' },
+    { label: 'Merchant Lookup', href: '/merchant-lookup' },
+    { label: 'Chrome Extension', href: '/chrome-extension' },
+    { label: 'Amazon', href: '/amazon' },
+    { label: 'AirBnB', href: '/airbnb' },
+    { label: 'Uber', href: '/uber' },
+    { label: 'International (INR)', href: '/international' },
+    { label: 'Nike', href: '/nike' },
+  ]
 
-export default Header;
+  return (
+    <header className="relative">
+      <div className=" items-center px-4 border-b">
+        <button 
+          className="p-2 rounded-lg bg-gray-100 lg:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span className="sr-only">Open menu</span>
+          <svg 
+            className="w-6 h-6" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        <Link href="/" className="ml-4">
+          <Image
+             src="/logo-text-side.png" // Replace with your actual logo path
+             alt="Logo"
+             width={128}
+             height={128}
+          />
+        </Link>
+         {/* Mobile menu */}
+      <nav className={`
+        ${isMenuOpen ? 'block' : 'hidden'}
+        lg:hidden
+        absolute
+        left-0
+        w-64
+        bg-white
+        shadow-lg
+        z-50
+      `}>
+        <div className="py-2">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </nav>
+
+      {/* Desktop menu */}
+      <nav className="hidden lg:flex items-center space-x-4 py-4 text-sm">
+        {navItems.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="text-gray-600 hover:text-gray-900"
+          >
+            {item.label}
+          </Link>
+        ))}
+      </nav>
+      </div>
+
+     
+    </header>
+  )
+}
+
+export default Header
