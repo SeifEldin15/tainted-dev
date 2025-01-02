@@ -65,7 +65,7 @@ const Header = () => {
             <Link
               key={item.href}
               href={item.href}
-              className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+              className="block px-4 py-2 text-base text-gray-600 hover:bg-gray-100"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.label}
@@ -75,15 +75,22 @@ const Header = () => {
       </nav>
 
       {/* Desktop menu */}
-      <nav className="hidden lg:flex items-center space-x-4 py-4 text-sm">
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="text-gray-600 hover:text-gray-900"
-          >
-            {item.label}
-          </Link>
+      <nav className="hidden lg:flex items-center space-x-4 py-4 text-base [&_a]:[-webkit-text-stroke:0.3px]">
+        {navItems.map((item, index) => (
+          <>
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`text-gray-700 hover:text-gray-900 ${
+                item.label === 'Home' ? 'font-medium [-webkit-text-stroke:0]' : 'font-light'
+              }`}
+            >
+              {item.label}
+            </Link>
+            {index < navItems.length - 1 && (
+              <span className="text-gray-400 font-normal mx-1">-</span>
+            )}
+          </>
         ))}
       </nav>
       </div>
