@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="col-span-1 md:col-span-6">
             <Image 
-              src="/logo-text-side.png" 
+              src="/image.png" 
               alt="LightningProxies" 
               width={214} 
               height={48}
