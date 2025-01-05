@@ -1,5 +1,5 @@
 "use client"
-import { Header, Hero, Features, Pricing } from "@/components/landing";
+import { Header, Hero, Features, Pricing, Countries } from "@/components/landing";
 import ServiceView from "@/components/landing/ServiceView";
 import Footer from "@/components/landing/footer";
 import OurFeatures from "@/components/landing/ourfeatures";
@@ -14,6 +14,7 @@ export default function Home() {
       <Hero />
       <Features />
       <Pricing />
+      <Countries />
     </div>
   );
 }

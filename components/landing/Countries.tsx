@@ -1,0 +1,47 @@
+import Image from 'next/image'
+
+interface Country {
+  name: string;
+  flag: string;
+  ipCount: string;
+}
+
+const countries: Country[] = [
+  { name: 'USA', flag: '/flags/us.svg', ipCount: '2,702,584 IPs' },
+  { name: 'UK', flag: '/flags/gb.svg', ipCount: '614,762 IPs' },
+  { name: 'Canada', flag: '/flags/ca.svg', ipCount: '543,782 IPs' },
+  { name: 'China', flag: '/flags/cn.svg', ipCount: '1,210,872 IPs' },
+  { name: 'France', flag: '/flags/fr.svg', ipCount: '568,958 IPs' },
+  { name: 'Germany', flag: '/flags/de.svg', ipCount: '583,121 IPs' },
+  { name: 'Australia', flag: '/flags/au.svg', ipCount: '220,543 IPs' },
+  { name: 'Brazil', flag: '/flags/br.svg', ipCount: '364,104 IPs' },
+  { name: 'India', flag: '/flags/in.svg', ipCount: '397,640 IPs' },
+  { name: 'Japan', flag: '/flags/jp.svg', ipCount: '134,222 IPs' },
+]
+
+export default function Countries() {
+  return (
+    <div className="py-16">
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-bold mb-2">Top Proxy Locations</h2>
+        <p className="text-gray-600">Premium proxy IPs from 195 countries</p>
+      </div>
+      
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto px-4">
+        {countries.map((country) => (
+          <div key={country.name} className="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center">
+            <Image
+              src={country.flag}
+              alt={`${country.name} flag`}
+              width={48}
+              height={32}
+              className="mb-2"
+            />
+            <h3 className="font-medium">{country.name}</h3>
+            <p className="text-sm text-gray-600">{country.ipCount}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
