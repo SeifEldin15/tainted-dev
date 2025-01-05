@@ -1,106 +1,84 @@
-import React from "react";
-import PricingCard from "../myui/PricingCard";
-import {
-  PricingValuesTypes,
-  PricingValues,
-  DatacenterPricingValues,
-  ContactUSValues,
-} from "@/constants/Strings";
-import Link from "next/link";
-import { Button } from "../ui/button";
-import LandingPageProxyPricing from "../myui/LandingPricingSlider";
-import { ShoppingCartIcon } from "lucide-react";
-import LandingIPv6Plans from "../myui/LandingIPv6Plans";
-import LandingIPv4Plans from "../myui/LandingIPv4Plans";
+import React from 'react';
 
-const Pricing = () => {
-  const { mainTitle, planType, plans, subTitle }: PricingValuesTypes =
-    PricingValues;
+interface PricingCard {
+  title: string;
+  description: string;
+  price: string;
+  unit: string;
+  buttonColor: string;
+  icon: string;
+}
+
+const PricingSection: React.FC = () => {
+  const pricingCards: PricingCard[] = [
+    {
+      title: "Residential Proxies",
+      description: "Real IPs from ISPs for reliable and secure web scraping",
+      price: "$2",
+      unit: "/GB",
+      buttonColor: "bg-[#00D4E1]",
+      icon: "/icons/residential.svg", // You'll need to add these icons
+    },
+    {
+      title: "Datacenter Proxies",
+      description: "High-speed, scalable proxies from data centers for bulk web scraping",
+      price: "$4.3",
+      unit: "/day",
+      buttonColor: "bg-[#00D4E1]",
+      icon: "/icons/datacenter.svg",
+    },
+    {
+      title: "IPV6 Proxies",
+      description: "Modern, high-availability proxies with vast address space for advanced needs",
+      price: "$3.1",
+      unit: "/day",
+      buttonColor: "bg-[#00D4E1]",
+      icon: "/icons/ipv6.svg",
+    },
+    {
+      title: "Static ISP Proxies",
+      description: "Consistent IPs from ISPs for stable and uninterrupted connections",
+      price: "$2.5",
+      unit: "/IP",
+      buttonColor: "bg-[#00D4E1]",
+      icon: "/icons/static-isp.svg",
+    },
+  ];
 
   return (
-    <div id="pricing" className="px-2">
-      <div className="mx-auto w-full max-w-[1400px] px-2">
-        <div className="flex flex-col gap-5">
-          {/* Title */}
-          <div className="w-full flex flex-col items-center mt-20">
-            <div className="flex flex-row items-center gap-2 text-sm text-brand">
-              <ShoppingCartIcon size={16} />
-              <div className="">Affordable Prices</div>
-            </div>
-            <div className="mt-4 text-4xl font-semibold">Pricing Plans</div>
-          </div>
+    <section className="py-16 px-4">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl  mb-2 text-gray-900">
+          Efficient Data Scraping For <span className="text-[#00D4E1] font-bold">Projects Of Any Scale</span>
+        </h2>
+        <p className="text-gray-600 mb-12">
+          From Premium Residential Proxies or responsive datacenter to static ISP solutions for any needs, experience the quality with CatProxies.
+        </p>
 
-          {/* Plans Starting */}
-          {/* planType */}
-          <div className="flex flex-col w-full gap-5">
-            <div className="text-brand bg-brand/[0.05] w-fit px-3 py-1.5 rounded-md">
-              {`Residential IPv4 Proxies`}
-            </div>
-            {/* Plans */}
-            <LandingPageProxyPricing />
-          </div>
-          {/* ipv6 plans */}
-          <div className="flex flex-col w-full gap-5">
-            <div className="text-brand bg-brand/[0.05] w-fit px-3 py-1.5 rounded-md">
-              {`Datacenter IPv6 Proxies`}
-            </div>
-            {/* Plans */}
-            <LandingIPv6Plans />
-          </div>
-          {/* ipv4 plans */}
-          <div className="flex flex-col w-full gap-5">
-            <div className="text-brand bg-brand/[0.05] w-fit px-3 py-1.5 rounded-md">
-              {`Datacenter IPv4 Proxies`}
-            </div>
-            {/* Plans */}
-            <LandingIPv4Plans />
-          </div>
-          {/* Exclusive Plans And Contact Us*/}
-          <div className="grid grid-flow-row gap-5">
-            {/* contact us */}
-            <div className="flex flex-col gap-5 h-full">
-              <div className="text-brand bg-brand/[0.05] w-fit px-3 py-1.5 rounded-md">
-                {ContactUSValues.title}
-              </div>
-              {/* Plans */}
-              <div className="h-full p-[1px] rounded-md">
-                <div className="h-full flex flex-col p-5 bg-[#111113] rounded-md relative">
-                  <div className="flex flex-col gap-3">
-                    {/* Icon */}
-                    <div className="h-[70px] w-[70px]">
-                      {ContactUSValues.icon}
-                    </div>
-                    {/* Plan name */}
-                    <div>
-                      <div className="text-[20px] font-semibold">
-                        {ContactUSValues.name}
-                      </div>
-                      <div className="text-sm text-grayText">
-                        {ContactUSValues.description}
-                      </div>
-                    </div>
-                    {/* Pricing */}
-                    <div className="mt-4">
-                      <Link href={ContactUSValues.buttonValues.path}>
-                        <Button
-                          size={ContactUSValues.buttonValues.size}
-                          variant={ContactUSValues.buttonValues.variant}
-                          className="flex flex-row items-center gap-2 bg-[#27272a] border border-[#27272a]"
-                        >
-                          <div>{ContactUSValues.buttonValues.text}</div>
-                          {ContactUSValues.buttonValues.icon}
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {pricingCards.map((card, index) => (
+            <div key={index} className="bg-white rounded-lg p-6 shadow-lg">
+              <img src={card.icon} alt="" className="w-12 h-12 mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">{card.title}</h3>
+              <p className="text-gray-600 mb-4">{card.description}</p>
+              <div className="flex items-center justify-between">
+                <div className="text-left">
+                  <p className="text-sm text-gray-500">Starting from</p>
+                  <p className="text-2xl font-bold text-gray-900">
+                    {card.price}
+                    <span className="text-gray-500 text-sm">{card.unit}</span>
+                  </p>
                 </div>
+                <button className={`${card.buttonColor} text-white px-6 py-2 rounded-md hover:opacity-90`}>
+                  Buy Now
+                </button>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Pricing;
+export default PricingSection;

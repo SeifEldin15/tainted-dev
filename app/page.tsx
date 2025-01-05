@@ -13,6 +13,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Features />
+      <Pricing />
     </div>
   );
 }
