@@ -12,10 +12,10 @@ export default function Hero() {
       
       {/* Call to Action Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 mb-12">
-        <button className="bg-blue-600 text-white px-6 sm:px-8 py-2 rounded-full tracking-wide text-sm sm:text-base hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-blue-500/50">
+        <button className="bg-[#00D4E1] text-white px-6 sm:px-8 py-2 rounded-full tracking-wide text-sm sm:text-base hover:bg-[#00bfc9] transition-all duration-200 transform hover:scale-105">
           View Pricing
         </button>
-        <button className="bg-white text-gray-800 px-6 sm:px-8 py-2 rounded-full tracking-wide text-sm sm:text-base hover:bg-gray-50 transition-all duration-200 transform hover:scale-105 border border-gray-200 shadow-lg hover:shadow-gray-300/50">
+        <button className="bg-white text-gray-800 px-6 sm:px-8 py-2 rounded-full tracking-wide text-sm sm:text-base hover:bg-gray-50 transition-all duration-200 transform hover:scale-105 border border-gray-200">
           Dashboard
         </button>
       </div>
