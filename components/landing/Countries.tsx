@@ -23,7 +23,7 @@ export default function Countries() {
   return (
     <div className="py-16">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold mb-2">Top Proxy Locations</h2>
+        <h2 className="text-4xl font-bold mb-2 text-gray-900">Top Proxy <span className="text-[#00D4E1] font-bold">Locations</span></h2>
         <p className="text-gray-600">Premium proxy IPs from 195 countries</p>
       </div>
       
