@@ -1,83 +1,36 @@
-"use client";
+import Image from 'next/image'
 
-import React from "react";
-import { Button } from "../ui/button";
-import { ChevronRight, Unlink } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-
-const Hero = () => {
+export default function Hero() {
   return (
-      <div className="px-4">
-
-        {/* Updated Banner for Residential Proxies (Bigger, White Text, Translucent Background, Clickable) */}
-        <Link href="/dashboard/core-residential-proxies">
-          <div className="bg-brand/50 text-white py-4 text-center text-xl font-semibold mb-4 rounded-xl max-w-lg mx-auto cursor-pointer">
-            As low as $1/GB Residential Proxies
-          </div>
-        </Link>
-
-        {/* Small Text under the banner */}
-        <Link href="https://discord.gg/EclipseProxy">
-          <div className="text-white text-center text-sm mb-6">
-            On Bulk Purchases - Contact Support
-          </div>
-        </Link>
-
-        {/* Content Section - Adjusted margin-top here */}
-        <div className="middle relative z-50"> {/* Reduced margin-top to move content up */}
-          <div className="flex w-full flex-col items-center gap-4 py-5 lg:flex-row z-20"> {/* Adjust padding-top here as well */}
-            {/* Left Container */}
-            <div className="flex flex-col items-center gap-4 text-center w-full">
-              <div className="text-sm font-semibold tracking-widest text-white/50 opacity-40">
-                Eclipse Proxy
-              </div>
-              <div className="flex flex-col text-4xl font-semibold sm:text-5xl md:text-7xl lg:text-8xl space-y-4">
-                <span>Leading Residential & IPv6 Proxies</span>
-                <span className="discord-shadow text-brand">Eclipse Proxy</span>
-              </div>
-              <div className="max-w-[550px] text-center text-white/30">
-                {`EclipseProxy is a leading proxy provider that offers high quality and affordable residential IPv4 and datacenter IPv6 proxies. We offer a wide range of locations and subnets to choose from. Our proxies are perfect for any use case, whether it be for website automation, web scraping, or any other use case.`}
-              </div>
-              <div className="mt-3 flex flex-row items-center gap-4">
-                <Link href={`/#pricing`}>
-                  <Button
-                      variant={"brand"}
-                      className="flex flex-row items-center gap-2"
-                  >
-                    <span>Shop Now</span>
-                    <ChevronRight size={16} />
-                  </Button>
-                </Link>
-                <Link href={`https://t.me/eclipseproxy`} target="_blank">
-                  <Button
-                      variant={"outline"}
-                      className="flex flex-row items-center gap-2"
-                  >
-                    <span>Join our Telegram</span>
-                    <Unlink size={16} />
-                  </Button>
-                </Link>
-              </div>
-              <div className="mt-5 flex w-fit flex-row items-center gap-10 py-5">
-                <div className="flex h-full flex-col items-center gap-2">
-                  <div className="text-3xl font-medium sm:text-4xl">{`0.5M+`}</div>
-                  <span className="text-white/30">Requests Served</span>
-                </div>
-                <div className="flex h-full flex-col items-center gap-2">
-                  <div className="text-3xl font-medium sm:text-4xl">{`100+`}</div>
-                  <span className="text-white/30">Invoices Created</span>
-                </div>
-                <div className="flex h-full flex-col items-center gap-2">
-                  <div className="text-3xl font-medium sm:text-4xl">{`5 ⭐`}</div>
-                  <span className="text-white/30">Customer Rating</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="flex flex-col items-center text-center max-w-4xl mx-auto px-4 py-24">
+      <h1 className="text-8xl font-bold mb-4 text-gray-800">
+        Eclipse Proxy
+      </h1>
+      <p className="text-xl text-gray-600 mb-8">
+        Leading Residential and Datacenter Proxies
+      </p>
+      
+      {/* Call to Action Buttons */}
+      <div className="flex gap-4 mb-12">
+        <button className="bg-blue-600 text-white px-8 py-2 rounded-full tracking-wide text-base hover:bg-blue-700 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-blue-500/50">
+          View Pricing
+        </button>
+        <button className="bg-white text-gray-800 px-8 py-2 rounded-full tracking-wide text-base hover:bg-gray-50 transition-all duration-200 transform hover:scale-105 border border-gray-200 shadow-lg hover:shadow-gray-300/50">
+          Dashboard
+        </button>
       </div>
-  );
-};
 
-export default Hero;
+      {/* Hero Image */}
+      <div className="w-full max-w-2xl rounded-lg overflow-hidden shadow-xl shadow-[0_0_40px_rgba(96,165,250,0.5)]  mt-6">
+        <Image
+          src="/placerholder-dashboard.png"
+          alt="Eclipse Proxy Dashboard"
+          width={800}
+          height={500}
+          className="w-full"
+          priority
+        />
+      </div>
+    </div>
+  )
+}
