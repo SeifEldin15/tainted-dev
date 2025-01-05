@@ -43,7 +43,7 @@ const Header = () => {
 
         <Link href="/" className="ml-4">
           <Image
-             src="/logo-text-side.png" // Replace with your actual logo path
+             src="/image.png" // Replace with your actual logo path
              alt="Logo"
              width={128}
              height={128}
