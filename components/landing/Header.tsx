@@ -20,9 +20,18 @@ const Header = () => {
 
   return (
     <header className="relative">
-      <div className=" items-center px-4 border-b">
+      <div className="flex lg:block md:block lg:pt-4 md:pt-4 justify-between items-center px-4 border-b">
+        <Link href="/" className="">
+          <Image
+             src="/image.png"
+             alt="Logo"
+             width={180}
+             height={180}
+          />
+        </Link>
+
         <button 
-          className="p-2 rounded-lg bg-gray-100 lg:hidden"
+          className="p-2 rounded-lg lg:hidden text-black"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span className="sr-only">Open menu</span>
@@ -41,21 +50,15 @@ const Header = () => {
           </svg>
         </button>
 
-        <Link href="/" className="ml-4">
-          <Image
-             src="/image.png" // Replace with your actual logo path
-             alt="Logo"
-             width={128}
-             height={128}
-          />
-        </Link>
-         {/* Mobile menu */}
+        {/* Mobile menu */}
       <nav className={`
         ${isMenuOpen ? 'block' : 'hidden'}
         lg:hidden
         absolute
         left-0
-        w-64
+        right-0
+        top-full
+        w-full
         bg-white
         shadow-lg
         z-50
