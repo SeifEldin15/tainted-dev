@@ -48,7 +48,7 @@ const PricingSection: React.FC = () => {
   return (
     <section className="py-16 px-4">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl  mb-2 text-gray-900">
+        <h2 className="text-4xl font-bold mb-2 text-gray-900">
           Efficient Data Scraping For <span className="text-[#00D4E1] font-bold">Projects Of Any Scale</span>
         </h2>
         <p className="text-gray-600 mb-12">
