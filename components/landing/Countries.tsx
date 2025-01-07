@@ -7,16 +7,16 @@ interface Country {
 }
 
 const countries: Country[] = [
-  { name: 'USA', flag: '/flags/us.svg', ipCount: '2,702,584 IPs' },
-  { name: 'UK', flag: '/flags/gb.svg', ipCount: '614,762 IPs' },
-  { name: 'Canada', flag: '/flags/ca.svg', ipCount: '543,782 IPs' },
-  { name: 'China', flag: '/flags/cn.svg', ipCount: '1,210,872 IPs' },
-  { name: 'France', flag: '/flags/fr.svg', ipCount: '568,958 IPs' },
-  { name: 'Germany', flag: '/flags/de.svg', ipCount: '583,121 IPs' },
-  { name: 'Australia', flag: '/flags/au.svg', ipCount: '220,543 IPs' },
-  { name: 'Brazil', flag: '/flags/br.svg', ipCount: '364,104 IPs' },
-  { name: 'India', flag: '/flags/in.svg', ipCount: '397,640 IPs' },
-  { name: 'Japan', flag: '/flags/jp.svg', ipCount: '134,222 IPs' },
+  { name: 'USA', flag: '/countries pngs/us2a.png', ipCount: '2,702,584 IPs' },
+  { name: 'UK', flag: '/countries pngs/br.png', ipCount: '614,762 IPs' },
+  { name: 'Canada', flag: '/countries pngs/canada.png', ipCount: '543,782 IPs' },
+  { name: 'China', flag: '/countries pngs/china.png', ipCount: '1,210,872 IPs' },
+  { name: 'France', flag: '/countries pngs/france.png', ipCount: '568,958 IPs' },
+  { name: 'Germany', flag: '/countries pngs/germany.png', ipCount: '583,121 IPs' },
+  { name: 'Australia', flag: '/countries pngs/au.png', ipCount: '220,543 IPs' },
+  { name: 'Brazil', flag: '/countries pngs/brazil.png', ipCount: '364,104 IPs' },
+  { name: 'India', flag: '/countries pngs/india.png', ipCount: '397,640 IPs' },
+  { name: 'Japan', flag: '/countries pngs/japan.png', ipCount: '134,222 IPs' },
 ]
 
 export default function Countries() {
@@ -33,8 +33,8 @@ export default function Countries() {
             <Image
               src={country.flag}
               alt={`${country.name} flag`}
-              width={48}
-              height={32}
+              width={64}
+              height={42}
               className="mb-2"
             />
             <h3 className="font-medium">{country.name}</h3>

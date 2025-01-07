@@ -8,44 +8,44 @@ interface LocationData {
 
 const locations: LocationData[] = [
   {
-    country: 'United States',
+    country: 'US',
     ips: '9,967,104 IPs',
-    flag: '/flags/us.svg'
+    flag: '/countries/us.svg'
   },
   {
-    country: 'United Kingdom',
+    country: 'UK',
     ips: '3,260,554 IPs',
-    flag: '/flags/uk.svg'
+    flag: '/countries/gb.svg'
   },
   {
     country: 'Germany',
     ips: '3,221,909 IPs',
-    flag: '/flags/de.svg'
+    flag: '/countries/de.svg'
   },
   {
     country: 'France',
     ips: '2,661,413 IPs',
-    flag: '/flags/fr.svg'
+    flag: '/countries/fr.svg'
   },
   {
     country: 'Australia',
     ips: '1,018,618 IPs',
-    flag: '/flags/au.svg'
+    flag: '/countries/au.svg'
   },
   {
     country: 'China',
     ips: '4,757,236 IPs',
-    flag: '/flags/cn.svg'
+    flag: '/countries/cn.svg'
   },
   {
     country: 'Brazil',
     ips: '3,746,440 IPs',
-    flag: '/flags/br.svg'
+    flag: '/countries/br.svg'
   },
   {
     country: 'Finland',
     ips: '31,354 IPs',
-    flag: '/flags/fi.svg'
+    flag: '/countries/fi.svg'
   }
 ]
 
@@ -71,7 +71,7 @@ export default function Popular() {
                 />
               </div>
               <div>
-                <div className="font-medium">{location.country}</div>
+                <div className="font-medium text-gray-900">{location.country}</div>
                 <div className="text-sm text-gray-500">{location.ips}</div>
               </div>
             </div>
