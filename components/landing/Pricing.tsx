@@ -1,4 +1,8 @@
 import React from 'react';
+import { HiServer } from 'react-icons/hi';
+import { HiHomeModern } from 'react-icons/hi2';
+import { BsGlobe } from 'react-icons/bs';
+import { MdRouter } from 'react-icons/md';
 
 interface PricingCard {
   title: string;
@@ -6,7 +10,7 @@ interface PricingCard {
   price: string;
   unit: string;
   buttonColor: string;
-  icon: string;
+  icon: React.ElementType;
 }
 
 const PricingSection: React.FC = () => {
@@ -17,7 +21,7 @@ const PricingSection: React.FC = () => {
       price: "$2",
       unit: "/GB",
       buttonColor: "bg-[#00D4E1]",
-      icon: "/icons/residential.svg", // You'll need to add these icons
+      icon: HiHomeModern,
     },
     {
       title: "Datacenter Proxies",
@@ -25,7 +29,7 @@ const PricingSection: React.FC = () => {
       price: "$4.3",
       unit: "/day",
       buttonColor: "bg-[#00D4E1]",
-      icon: "/icons/datacenter.svg",
+      icon: HiServer,
     },
     {
       title: "IPV6 Proxies",
@@ -33,7 +37,7 @@ const PricingSection: React.FC = () => {
       price: "$3.1",
       unit: "/day",
       buttonColor: "bg-[#00D4E1]",
-      icon: "/icons/ipv6.svg",
+      icon: BsGlobe,
     },
     {
       title: "Static ISP Proxies",
@@ -41,12 +45,12 @@ const PricingSection: React.FC = () => {
       price: "$2.5",
       unit: "/IP",
       buttonColor: "bg-[#00D4E1]",
-      icon: "/icons/static-isp.svg",
+      icon: MdRouter,
     },
   ];
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4 mt-12">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-2 text-gray-900">
           Efficient Data Scraping For <span className="text-[#00D4E1] font-bold">Projects Of Any Scale</span>
@@ -58,7 +62,7 @@ const PricingSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {pricingCards.map((card, index) => (
             <div key={index} className="bg-white rounded-lg p-6 shadow-lg">
-              <img src={card.icon} alt="" className="w-12 h-12 mb-4" />
+              <card.icon className="w-12 h-12 mb-4 mx-auto text-[#00D4E1]" />
               <h3 className="text-xl font-semibold mb-2 text-gray-900">{card.title}</h3>
               <p className="text-gray-600 mb-4">{card.description}</p>
               <div className="flex items-center justify-between">
