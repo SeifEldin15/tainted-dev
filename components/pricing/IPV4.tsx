@@ -11,9 +11,17 @@ const IPV4 = () => {
 
       <div className="border border-gray-200 rounded-lg p-4 sm:p-6">
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-4">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#00D4E1]">
-            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
-          </svg>
+          <div className="bg-[#00D4E1]/10 p-1.5 rounded">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#00D4E1]">
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+              <path 
+                d="M7 13h2m2 0h2m-6-3h10" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
           <div>
             <h3 className="text-lg sm:text-xl font-semibold text-gray-900">Purchase IPv4 Residential Proxies</h3>
             <p className="text-sm sm:text-base text-gray-600">Pay for as much bandwidth as you'll use.</p>
