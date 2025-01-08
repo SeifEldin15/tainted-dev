@@ -38,7 +38,7 @@ const IPV4Plan = () => {
   ];
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-4 sm:p-6">
+    <div className="w-full max-w-[1400px] mx-auto p-4 sm:p-6">
       <div className="bg-white p-4 sm:p-8 border border-gray-200 rounded-lg">
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-6">
           <div className="bg-[#00D4E1]/10 p-1.5 rounded">

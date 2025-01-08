@@ -2,50 +2,52 @@ import Link from 'next/link'
 
 export default function Contact() {
   return (
-    <div className="bg-white p-6 rounded-lg border border-gray-200">
-      <div className="flex items-start gap-4">
-        <div className="p-3 rounded-lg bg-[#00D4E1]/10">
-          <svg 
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path 
-              d="M20 7L12 13L4 7M5 18H19C19.5523 18 20 17.5523 20 17V7C20 6.44772 19.5523 6 19 6H5C4.44772 6 4 6.44772 4 7V17C4 17.5523 4.44772 18 5 18Z" 
-              stroke="#00D4E1" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-        
-        <div className="flex-1">
-          <h3 className="text-xl font-semibold mb-2 text-gray-900">Custom Made Plan</h3>
-          <p className="text-gray-600 mb-4">
-            EclipseProxy can cater to your specific needs! Terabytes of bandwidth, thousands of threads, or months long plans! We can offer bulk pricing and more, contact us at any time!
-          </p>
-          <Link 
-            href="/contact" 
-            className="inline-flex items-center text-[#00D4E1] hover:text-[#00D4E1]/80"
-          >
-            Contact Us
-            <svg
-              className="ml-2 w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+    <div className="w-full max-w-[1400px] mx-auto p-4 sm:p-6">
+      <div className="bg-white p-4 sm:p-8 border border-gray-200 rounded-lg">
+        <div className="flex items-start gap-4">
+          <div className="p-3 rounded-lg bg-[#00D4E1]/10">
+            <svg 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                strokeLinecap="round"
+              <path 
+                d="M20 7L12 13L4 7M5 18H19C19.5523 18 20 17.5523 20 17V7C20 6.44772 19.5523 6 19 6H5C4.44772 6 4 6.44772 4 7V17C4 17.5523 4.44772 18 5 18Z" 
+                stroke="#00D4E1" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
                 strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
               />
             </svg>
-          </Link>
+          </div>
+          
+          <div className="flex-1">
+            <h3 className="text-xl font-semibold mb-2 text-gray-900">Custom Made Plan</h3>
+            <p className="text-gray-600 mb-4">
+              EclipseProxy can cater to your specific needs! Terabytes of bandwidth, thousands of threads, or months long plans! We can offer bulk pricing and more, contact us at any time!
+            </p>
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center text-[#00D4E1] hover:text-[#00D4E1]/80"
+            >
+              Contact Us
+              <svg
+                className="ml-2 w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
