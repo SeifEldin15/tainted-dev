@@ -1,0 +1,83 @@
+import React from 'react';
+
+const IPV4Plan = () => {
+  const features = [
+    "Unlimited Bandwidth",
+    "Super Fast Response Time",
+    "User/Password or IP Auth",
+    "US IPs",
+    "Large Proxy Pool",
+    "Sticky Session Support"
+  ];
+
+  const plans = [
+    {
+      threads: 400,
+      pricing: {
+        day: "3.49",
+        week: "23.25",
+        month: "89"
+      }
+    },
+    {
+      threads: 500,
+      pricing: {
+        day: "4.29",
+        week: "29",
+        month: "109"
+      }
+    },
+    {
+      threads: 1000,
+      pricing: {
+        day: "7.99",
+        week: "53",
+        month: "199"
+      }
+    }
+  ];
+
+  return (
+    <div className="w-full max-w-7xl mx-auto p-6">
+      <div className="mb-8">
+        <div className="flex items-center gap-3 mb-2">
+          <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <h2 className="text-2xl font-bold text-gray-900">Purchase an IPV4 Proxy Plan</h2>
+        </div>
+        <p className="text-cyan-400">Pick the length and thread limit you need</p>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8 ">
+        {features.map((feature, index) => (
+          <div key={index} className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+            <span className="text-gray-900">{feature}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-6">
+        {plans.map((plan, index) => (
+          <div key={index} className="border border-gray-200 bg-white rounded-lg p-6">
+            <h3 className="text-2xl text-cyan-400 mb-4">{plan.threads} Threads</h3>
+            <div className="space-y-3 ">
+              <button className="w-full py-2 px-4 rounded border border-gray-200 border border-gray-200 text-gray-900  transition">
+                1 Day - ${plan.pricing.day}
+              </button>
+              <button className="w-full py-2 px-4 rounded border border-gray-200 text-gray-900  transition">
+                1 Week - ${plan.pricing.week}
+              </button>
+              <button className="w-full py-2 px-4 rounded border border-gray-200 text-gray-900  transition">
+                1 Month - ${plan.pricing.month}
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default IPV4Plan;
