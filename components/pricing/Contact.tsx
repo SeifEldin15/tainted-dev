@@ -30,21 +30,20 @@ export default function Contact() {
             </p>
             <Link 
               href="/contact" 
-              className="inline-flex items-center text-[#00D4E1] hover:text-[#00D4E1]/80"
+              className="inline-flex items-center gap-2 bg-[#00D4E1] text-white px-4 py-2 rounded-lg hover:bg-[#00D4E1]/90 transition-colors"
             >
               Contact Us
               <svg
-                className="ml-2 w-4 h-4"
+                className="w-4 h-4"
+                viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                viewBox="0 0 24 24"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
             </Link>
           </div>
