@@ -43,12 +43,12 @@ const IPV4Plan = () => {
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-6">
           <div className="bg-[#00D4E1]/10 p-1.5 rounded">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#00D4E1]">
-              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
               <path 
-                d="M7 13h2m2 0h2m-6-3h10" 
+                d="M13 3L4 14h7l-2 7 9-11h-7l2-7z" 
                 stroke="currentColor" 
                 strokeWidth="2" 
-                strokeLinecap="round"
+                strokeLinecap="round" 
+                strokeLinejoin="round"
               />
             </svg>
           </div>
