@@ -3,7 +3,7 @@
 import IPV4 from '@/components/pricing/IPV4'
 import IPV6 from '@/components/pricing/IPV6'
 import IPV4Plan from '@/components/pricing/IPV4Plan'
-
+import Contact from '@/components/pricing/Contact'
 export default function PricingPage() {
   return (
     <div className="container mx-auto px-4 py-12">
@@ -22,6 +22,7 @@ export default function PricingPage() {
       <IPV4 />
       <IPV6 />
       <IPV4Plan />
+      <Contact />
     </div>
   )
 }
