@@ -62,11 +62,24 @@ const IPV6 = () => {
   ];
 
   return (
-    <div className="bg-white p-4 sm:p-8">
-      <div className="mb-6 sm:mb-8">
-        <span className="text-[#00D4E1] text-sm font-medium px-3 py-1 rounded-full bg-[#00D4E1]/10">
-          Residential IPv4 Proxies
-        </span>
+    <div className="bg-white p-4 sm:p-8 border border-gray-200 rounded-lg">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-6">
+        <div className="bg-[#00D4E1]/10 p-1.5 rounded">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#00D4E1]">
+            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+            <path 
+              d="M7 13h2m2 0h2m-6-3h10" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
+        <div>
+          <span className="text-[#00D4E1] text-sm font-medium px-3 py-1 rounded-full bg-[#00D4E1]/10">
+            Residential IPv6 Proxies
+          </span>
+        </div>
       </div>
 
       <div className="mb-4 sm:mb-6">
