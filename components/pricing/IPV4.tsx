@@ -2,21 +2,21 @@ import React from 'react';
 
 const IPV4 = () => {
   return (
-    <div className="bg-white p-6 rounded-lg">
+    <div className="bg-white p-4 sm:p-6 rounded-lg">
       <div className="mb-4">
-        <span className="text-[#00D4E1] text-sm font-medium px-3 py-1 rounded-full bg-[#00D4E1]/10">
+        <span className="text-[#00D4E1] text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 rounded-full bg-[#00D4E1]/10">
           Residential IPv4 Proxies
         </span>
       </div>
 
-      <div className="border border-gray-200 rounded-lg p-6">
-        <div className="flex items-center gap-3 mb-4">
+      <div className="border border-gray-200 rounded-lg p-4 sm:p-6">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-4">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#00D4E1]">
             <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
           </svg>
           <div>
-            <h3 className="text-xl font-semibold text-gray-900">Purchase IPv4 Residential Proxies</h3>
-            <p className="text-gray-600">Pay for as much bandwidth as you'll use.</p>
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900">Purchase IPv4 Residential Proxies</h3>
+            <p className="text-sm sm:text-base text-gray-600">Pay for as much bandwidth as you'll use.</p>
           </div>
         </div>
 
@@ -27,7 +27,7 @@ const IPV4 = () => {
           <span className="text-sm text-gray-600 mt-1">1 GB</span>
         </div>
 
-        <ul className="space-y-3 mb-6">
+        <ul className="space-y-2 sm:space-y-3 mb-6">
           {[
             'Unlimited Threads',
             '10 Million+ Unique IPs Globally',
@@ -48,16 +48,16 @@ const IPV4 = () => {
           ))}
         </ul>
 
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
           <div>
-            <p className="text-sm text-gray-500">Estimate Price:</p>
+            <p className="text-xs sm:text-sm text-gray-500">Estimate Price:</p>
             <div className="flex items-baseline text-gray-900">
-              <span className="text-2xl font-bold">$</span>
-              <span className="text-3xl font-bold">1.75</span>
-              <span className="text-sm text-gray-500 ml-1">USD</span>
+              <span className="text-xl sm:text-2xl font-bold">$</span>
+              <span className="text-2xl sm:text-3xl font-bold">1.75</span>
+              <span className="text-xs sm:text-sm text-gray-500 ml-1">USD</span>
             </div>
           </div>
-          <button className="bg-[#00D4E1] text-white px-6 py-2 rounded-lg hover:bg-[#00D4E1]/90 transition-colors">
+          <button className="w-full sm:w-auto bg-[#00D4E1] text-white px-4 sm:px-6 py-2 rounded-lg hover:bg-[#00D4E1]/90 transition-colors">
             Login to buy →
           </button>
         </div>
