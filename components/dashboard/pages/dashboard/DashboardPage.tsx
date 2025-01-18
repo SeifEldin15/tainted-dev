@@ -32,11 +32,13 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
   const totalSpent = getUserSpent(UserData?.data?.user);
   const roundedSpent = totalSpent ? totalSpent.toFixed(2) : "0.00";
 
-  let cards: Array<
-      | { icon: React.JSX.Element; id: number; title: string; value: any }
-      | { icon: React.JSX.Element; id: number; title: string; value: 0 | number }
-      | { icon: React.JSX.Element; id: number; title: string; value: string }
-  >;
+  let cards: Array<{
+    icon: React.JSX.Element;
+    id: number;
+    title: string;
+    value: any;
+    secondaryValue?: string;
+  }>;
 
 
   if (UserData?.data?.proxyData?.data?.balance > 0) {
