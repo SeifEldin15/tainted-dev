@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Bitcoin, Layers, MapPin, Users } from "lucide-react";
+import { Layers, MapPin, Users, Network, Signal } from "lucide-react";
 import DashboardCard from "../../comps/dashboard/Card";
 import DashboardChart from "../../comps/dashboard/DashboardChart";
 import Annoucements from "../../comps/dashboard/Annoucements";
@@ -44,27 +44,31 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
       {
         id: 1,
         title: "Core Residential Bandwidth",
+        secondaryValue: "Available bandwidth for core services",
         value: UserData && `${CoreBandwidth}`,
-        icon: <Bitcoin size={18} />,
+        icon: <Network className="text-[#00D4E1]" size={24} />,
       },
       {
         id: 2,
         title: "Residential Bandwidth",
+        secondaryValue: "Current available bandwidth",
         value: UserData && `${formatBandwidth(BandwidthRemaining)}`,
-        icon: <Bitcoin size={18} />,
+        icon: <Signal className="text-[#00D4E1]" size={24} />,
       },
       {
         id: 3,
         title: "Active Datacenter Plans",
+        secondaryValue: "Total active plans",
         value: getUserPlans(UserData?.data?.user) &&
             getUserPlans(UserData?.data?.user),
-        icon: <Layers size={18} />,
+        icon: <Layers className="text-[#00D4E1]" size={20} />,
       },
       {
         id: 4,
         title: "Total Spent",
+        secondaryValue: "Lifetime spending",
         value: `$ ${roundedSpent}`,
-        icon: <MapPin size={18} />,
+        icon: <MapPin className="text-[#00D4E1]" size={20} />,
       },
     ];
   } else {
@@ -72,29 +76,33 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
       {
         id: 1,
         title: "Core Residential Bandwidth",
+        secondaryValue: "Available bandwidth for core services",
         value: UserData && `${CoreBandwidth}`,
-        icon: <Bitcoin size={18} />,
+        icon: <Network className="text-[#00D4E1]" size={20} />,
       },
       {
         id: 2,
         title: "Active Datacenter Plans",
+        secondaryValue: "Total active plans",
         value: getUserPlans(UserData?.data?.user) &&
             getUserPlans(UserData?.data?.user),
-        icon: <Layers size={18} />,
+        icon: <Layers className="text-[#00D4E1]" size={20} />,
       },
       {
         id: 3,
         title: "Total Spent",
+        secondaryValue: "Lifetime spending",
         value: `$ ${roundedSpent}`,
-        icon: <MapPin size={18} />,
+        icon: <MapPin className="text-[#00D4E1]" size={20} />,
       },
       {
         id: 4,
         title: "Total Orders",
+        secondaryValue: "Completed orders",
         value:
             getUserOrders(UserData?.data?.user) &&
             getUserOrders(UserData?.data?.user),
-        icon: <Users size={18} />,
+        icon: <Users className="text-[#00D4E1]" size={20} />,
       },
     ];
   }
@@ -138,7 +146,7 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
 
                   {/* Coming Soon Overlay */}
                   <div
-                      className="absolute inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50 text-gray-900 font-semibold text-xl">
+                      className="absolute inset-0 flex items-center justify-center text-gray-900 font-semibold text-xl">
                     Coming Soon
                   </div>
                 </div>
