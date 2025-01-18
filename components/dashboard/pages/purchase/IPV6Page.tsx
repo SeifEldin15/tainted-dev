@@ -10,7 +10,7 @@ const IPV6Page = ({ session }: any) => {
   return (
     <div className="flex flex-col gap-3 sm:gap-5 h-full">
       <div className="flex flex-col gap-[10px]">
-        <div className="text-[20px] sm:text-[24px] font-semibold">
+        <div className="text-[20px] sm:text-[24px] font-semibold text-gray-900">
           <span>{`IPV6 Proxies`}</span>
         </div>
         <div className="text-[13px] text-grayText">{`Here is our pricing for IPV6 proxies! Purchase as many threads as you need.`}</div>

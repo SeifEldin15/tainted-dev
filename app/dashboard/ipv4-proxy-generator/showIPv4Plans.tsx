@@ -23,7 +23,7 @@ const ShowIPv4Plans = ({ PlansData }: any) => {
   return (
     <div className="h-full w-full">
       <div className="flex flex-col gap-[10px]">
-        <div className="text-[20px] sm:text-[24px] font-semibold">
+        <div className="text-[20px] sm:text-[24px] font-semibold text-black">
           <span>{`IPv4 Plans`}</span>
         </div>
         <div className="text-[13px] text-grayText">{`Select any of your plans to begin generating proxies!`}</div>
@@ -40,12 +40,12 @@ const ShowIPv4Plans = ({ PlansData }: any) => {
             return (
               <div
                 className={cn(
-                  differenceInDays < -10 && "hidden", // hide plans that are expired for more than 10 days
-                  isPlanExpired && "opacity-50", // reduce opacity for expired plans
+                  differenceInDays < -10 && "hidden",
+                  isPlanExpired && "opacity-50",
                   selectedPlan?.username === plan?.username
                     ? "border-brand shadow-xl shadow-brand/5"
                     : "border-transparent",
-                  "bg-brandGray rounded-lg select-none cursor-pointer border-[1px] duration-200 group relative"
+                  "bg-white rounded-lg select-none cursor-pointer border-[1px] duration-200 group relative"
                 )}
                 key={index}
                 onClick={() => {
@@ -70,31 +70,31 @@ const ShowIPv4Plans = ({ PlansData }: any) => {
                   )
                 }
                 {/* top div */}
-                <div className="flex flex-row gap-3 items-center py-3 px-3 border-b border-white/10">
-                  <div className="p-3 bg-white/5 rounded-md">
+                <div className="flex flex-row gap-3 items-center py-3 px-3 border-b border-black/10">
+                  <div className="p-3 bg-brand/10 rounded-md">
                     <ZapIcon
                       fill={
                         selectedPlan?.username === plan?.username
                           ? "#00ecfc"
-                          : "white"
+                          : "#00ecfc"
                       }
                       size={16}
                       className={cn(
                         selectedPlan?.username === plan?.username
                           ? "text-brand"
-                          : "text-white"
+                          : "text-brand"
                       )}
                     />
                   </div>
                   <div className="flex flex-col gap-1">
-                    <div className="text-sm text-white/30">Username</div>
-                    <div className="text-sm">{plan?.username}</div>
+                    <div className="text-sm text-black/60">Username</div>
+                    <div className="text-sm text-black">{plan?.username}</div>
                   </div>
                 </div>
                 {/* plan details */}
                 <div className="flex flex-col gap-1 p-3">
                   <div className="flex flex-row justify-between items-center">
-                    <div className="text-xs text-white/30">Status</div>
+                    <div className="text-xs text-black/60">Status</div>
                     <div
                       className={cn(
                         isPlanExpired
@@ -110,29 +110,27 @@ const ShowIPv4Plans = ({ PlansData }: any) => {
                     </div>
                   </div>
                   <div className="flex flex-row justify-between items-center">
-                    <div className="text-xs text-white/30">Key</div>
-                    <div className="text-xs px-1.5 py-1 rounded-md bg-gray-400/10 text-gray-400 select-text">
+                    <div className="text-xs text-black/60">Key</div>
+                    <div className="text-xs px-1.5 py-1 rounded-md bg-brand/10 text-black select-text">
                       {isPlanExpired ? "Expired Key" : plan?.proxy_key}
                     </div>
                   </div>
                   <div className="flex flex-row justify-between items-center">
-                    <div className="text-xs text-white/30">Threads</div>
-                    <div className="text-xs px-1.5 py-1">
-                      {plan?.threadCount}
-                    </div>
+                    <div className="text-xs text-black/60">Threads</div>
+                    <div className="text-xs px-1.5 py-1 text-black">{plan?.threadCount}</div>
                   </div>
                   <div className="flex flex-row justify-between items-center">
-                    <div className="text-xs text-white/30">Days</div>
-                    <div className="text-xs px-1.5 py-1">{plan?.daysCount}</div>
+                    <div className="text-xs text-black/60">Days</div>
+                    <div className="text-xs px-1.5 py-1 text-black">{plan?.daysCount}</div>
                   </div>
                   <div className="flex flex-row justify-between items-center">
-                    <div className="text-xs text-white/30">Created At</div>
-                    <div className="text-xs px-1.5 py-1">
+                    <div className="text-xs text-black/60">Created At</div>
+                    <div className="text-xs px-1.5 py-1 text-black">
                       {moment(plan?.created_at).format("LL")}
                     </div>
                   </div>
                   <div className="flex flex-row justify-between items-center">
-                    <div className="text-xs text-white/30">
+                    <div className="text-xs text-black/60">
                       {
                         // expired at
                         isPlanExpired ? "Expired At" : "Expires At"
