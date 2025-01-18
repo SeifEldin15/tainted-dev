@@ -40,11 +40,11 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
       <div
         className={cn(
           sidebar ? "left-0 " : "left-[-100%]",
-          "sm:left-0 fixed sm:relative top-0 z-[100] w-full sm:w-[260px] max-w-[260px] bg-[#09090b] h-full duration-300 "
+          "sm:left-0 fixed sm:relative top-0 z-[100] w-full sm:w-[260px] max-w-[260px] bg-white h-full duration-300 "
         )}
       >
         {/* Logo */}
-        <div className="h-[60px] overflow-hidden py-2 flex items-center bg-brandGray border-r sm:border-none border-borderColor">
+        <div className="h-[60px] overflow-hidden py-2 flex items-center bg-white border-r sm:border-none border-borderColor">
           <div className="flex flex-row items-center relative justify-between sm:border-r border-borderColor w-full px-3 h-full">
             {/* Logo */}
             <div className="w-[140px]">
@@ -53,7 +53,7 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
                   <Image
                     alt="Eclipse Logo"
                     className="w-[150px]"
-                    src="/logo-text-side.png"
+                    src="/image.png"
                     width={600}
                     height={160}
                     draggable="false"
@@ -110,14 +110,14 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
                         }
                         className={cn(
                           currentPageOpen == linkName
-                            ? "text-gray-100"
-                            : "text-[#838383]",
+                            ? "bg-brand/10 text-black hover:bg-brand/20 hover:text-black"
+                            : "text-black/60 hover:bg-brand/10 hover:text-black/60",
                           "group flex justify-start flex-row items-center gap-2 font-normal duration-100 w-full"
                         )}
                       >
                         <div
                           className={cn(
-                            currentPageOpen == linkName ? "text-brand" : "",
+                            "text-brand",
                             "duration-0"
                           )}
                         >
