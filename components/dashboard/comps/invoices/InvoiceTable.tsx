@@ -11,7 +11,7 @@ const InvoiceTable = ({ tableData }: any) => {
     <div className="flex flex-row w-full overflow-x-scroll noscrollbar">
       <div className="flex flex-col text-sm w-full">
         {/* Table Top Bar */}
-        <div className="flex flex-row bg-[#101014] py-3 rounded-tr-md rounded-tl-md border border-borderColor px-3 min-w-min">
+        <div className="flex flex-row bg-[#00D4E1]/10 py-3 rounded-tr-md rounded-tl-md border border-gray-100 px-3 min-w-min text-gray-900 font-medium">
           <div className="w-[50px]">{`No.`}</div>
           <div className="min-w-[300px] flex-1">{`Invoice ID`}</div>
           <div className="min-w-[150px] w-[150px] text-center">{`Date`}</div>
@@ -22,29 +22,28 @@ const InvoiceTable = ({ tableData }: any) => {
         {/* data */}
         {reverseTableData.map((invoice: Invoices, index: number) => {
           return (
-              <div
-                  key={index}
-                  className="flex flex-row py-3 border-l border-r border-b border-borderColor px-3 min-w-min"
-              >
-                <div className="w-[50px]">{`${index + 1}`}</div>
-                <div className="min-w-[300px] flex-1">{`${invoice?.uniqid}`}</div>
-                <div className="min-w-[150px] w-[150px] text-center text-[#b9b9b9]">
-                  {moment(invoice?.created_at * 1000).calendar()}
-                </div>
-                <div className="min-w-[150px] w-[150px] text-center text-[#b9b9b9]">
-                  {invoice?.planName === "Core Residential Proxies" ? "Core Resi Proxies" : invoice?.planName}
-                </div>
-                <div className="min-w-[100px] w-[100px] text-center">{`$${invoice?.planPrice}`}</div>
-                <div className="min-w-[150px] w-[150px] text-center text-xs flex items-center justify-center">
-                  {returnStatusColor(invoice?.status)}
-                </div>
+            <div
+              key={index}
+              className="flex flex-row py-3 border-l border-r border-b border-gray-100 px-3 min-w-min hover:bg-gray-50 transition-colors"
+            >
+              <div className="w-[50px] text-gray-900">{`${index + 1}`}</div>
+              <div className="min-w-[300px] flex-1 text-gray-900">{`${invoice?.uniqid}`}</div>
+              <div className="min-w-[150px] w-[150px] text-center text-gray-500">
+                {moment(invoice?.created_at * 1000).calendar()}
               </div>
+              <div className="min-w-[150px] w-[150px] text-center text-gray-500">
+                {invoice?.planName === "Core Residential Proxies" ? "Core Resi Proxies" : invoice?.planName}
+              </div>
+              <div className="min-w-[100px] w-[100px] text-center text-gray-900">{`$${invoice?.planPrice}`}</div>
+              <div className="min-w-[150px] w-[150px] text-center text-xs flex items-center justify-center">
+                {returnStatusColor(invoice?.status)}
+              </div>
+            </div>
           );
         })}
         {tableData.length === 0 && (
-            <div
-                className="flex flex-col items-center justify-center py-3 border-l border-r border-b border-borderColor px-3 min-w-min">
-            <div className="text-[#b9b9b9]">No Invoices Found</div>
+          <div className="flex flex-col items-center justify-center py-6 border-l border-r border-b border-gray-100 px-3 min-w-min">
+            <div className="text-gray-500">No Invoices Found</div>
           </div>
         )}
       </div>
@@ -58,31 +57,31 @@ const returnStatusColor = (status: string) => {
   switch (status) {
     case "COMPLETED":
       return (
-        <div className="bg-green-400/[0.15] h-full flex items-center justify-center w-fit px-3 text-green-400 rounded-full pt-1">
+        <div className="bg-[#00D4E1]/10 h-full flex items-center justify-center w-fit px-3 text-[#00D4E1] rounded-full pt-1">
           {status}
         </div>
       );
     case "PENDING":
       return (
-        <div className="bg-yellow-400/[0.15] h-full flex items-center justify-center w-fit px-3 text-yellow-400 rounded-full pt-1">
+        <div className="bg-yellow-400/10 h-full flex items-center justify-center w-fit px-3 text-yellow-500 rounded-full pt-1">
           {status}
         </div>
       );
     case "CANCELLED":
       return (
-          <div className="bg-red-400/[0.15] h-full flex items-center justify-center w-fit px-3 text-red-400 rounded-full pt-1">
-            {status}
-          </div>
+        <div className="bg-red-400/10 h-full flex items-center justify-center w-fit px-3 text-red-500 rounded-full pt-1">
+          {status}
+        </div>
       );
     case "VOIDED":
       return (
-          <div className="bg-red-400/[0.15] h-full flex items-center justify-center w-fit px-3 text-red-400 rounded-full pt-1">
-            {status}
-          </div>
+        <div className="bg-red-400/10 h-full flex items-center justify-center w-fit px-3 text-red-500 rounded-full pt-1">
+          {status}
+        </div>
       );
     default:
       return (
-        <div className="bg-gray-400/[0.15] h-full flex items-center justify-center w-fit px-3 text-green-400 rounded-full pt-1">
+        <div className="bg-gray-400/10 h-full flex items-center justify-center w-fit px-3 text-gray-500 rounded-full pt-1">
           {status}
         </div>
       );
