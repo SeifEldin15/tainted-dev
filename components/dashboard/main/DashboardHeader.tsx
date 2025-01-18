@@ -16,16 +16,16 @@ const DashboardHeader = ({ session }: any) => {
   };
 
   return (
-    <div className="h-[60px] bg-brandGray flex items-center border-b sm:border-none border-borderColor">
-      <div className="h-full px-3 w-full flex flex-row justify-between sm:justify-end items-center">
+    <div className="h-[60px] bg-white flex items-center border-b border-borderColor">
+      <div className="h-full px-4 w-full flex flex-row justify-between sm:justify-end items-center">
         {/* Close sidebar btn */}
         <div className="sm:hidden">
           <Button
             onClick={() => setSidebar(true)}
             variant="ghost"
-            className="px-2"
+            className="px-2 hover:bg-gray-100"
           >
-            <Menu size={18} />
+            <Menu size={20} />
           </Button>
         </div>
         {/* profile btn */}
@@ -33,23 +33,23 @@ const DashboardHeader = ({ session }: any) => {
           <div className="h-full flex items-center">
             <div
               onClick={() => openLogoutModal()}
-              className="flex flex-row items-center h-[48px] px-2 rounded-md gap-4 cursor-pointer hover:bg-[#27272a]"
+              className="flex flex-row items-center h-[48px] px-3 rounded-lg gap-3 cursor-pointer hover:bg-gray-100 transition-colors"
             >
-              {/* name and role */}
-              <div className="flex flex-col">
-                <div className="text-[15px] text-gray-100">
-                  {session?.user?.username.replace("eclipse_", "")}
-                </div>
-                <div className="text-[12px] text-[#979797]">
-                  {session?.user?.role}
-                </div>
-              </div>
               {/* image */}
               <img
-                className="h-[35px] w-[35px] rounded-md overflow-hidden"
+                className="h-[38px] w-[38px] rounded-full border border-gray-200"
                 alt="user image"
                 src={session?.user?.image}
               />
+              {/* name and role */}
+              <div className="flex flex-col">
+                <div className="text-[15px] font-medium text-gray-900">
+                  {session?.user?.username.replace("eclipse_", "")}
+                </div>
+                <div className="text-[13px] text-gray-500">
+                  {session?.user?.role}
+                </div>
+              </div>
             </div>
           </div>
         </div>
