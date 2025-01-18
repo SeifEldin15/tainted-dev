@@ -39,20 +39,20 @@ const CoreDashboardResidentialComponent = ({
             className={cn(
               isBackgroundTransparent
                 ? "border bg-transparent"
-                : "mt-10 bg-[#111113]",
+                : "mt-10 bg-white",
               "relative flex w-full flex-col rounded-2xl p-6"
             )}
           >
             {/* box content */}
             <div className="flex flex-row gap-4">
-              <div className="rounded-md bg-brand/10  p-3 sm:p-5">
-                <CreditCard size={26} className="text-brand" />
+              <div className="rounded-md bg-[#00D4E1]/10 p-3 sm:p-5">
+                <CreditCard size={26} className="text-[#00D4E1]" />
               </div>
               <div className="flex flex-col justify-between sm:py-1">
-                <div className="text-xl font-semibold sm:text-2xl">
+                <div className="text-xl font-semibold text-gray-600 sm:text-2xl">
                   Purchase Core Residential Bandwidth
                 </div>
-                <div className="text-brand">Pay as You Go</div>
+                <div className="text-[#00D4E1]">Pay as You Go</div>
               </div>
             </div>
             {/* Slider */}
@@ -63,6 +63,7 @@ const CoreDashboardResidentialComponent = ({
                 max={500}
                 step={1}
                 onValueChange={(val: any) => setValue(val?.[0])}
+                className="[&_.relative]:bg-gray-200 [&_[data-orientation=horizontal]>.bg-primary]:bg-[#00E9F7] [&_[role=slider]]:bg-[#00E9F7] [&_[role=slider]]:border-[#00E9F7]"
               />
             </div>
             {/* features of pricing */}
@@ -70,45 +71,45 @@ const CoreDashboardResidentialComponent = ({
               {/* Features */}
               <div className="flex flex-col gap-3">
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-white/80">Unlimited Threads</div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="text-gray-600">Unlimited Threads</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-white/80">10 Million+ Unique IPs Globally</div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="text-gray-600">10 Million+ Unique IPs Globally</div>
                 </div>
                 <div className="flex flex-row items-center gap-2">
-                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-white/80">High Network Speeds</div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="text-gray-600">High Network Speeds</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-white/80">190+ Countries</div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="text-gray-600">190+ Countries</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-white/80">Reliable Connections</div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="text-gray-600">Reliable Connections</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-white/80">Data <strong>Never</strong> Expires</div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="text-gray-600">Data <strong>Never</strong> Expires</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-white/80">
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="text-gray-600">
                     Sticky Sessions up to 24 Hours
                   </div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-white/80">Authenticated & IP Whitelist</div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="text-gray-600">Authenticated & IP Whitelist</div>
                 </div>
               </div>
               {/* Caluclated Pricing */}
               <div className="flex w-full flex-row items-center justify-between gap-5 sm:w-fit">
                 <div>
-                  <div className="text-sm text-white">Estimate Price:</div>
-                  <div className="text-3xl font-semibold text-brand">
+                  <div className="text-sm text-gray-600">Estimate Price:</div>
+                  <div className="text-3xl font-semibold text-[#00D4E1]">
                     {`$ ${getCoreResiProxyPrice(Number(value))}`}
                   </div>
                 </div>
@@ -117,12 +118,12 @@ const CoreDashboardResidentialComponent = ({
                   <Button
                     variant={"brand"}
                     onClick={handleCheckout}
-                    className="flex flex-row items-center gap-2"
+                    className="flex flex-row items-center gap-2 bg-[#00D4E1] hover:bg-[#00D4E1]/90] text-white"
                   >
                     <span>Purchase</span>
                     <ChevronRight size={16} />
                   </Button>
-                  <div className="mt-1 text-xs text-white/50">
+                  <div className="mt-1 text-xs text-gray-600">
                     {`*Prices are in USD`}
                   </div>
                 </div>
