@@ -17,7 +17,7 @@ const Annoucements = () => {
                 <div className="font-semibold text-brand">
                   {annoucement?.title}
                 </div>
-                <div className="text-sm ">{annoucement?.description}</div>
+                <div className="text-sm text-gray-900">{annoucement?.description}</div>
                 <Link href={annoucement?.link}>
                   <Button
                     className="w-fit rounded-sm"

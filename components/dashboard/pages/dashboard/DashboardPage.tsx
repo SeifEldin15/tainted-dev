@@ -105,12 +105,12 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
       <Annoucements />
       {/* Greetings Text */}
       <div className="flex flex-col gap-[10px]">
-        <div className="text-[20px] sm:text-[24px] font-semibold">
+        <div className="text-[20px] sm:text-[24px] font-semibold text-gray-900">
           <span>{`Welcome, `}</span>
           <span>{`${session?.user?.username.replace("eclipse_", "")}!`}</span>
           <span>{`🌞`}</span>
         </div>
-        <div className="text-xs text-grayText">{`Thank you for being a customer!`}</div>
+        <div className="text-xs text-gray-900">{`Thank you for being a customer!`}</div>
       </div>
       {/* Dashboard Content */}
       <div className="flex flex-col gap-[16px] pb-3 sm:pb-5">
@@ -129,7 +129,7 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
             {/* Chart */}
             <div className="w-full">
               <DashboardCard title="Core Residential Bandwidth Usage">
-                <div className="mt-4 text-sm text-grayText relative">
+                <div className="mt-4 text-sm text-gray-900 relative">
                   {UserData?.dataa?.proxyUsage?.data?.stats ? (
                       <DashboardChart chartData={UserData?.dataa?.proxyUsage?.data?.stats}/>
                   ) : (
@@ -138,7 +138,7 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
 
                   {/* Coming Soon Overlay */}
                   <div
-                      className="absolute inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50 text-white font-semibold text-xl">
+                      className="absolute inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50 text-gray-900 font-semibold text-xl">
                     Coming Soon
                   </div>
                 </div>
@@ -152,7 +152,7 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
         {BandwidthRemaining > 0 && (
             <div className="w-full">
               <DashboardCard title="Residential Bandwidth Usage">
-                <div className="mt-4 text-sm text-grayText">
+                <div className="mt-4 text-sm text-gray-900">
                   {UserData?.data?.proxyUsage?.data?.stats ? (
                       <DashboardChart chartData={UserData?.data?.proxyUsage?.data?.stats} />
                   ) : (
