@@ -11,7 +11,7 @@ const InvoiceTable = ({ tableData }: any) => {
     <div className="flex flex-row w-full overflow-x-scroll noscrollbar">
       <div className="flex flex-col text-sm w-full">
         {/* Table Top Bar */}
-        <div className="flex flex-row bg-[#00D4E1]/10 py-3 rounded-tr-md rounded-tl-md border border-gray-100 px-3 min-w-min text-gray-900 font-medium">
+        <div className="flex flex-row py-3 rounded-tr-md rounded-tl-md border border-gray-100 px-3 min-w-min text-gray-900 font-medium">
           <div className="w-[50px]">{`No.`}</div>
           <div className="min-w-[300px] flex-1">{`Invoice ID`}</div>
           <div className="min-w-[150px] w-[150px] text-center">{`Date`}</div>
