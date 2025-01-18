@@ -44,17 +44,17 @@ export function ProtocolCoreResiSelectField({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between"
+          className="w-full justify-between hover:!bg-[#ffffff] hover:!text-gray-600 text-gray-600 border-gray-200"
         >
           {FieldValue ? FieldValue : defaultSelectText}
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="max-w-[360px] p-0 border-borderColor">
-        <Command>
+      <PopoverContent className="max-w-[360px] p-0 border-gray-200 bg-white">
+        <Command className="bg-white !bg-white">
           <CommandInput placeholder="Search ..." className="h-9" />
           <CommandEmpty>No Results</CommandEmpty>
-          <CommandGroup>
+          <CommandGroup className="bg-white !bg-white">
             {data.map(({ label, value }: any) => (
               <CommandItem
                 key={value}
@@ -63,6 +63,7 @@ export function ProtocolCoreResiSelectField({
                   setFieldValue("protocol", newValue);
                   setOpen(false);
                 }}
+                className="!bg-white !text-black hover:!bg-[#00D4E1] hover:!text-white data-[highlighted]:!bg-[#00D4E1] data-[highlighted]:!text-white cursor-pointer"
               >
                 <span>{label}</span>
                 <CheckIcon
