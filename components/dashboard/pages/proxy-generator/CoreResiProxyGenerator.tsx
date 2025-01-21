@@ -20,8 +20,6 @@ import { ProtocolCoreResiSelectField } from "../../comps/proxy-generator/Protoco
 import { hostname } from "os";
 
 const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
-  // console.log("PROXY GENERATOR PROXY SETTINGS :", proxySettings);
-  // console.log("PROXY GENERATOR USER PROXY DATA :", userProxyData);
 
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
@@ -202,9 +200,9 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
       </div>
       <div className="flex flex-col lg:flex-row gap-6 mt-6 w-full">
         {/* Generator Settings */}
-        <div className="bg-white rounded-md py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full shadow-lg shadow-[#00000010]">
+        <div className="bg-white rounded-lg py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300">
           <div className="text-gray-900">Generator Settings</div>
-          <div className="h-[1px] bg-gray-200"></div>
+          <div className="h-[1px] bg-gray-300"></div>
           {/* Now The Main things */}
           <Formik
             onSubmit={onSubmit}
@@ -258,7 +256,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                         <span>{`Session Time (in 1-120 Minutes)`}</span>
                       </Label>
                       <Input
-                        className="border-gray-200 disabled:opacity-80"
+                        className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
                         value={values?.stickySession}
                         name="stickySession"
                         onChange={(event) => {
@@ -367,7 +365,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                       <span>Amount To Generate</span>
                     </Label>
                     <Input
-                      className="border-gray-200 disabled:opacity-80 border-gray-200"
+                      className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
                       name="generateAmount"
                       value={values?.generateAmount}
                       onChange={handleChange("generateAmount")}
@@ -378,7 +376,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                   {/* Generate Button & proxy reset button*/}
                   <div className="flex flex-row gap-4">
                     <Button
-                      className="w-full bg-[#00D4E1] text-white hover:bg-red-500"
+                      className="w-full bg-[#00D4E1] text-white hover:bg-[#00D4E1]/90 transition-all duration-300"
                       onClick={handleResetProxyPass}
                     >
                       Reset Password
@@ -386,7 +384,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                     <Button
                       onClick={() => handleSubmit()}
                       type="submit"
-                      className="w-full bg-[#00D4E1] text-white hover:bg-[#00D4E1] hover:opacity-90 transition-all duration-300"
+                      className="w-full bg-[#00D4E1] text-white hover:bg-[#00D4E1]/90 transition-all duration-300"
                     >
                       Generate Proxies
                     </Button>
@@ -399,7 +397,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
           {/* Whitelist IPs */}
           <div className="my-2">
             <div className="text-[16px] mb-2 text-gray-900">Whitelist IPs</div>
-            <div className="h-[1px] bg-gray-200 mb-4"></div>
+            <div className="h-[1px] bg-gray-300 mb-4"></div>
 
             <div className="flex flex-col gap-2">
               <div className="grid gap-2">
@@ -411,7 +409,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 </Label>
                 <div className="flex flex-col md:flex-row gap-2">
                   <Input
-                    className="border-gray-200 disabled:opacity-80"
+                    className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
                     value={whitelistIps.ip1}
                     onChange={(e) =>
                       setWhitelistIps({ ...whitelistIps, ip1: e.target.value })
@@ -439,7 +437,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 </Label>
                 <div className="flex flex-col md:flex-row gap-2">
                   <Input
-                    className="border-gray-200 disabled:opacity-80"
+                    className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
                     value={whitelistIps.ip2}
                     onChange={(e) =>
                       setWhitelistIps({ ...whitelistIps, ip2: e.target.value })
@@ -466,7 +464,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 </Label>
                 <div className="flex flex-col md:flex-row gap-2">
                   <Input
-                    className="border-gray-200 disabled:opacity-80"
+                    className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
                     value={whitelistIps.ip3}
                     onChange={(e) =>
                       setWhitelistIps({ ...whitelistIps, ip3: e.target.value })
@@ -497,9 +495,9 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
           </div>
         </div>
         {/* Generated Proxies */}
-        <div className="bg-white rounded-md py-4 px-5 flex flex-col gap-2 shadow-lg shadow-[#00000010] w-full">
+        <div className="bg-white rounded-lg py-4 px-5 flex flex-col gap-2 w-full border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300">
           <div className="text-[16px] text-gray-900">Generator Settings</div>
-          <div className="h-[1px] bg-gray-200"></div>
+          <div className="h-[1px] bg-gray-300"></div>
           <div className="mt-4 flex flex-col gap-6 h-full">
             {/* Hostname / IP for Pool Access */}
             <div className="grid gap-2">
@@ -510,7 +508,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Hostname / IP for Pool Access`}</span>
               </Label>
               <Input
-                  className="border-gray-200 disabled:opacity-80"
+                  className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
                   defaultValue={"core.eclipseproxy.com"}
                   disabled={true}
               />
@@ -524,7 +522,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Port`}</span>
               </Label>
               <Input
-                  className="border-gray-200 disabled:opacity-80"
+                  className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
                   defaultValue={`9000/10000/11000/12000`}
                   disabled={true}
               />
@@ -538,7 +536,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Your Username`}</span>
               </Label>
               <Input
-                  className="border-gray-200 disabled:opacity-80"
+                  className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
                   defaultValue={userProxyData?.data?.authorization?.username}
                   disabled={true}
               />
@@ -552,7 +550,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Your Proxy Password`}</span>
               </Label>
               <Input
-                  className="border-gray-200 disabled:opacity-80"
+                  className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
                   value={userProxyData?.data?.authorization?.password}
                   disabled={true}
               />
@@ -596,7 +594,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
               </Label>
 
               <Textarea
-                  className="border-gray-200 disabled:opacity-100 lg:h-full min-h-[200px] lg:min-h-fit flex-1 disabled:cursor-text"
+                  className="border-gray-300 disabled:opacity-100 lg:h-full min-h-[200px] lg:min-h-fit flex-1 disabled:cursor-text"
                   defaultValue={generatedProxies}
                   placeholder="Click Generate Proxies to generate proxies"
                   disabled={true}

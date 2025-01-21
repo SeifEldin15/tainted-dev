@@ -9,9 +9,9 @@ const InvoiceTable = ({ tableData }: any) => {
 
   return (
     <div className="flex flex-row w-full overflow-x-scroll noscrollbar">
-      <div className="flex flex-col text-sm w-full bg-white rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+      <div className="flex flex-col text-sm w-full bg-white rounded-lg border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300">
         {/* Table Top Bar */}
-        <div className="flex flex-row py-3 px-3 min-w-min text-gray-500 font-medium border-b border-gray-100">
+        <div className="flex flex-row py-3 px-3 min-w-min text-gray-500 font-medium border-b border-gray-300">
           <div className="w-[50px]">{`No.`}</div>
           <div className="min-w-[300px] flex-1">{`Invoice ID`}</div>
           <div className="min-w-[150px] w-[150px] text-center">{`Date`}</div>
@@ -24,7 +24,7 @@ const InvoiceTable = ({ tableData }: any) => {
           return (
             <div
               key={index}
-              className="flex flex-row py-3 px-3 min-w-min hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0"
+              className="flex flex-row py-3 px-3 min-w-min hover:bg-gray-50 transition-colors border-b border-gray-300 last:border-b-0"
             >
               <div className="w-[50px] text-gray-900">{`${index + 1}`}</div>
               <div className="min-w-[300px] flex-1 text-gray-900">{`${invoice?.uniqid}`}</div>

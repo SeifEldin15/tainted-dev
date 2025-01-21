@@ -38,9 +38,9 @@ const CoreDashboardResidentialComponent = ({
           <div
             className={cn(
               isBackgroundTransparent
-                ? "border bg-transparent"
-                : "mt-10 bg-white",
-              "relative flex w-full flex-col rounded-2xl p-6"
+                ? "border border-gray-300 bg-transparent"
+                : "mt-10 border border-gray-300 bg-white",
+              "relative flex w-full flex-col rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden p-6"
             )}
           >
             {/* box content */}
@@ -49,10 +49,10 @@ const CoreDashboardResidentialComponent = ({
                 <CreditCard size={26} className="text-[#00D4E1]" />
               </div>
               <div className="flex flex-col justify-between sm:py-1">
-                <div className="text-xl font-semibold text-gray-600 sm:text-2xl">
+                <div className="text-xl font-semibold text-gray-900 sm:text-2xl">
                   Purchase Core Residential Bandwidth
                 </div>
-                <div className="text-[#00D4E1]">Pay as You Go</div>
+                <div className="text-gray-500">Pay as You Go</div>
               </div>
             </div>
             {/* Slider */}

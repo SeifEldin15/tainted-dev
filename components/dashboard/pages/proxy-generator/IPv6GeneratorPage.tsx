@@ -205,9 +205,9 @@ const IPv6GeneratorPage = ({ userProxyData }: any) => {
       </div>
       <div className="flex flex-col lg:flex-row gap-6 mt-2 w-full">
         {/* Generator Settings */}
-        <div className="bg-white rounded-md py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full shadow-lg shadow-[#00000038]">
-          <div className="text-[16px] text-black">Generator Settings</div>
-          <div className="h-[1px] bg-gray-200"></div>
+        <div className="bg-white rounded-lg py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300">
+          <div className="text-[16px] text-gray-900">Generator Settings</div>
+          <div className="h-[1px] bg-gray-300"></div>
           {/* Now The Main things */}
           <Formik
             onSubmit={onSubmit}
@@ -320,8 +320,8 @@ const IPv6GeneratorPage = ({ userProxyData }: any) => {
                   {/* Generate Button & proxy reset button*/}
                   <div className="flex flex-row gap-4">
                     <Button
-                      className="w-full"
-                      variant={"attention"}
+                      className="w-full text-white"
+                      variant={"brand"}
                       onClick={handleResetProxyPass}
                     >
                       Reset Password
@@ -370,9 +370,9 @@ const IPv6GeneratorPage = ({ userProxyData }: any) => {
           </Formik>
         </div>
         {/* Generated Proxies */}
-        <div className="bg-white rounded-md py-4 px-5 flex flex-col gap-2 shadow-lg shadow-[#00000038] w-full">
-          <div className="text-[16px] text-black">Generator Settings</div>
-          <div className="h-[1px] bg-gray-200"></div>
+        <div className="bg-white rounded-lg py-4 px-5 flex flex-col gap-2 w-full border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300">
+          <div className="text-[16px] text-gray-900">Generator Settings</div>
+          <div className="h-[1px] bg-gray-300"></div>
           <div className="mt-4 flex flex-col gap-6 h-full">
             {/* Hostname / IP for Pool Access */}
             <div className="grid gap-2">
@@ -383,7 +383,7 @@ const IPv6GeneratorPage = ({ userProxyData }: any) => {
                 <span>{`Hostname / IP for Pool Access`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 bg-gray-50 text-black border-gray-200"
+                className="disabled:opacity-80 bg-gray-50 text-gray-900 border-gray-300"
                 defaultValue={`ipv6.eclipseproxy.com`}
                 disabled={true}
               />
@@ -397,7 +397,7 @@ const IPv6GeneratorPage = ({ userProxyData }: any) => {
                 <span>{`Port`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 bg-gray-50 text-black border-gray-200"
+                className="disabled:opacity-80 bg-gray-50 text-gray-900 border-gray-300"
                 defaultValue={`23468`}
                 disabled={true}
               />
@@ -411,7 +411,7 @@ const IPv6GeneratorPage = ({ userProxyData }: any) => {
                 <span>{`Your Username`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 bg-gray-50 text-black border-gray-200"
+                className="disabled:opacity-80 bg-gray-50 text-gray-900 border-gray-300"
                 defaultValue={userProxyData?.username}
                 disabled={true}
               />
@@ -425,7 +425,7 @@ const IPv6GeneratorPage = ({ userProxyData }: any) => {
                 <span>{`Your Proxy Password`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 bg-gray-50 text-black border-gray-200"
+                className="disabled:opacity-80 bg-gray-50 text-gray-900 border-gray-300"
                 value={userProxyData?.password}
                 disabled={true}
               />
@@ -468,7 +468,7 @@ const IPv6GeneratorPage = ({ userProxyData }: any) => {
                 </div>
               </Label>
               <Textarea
-                className="disabled:opacity-100 lg:h-full min-h-[200px] lg:min-h-[100px] flex-1 disabled:cursor-text bg-gray-50 text-black border-gray-200"
+                className="disabled:opacity-100 lg:h-full min-h-[200px] lg:min-h-[100px] flex-1 disabled:cursor-text bg-gray-50 text-gray-900 border-gray-300"
                 defaultValue={generatedProxies}
                 placeholder="Click Generate Proxies to generate proxies"
                 disabled={true}

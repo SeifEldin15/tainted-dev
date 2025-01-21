@@ -44,8 +44,8 @@ const ShowIPv4Plans = ({ PlansData }: any) => {
                   isPlanExpired && "opacity-50",
                   selectedPlan?.username === plan?.username
                     ? "border-brand shadow-xl shadow-brand/5"
-                    : "border-transparent",
-                  "bg-white rounded-lg select-none cursor-pointer border-[1px] duration-200 group relative"
+                    : "border-gray-300",
+                  "bg-white rounded-lg select-none cursor-pointer border transition-all duration-300 shadow-sm hover:shadow-md relative overflow-hidden"
                 )}
                 key={index}
                 onClick={() => {

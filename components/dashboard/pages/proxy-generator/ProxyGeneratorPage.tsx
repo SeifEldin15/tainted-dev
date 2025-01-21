@@ -108,9 +108,9 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
       </div>
       <div className="flex flex-col lg:flex-row gap-6 mt-6 w-full">
         {/* Generator Settings */}
-        <div className="bg-white rounded-lg py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full shadow-lg">
+        <div className="bg-white rounded-lg h-full border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full">
           <div className="text-[#00D4E1] text-xl font-semibold">Generator Settings</div>
-          <div className="h-[1px] bg-gray-200"></div>
+          <div className="h-[1px] bg-gray-100"></div>
           {/* Now The Main things */}
           <Formik
             onSubmit={onSubmit}
@@ -186,6 +186,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                         type="number"
                         max={120}
                         min={1}
+                        className="border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
                       />
                     </div>
                   )}
@@ -280,14 +281,14 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                       value={values?.generateAmount}
                       onChange={handleChange("generateAmount")}
                       id="generateAmount"
-                      className="border-gray-200 text-gray-600"
+                      className="border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
                       type="number"
                     />
                   </div>
                   {/* Generate Button & proxy reset button*/}
                   <div className="flex flex-row gap-4">
                     <Button
-                      className="w-full bg-[#00D4E1] hover:opacity-90 text-white"
+                      className="bg-[#00D4E1] hover:bg-[#00D4E1]/90 text-white transition-all duration-300"
                       variant={"attention"}
                       onClick={handleResetProxyPass}
                     >
@@ -296,7 +297,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                     <Button
                       onClick={() => handleSubmit()}
                       type="submit"
-                      className="w-full bg-[#00D4E1] hover:bg-[#00D4E1] hover:opacity-90 transition-all duration-300 text-white"
+                      className="bg-[#00D4E1] hover:bg-[#00D4E1]/90 text-white transition-all duration-300"
                       variant={"brand"}
                     >
                       Generate Proxies
@@ -308,9 +309,9 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
           </Formik>
         </div>
         {/* Generated Proxies */}
-        <div className="bg-white rounded-lg py-4 px-5 flex flex-col gap-2 shadow-lg w-full">
+        <div className="bg-white rounded-lg h-full border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden py-4 px-5 flex flex-col gap-2 w-full">
           <div className="text-[#00D4E1] text-xl font-semibold">Generated Proxies</div>
-          <div className="h-[1px] bg-gray-200"></div>
+          <div className="h-[1px] bg-gray-100"></div>
           <div className="mt-4 flex flex-col gap-6 h-full">
             {/* Hostname / IP for Pool Access */}
             <div className="grid gap-2">
@@ -321,7 +322,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Hostname / IP for Pool Access`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 border-gray-200 text-gray-600"
+                className="disabled:opacity-80 border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
                 defaultValue={`ipv4.eclipseproxy.com`}
                 disabled={true}
               />
@@ -335,7 +336,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Port`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 border-gray-200 text-gray-600"
+                className="disabled:opacity-80 border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
                 defaultValue={`1111 (http); 1112 (https); 2222 (socks5)`}
                 disabled={true}
               />
@@ -349,7 +350,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Your Username`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 border-gray-200 text-gray-600"
+                className="disabled:opacity-80 border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
                 defaultValue={userProxyData?.data?.username}
                 disabled={true}
               />
@@ -363,7 +364,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Your Proxy Password`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 border-gray-200 text-gray-600"
+                className="disabled:opacity-80 border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
                 value={userProxyData?.data?.proxy_authkey}
                 disabled={true}
               />
@@ -391,7 +392,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 </Button>
               </Label>
               <Textarea
-                className="disabled:opacity-100 lg:h-full min-h-[200px] lg:min-h-fit flex-1 disabled:cursor-text border-gray-200 text-gray-600"
+                className="disabled:opacity-100 lg:h-full min-h-[200px] lg:min-h-fit flex-1 disabled:cursor-text border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
                 defaultValue={generatedProxies}
                 placeholder="Click Generate Proxies to generate proxies"
                 disabled={true}

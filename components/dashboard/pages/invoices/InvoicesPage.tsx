@@ -6,7 +6,7 @@ import InvoiceTable from "../../comps/invoices/InvoiceTable";
 const InvoicesPage = ({ session, user }: any) => {
   return (
     <div className="flex flex-col gap-3 sm:gap-5 h-full max-w-[1200px] mx-auto p-4">
-      <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+      <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-300">
         <div className="flex flex-col gap-[8px]">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-lg bg-[#00D4E1]/10">

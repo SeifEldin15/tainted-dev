@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Contact() {
   return (
     <div className="w-full max-w-[1400px] mx-auto p-4 sm:p-6">
-      <div className="bg-white p-4 sm:p-8 border border-gray-200 rounded-lg">
+      <div className="bg-white p-4 sm:p-8 border border-gray-300 rounded-lg">
         <div className="flex items-start gap-4">
           <div className="p-3 rounded-lg bg-[#00D4E1]/10">
             <svg 

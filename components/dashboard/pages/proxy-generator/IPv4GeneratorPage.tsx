@@ -182,7 +182,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
       </div>
       <div className="flex flex-col lg:flex-row gap-6 mt-2 w-full">
         {/* Generator Settings */}
-        <div className="bg-white rounded-md py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full shadow-lg shadow-[#00000038]">
+        <div className="bg-white rounded-lg border border-gray-300 py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full shadow-sm hover:shadow-md transition-all duration-300">
           <div className="text-[16px] text-black">Generator Settings</div>
           <div className="h-[1px] bg-gray-200"></div>
           {/* Now The Main things */}
@@ -297,8 +297,8 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
                   {/* Generate Button & proxy reset button*/}
                   <div className="flex flex-row gap-4">
                     <Button
-                      className="w-full"
-                      variant={"attention"}
+                      className="w-full text-white"
+                      variant={"brand"}
                       onClick={handleResetProxyPass}
                     >
                       Reset Password
@@ -306,7 +306,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
                     <Button
                       onClick={() => handleSubmit()}
                       type="submit"
-                      className="w-full"
+                      className="w-full text-white"
                       variant={"brand"}
                     >
                       Generate Proxies
@@ -418,7 +418,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
           </div>
         </div>
         {/* Generated Proxies */}
-        <div className="bg-white rounded-md py-4 px-5 flex flex-col gap-2 shadow-lg shadow-[#00000038] w-full">
+        <div className="bg-white rounded-lg border border-gray-300 py-4 px-5 flex flex-col gap-2 w-full shadow-sm hover:shadow-md transition-all duration-300">
           <div className="text-[16px] text-black">Generator Settings</div>
           <div className="h-[1px] bg-gray-200"></div>
           <div className="mt-4 flex flex-col gap-6 h-full">
