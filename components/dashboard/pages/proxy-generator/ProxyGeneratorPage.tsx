@@ -102,7 +102,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
   return (
     <div>
       <div className="flex flex-col gap-[10px]">
-        <div className="text-[20px] sm:text-[24px] font-semibold">
+        <div className="text-[20px] sm:text-[24px] font-semibold text-gray-900">
           <span>{`Proxy Generator`}</span>
         </div>
       </div>
