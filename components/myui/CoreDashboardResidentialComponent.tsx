@@ -34,7 +34,7 @@ const CoreDashboardResidentialComponent = ({
   return (
     <div id="pricing">
       <div className="">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center mb-12">
           <div
             className={cn(
               isBackgroundTransparent

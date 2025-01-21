@@ -106,9 +106,9 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
           <span>{`Proxy Generator`}</span>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-6 mt-6 w-full">
+      <div className="flex flex-col lg:flex-row gap-6 mt-6 w-full h-full">
         {/* Generator Settings */}
-        <div className="bg-white rounded-lg h-full border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full">
+        <div className="bg-white rounded-lg h-full border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full mb-12">
           <div className="text-[#00D4E1] text-xl font-semibold">Generator Settings</div>
           <div className="h-[1px] bg-gray-100"></div>
           {/* Now The Main things */}
