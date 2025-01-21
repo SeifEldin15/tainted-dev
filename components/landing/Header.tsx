@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <header className="relative">
-      <div className="flex lg:block md:block lg:pt-4 md:pt-4 justify-between items-center px-4 border-b">
+      <div className="flex lg:block md:block lg:pt-4 md:pt-4 justify-between items-center px-4 border-b border-gray-300">
         <Link href="/" className="">
           <Image
              src="/image.png"

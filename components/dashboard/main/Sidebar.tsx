@@ -44,7 +44,7 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
         )}
       >
         {/* Logo */}
-        <div className="h-[60px] overflow-hidden py-2 flex items-center bg-white border-b border-borderColor">
+        <div className="h-[60px] overflow-hidden py-2 flex items-center bg-white border-b border-gray-300">
           <div className="flex flex-row items-center relative justify-between w-full px-3 h-full">
             {/* Logo */}
             <div className="w-[140px]">
@@ -72,7 +72,7 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
             </Button>
           </div>
         </div>
-        <div className="flex flex-col h-full p-3 border-r border-borderColor">
+        <div className="flex flex-col h-full p-3 border-r border-gray-300">
           {/* Buttons Categories */}
           <div className="flex flex-col gap-1">
             {/* catergory */}
@@ -111,7 +111,7 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
                         className={cn(
                           currentPageOpen == linkName
                             ? "bg-brand/10 text-black hover:bg-brand/20 hover:text-black"
-                            : "text-black/60 hover:bg-brand/10 hover:text-black/60",
+                            : "text-black hover:bg-brand/10 hover:text-black",
                           "group flex justify-start flex-row items-center gap-2 font-normal duration-100 w-full"
                         )}
                       >
@@ -127,7 +127,7 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
                           {title}
                         </span>
                         {badge && (
-                          <span className="flex flex-row items-center gap-1 text-[10px] px-1.5 bg-brand/[0.2] text-brand rounded-full">
+                          <span className="flex flex-row items-center gap-1 text-[10px] px-1.5 bg-brand/[0.2] text-black rounded-full">
                             <span>{badge?.title}</span>
                             {badge?.icon}
                           </span>
@@ -137,7 +137,7 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
                     {dynamicIndices.includes(index) && (
                       <div className="relative my-1 select-none">
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="w-[90%] border-t border-borderColor" />
+                          <span className="w-[90%] border-t border-gray-300" />
                         </div>
                       </div>
                     )}

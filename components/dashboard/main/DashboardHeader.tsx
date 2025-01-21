@@ -16,7 +16,7 @@ const DashboardHeader = ({ session }: any) => {
   };
 
   return (
-    <div className="h-[60px] bg-white flex items-center border-b border-borderColor">
+    <div className="h-[60px] bg-white flex items-center border-b border-gray-300">
       <div className="h-full px-4 w-full flex flex-row justify-between sm:justify-end items-center">
         {/* Close sidebar btn */}
         <div className="sm:hidden">
@@ -37,7 +37,7 @@ const DashboardHeader = ({ session }: any) => {
             >
               {/* image */}
               <img
-                className="h-[38px] w-[38px] rounded-full border border-gray-200"
+                className="h-[38px] w-[38px] rounded-full border border-gray-300"
                 alt="user image"
                 src={session?.user?.image}
               />
