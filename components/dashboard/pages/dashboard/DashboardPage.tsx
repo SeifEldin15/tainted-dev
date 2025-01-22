@@ -125,7 +125,7 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
       {/* Dashboard Content */}
       <div className="flex flex-col gap-[16px] pb-3 sm:pb-5">
         {/* Cards */}
-        <div className="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[16px] shadow-lg rounded-lg p-4">
+        <div className="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[16px]">
           {cards?.map((card, index) => (
               <DashboardCard key={index} {...card} />
           ))}
