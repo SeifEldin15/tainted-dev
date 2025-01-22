@@ -5,6 +5,7 @@ import Join from '@/components/reseller/Join'
 import Features2 from '@/components/reseller/Features2'
 import GetStarted from '@/components/reseller/GetStarted'
 import Header from '@/components/Header'
+import Footer from '@/components/landing/footer'
 
 export default function ResellerPage() {
   return (
@@ -15,6 +16,7 @@ export default function ResellerPage() {
       <Join />
       <Features2 />
       <GetStarted />
+      <Footer />
     </main>
   )
 }
