@@ -1,28 +1,61 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
+
+type DropdownItem = {
+  label: string;
+  href: string;
+  scroll?: boolean;
+}
+
+type NavItem = {
+  label: string;
+  href: string;
+  dropdownItems?: DropdownItem[];
+}
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const pathname = usePathname()
 
-  const navItems = [
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const navItems: NavItem[] = [
     {
       label: 'Home',
-      href: '#',
+      href: pathname === '/' ? '#' : '/',
       dropdownItems: [
-        { label: 'About', href: '/about' },
-        { label: 'Features', href: '/features' },
-        { label: 'Pricing', href: '/pricing' },
+        { label: 'About', href: pathname === '/' ? '#about' : '/#about', scroll: pathname === '/' },
+        { label: 'Features', href: pathname === '/' ? '#features' : '/#features', scroll: pathname === '/' },
+        { label: 'Pricing', href: pathname === '/' ? '#pricing' : '/#pricing', scroll: pathname === '/' },
       ]
     },
     {
       label: 'Pricing',
-      href: '/pricing',
+      href: pathname === '/pricing' ? '#' : '/pricing',
       dropdownItems: [
-        { label: 'IPv4 Datacenter', href: '/pricing#ipv4' },
-        { label: 'IPv6 Datacenter', href: '/pricing#ipv6' },
-        { label: 'IPv4 Plans', href: '/pricing#ipv4-plans' },
+        { 
+          label: 'IPv4 Datacenter', 
+          href: pathname === '/pricing' ? '#ipv4' : '/pricing#ipv4',
+          scroll: pathname === '/pricing'
+        },
+        { 
+          label: 'IPv6 Datacenter', 
+          href: pathname === '/pricing' ? '#ipv6' : '/pricing#ipv6',
+          scroll: pathname === '/pricing'
+        },
+        { 
+          label: 'IPv4 Plans', 
+          href: pathname === '/pricing' ? '#ipv4-plans' : '/pricing#ipv4-plans',
+          scroll: pathname === '/pricing'
+        },
       ]
     },
     { label: 'Reseller', href: '/reseller' },
@@ -52,13 +85,20 @@ const Header = () => {
                 {item.dropdownItems && activeDropdown === item.label && (
                   <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 min-w-[200px]">
                     {item.dropdownItems.map((dropdownItem) => (
-                      <Link
+                      <a
                         key={dropdownItem.href}
                         href={dropdownItem.href}
                         className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        onClick={(e) => {
+                          if (dropdownItem.scroll) {
+                            e.preventDefault();
+                            scrollToSection(dropdownItem.href.substring(1));
+                            setActiveDropdown(null);
+                          }
+                        }}
                       >
                         {dropdownItem.label}
-                      </Link>
+                      </a>
                     ))}
                   </div>
                 )}
