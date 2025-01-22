@@ -18,20 +18,20 @@ const Header = () => {
     },
     {
       label: 'Pricing',
-      href: '#',
+      href: '/pricing',
       dropdownItems: [
-        { label: 'Residential', href: '/pricing/residential' },
-        { label: 'IPv6 Datacenter', href: '/pricing/ipv6' },
-        { label: 'IPv4 Datacenter', href: '/pricing/ipv4' },
+        { label: 'IPv4 Datacenter', href: '/pricing#ipv4' },
+        { label: 'IPv6 Datacenter', href: '/pricing#ipv6' },
+        { label: 'IPv4 Plans', href: '/pricing#ipv4-plans' },
       ]
     },
     { label: 'Reseller', href: '/reseller' },
   ]
 
   return (
-    <header className="relative">
-      <div className="flex justify-between items-center px-4 border-b border-gray-300">
-        <div className="flex items-center">
+    <header className="relative border-b border-gray-300">
+      <div className="flex justify-between items-center max-w-[1350px] mx-auto">
+        <div className="flex items-center ">
           <Link href="/" className="mr-8">
             <Image src="/image.png" alt="Logo" width={180} height={180} />
           </Link>
