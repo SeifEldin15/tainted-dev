@@ -21,7 +21,7 @@ export default function Hero() {
       </div>
 
       {/* Hero Image */}
-      <div className="w-full max-w-2xl rounded-lg overflow-hidden shadow-xl shadow-[0_0_40px_rgba(96,165,250,0.5)] mt-6">
+      <div className="w-full max-w-4xl rounded-lg overflow-hidden shadow-xl shadow-[0_0_40px_rgba(0,0,0,0.3)] mt-6">
         <Image
           src="/placerholder-dashboard.png"
           alt="Eclipse Proxy Dashboard"
