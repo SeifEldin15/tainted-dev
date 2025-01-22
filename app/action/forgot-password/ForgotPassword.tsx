@@ -62,9 +62,9 @@ const ForgotPassword = () => {
   return (
     <div className="h-[100svh] w-full flex flex-row items-center px-5">
       {/* background */}
-      <div className="absolute w-full h-full top-0 left-0 right-0 bottom-0 overflow-hidden z-[1]">
+      <div className="absolute w-full h-full top-0 left-0 right-0 bottom-0 overflow-hidden z-[1] bg-black/40">
         <Image
-          className="object-cover object-center w-full h-full opacity-[50%]"
+          className="object-cover object-center w-full h-full opacity-[15%]"
           alt="Background"
           src={"/backgrounds/patternWaves.png"}
           width={1920}
@@ -92,12 +92,12 @@ const ForgotPassword = () => {
         }) => (
           <Fragment>
             <Form className="w-full max-w-[500px] mx-auto z-[2]">
-              <Card>
+              <Card className="shadow-lg bg-white/95 backdrop-blur-sm border-0">
                 <CardHeader className="space-y-1">
-                  <CardTitle className="text-2xl">
-                    Reset Your Password
+                  <CardTitle className="text-2xl text-black">
+                    Reset Your <span className="text-brand">Password</span>
                   </CardTitle>
-                  <CardDescription>
+                  <CardDescription className="text-gray-600">
                     Enter your email address and we will send you a password
                     reset link.
                   </CardDescription>
@@ -106,12 +106,12 @@ const ForgotPassword = () => {
                   {/* EMAIL */}
                   <div className="grid gap-2">
                     <Label
-                      className="h-[15px] flex flex-row items-center justify-between"
+                      className="h-[15px] flex flex-row items-center justify-between text-black"
                       htmlFor="email"
                     >
                       <span>Your Email</span>
                       {errors.email ? (
-                        <span className="pt-1 font-medium text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none">
+                        <span className="pt-1 font-medium text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none text-white">
                           {errors?.email}
                         </span>
                       ) : null}
@@ -123,6 +123,7 @@ const ForgotPassword = () => {
                       id="email"
                       type="email"
                       placeholder="johndoe@eclipseproxy.com"
+                      className="border-gray-200 text-black placeholder:text-gray-500"
                     />
                   </div>
                 </CardContent>
@@ -131,16 +132,16 @@ const ForgotPassword = () => {
                   <Button
                     onClick={() => handleSubmit()}
                     type="submit"
-                    className="w-full flex flex-row items-center gap-1.5"
+                    className="w-full flex flex-row items-center gap-1.5 bg-brand hover:bg-brand/90 text-white"
                     disabled={isSendingData}
                   >
                     {!isSendingData ? (
                       <>
-                        <span>Send</span>
-                        <ArrowRight size={14} />
+                        <span className="text-white">Send</span>
+                        <ArrowRight size={14} className="text-white" />
                       </>
                     ) : (
-                      <Loader size={20} className="animate-spin" />
+                      <Loader size={20} className="animate-spin text-white" />
                     )}
                   </Button>
                 </CardFooter>
