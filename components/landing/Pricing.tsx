@@ -61,7 +61,7 @@ const PricingSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {pricingCards.map((card, index) => (
-            <div key={index} className="bg-white rounded-lg p-6 shadow-lg">
+            <div key={index} className="bg-white rounded-lg p-6 shadow-[0_0_20px_rgba(0,0,0,0.15)]">
               <card.icon className="w-12 h-12 mb-4 mx-auto text-[#00D4E1]" />
               <h3 className="text-xl font-semibold mb-2 text-gray-900">{card.title}</h3>
               <p className="text-gray-600 mb-4">{card.description}</p>
