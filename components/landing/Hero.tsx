@@ -21,14 +21,14 @@ export default function Hero() {
       </div>
 
       {/* Hero Image */}
-      <div className="w-full max-w-4xl rounded-lg overflow-hidden shadow-xl shadow-[0_0_40px_rgba(0,0,0,0.3)] mt-6">
+      <div className="w-full max-w-4xl rounded-lg overflow-hidden shadow-[0_0_50px_rgba(0,169,180,0.2),_0_0_100px_rgba(0,169,180,0.1),_0_0_150px_rgba(0,169,180,0.2)] mt-6">
         <Image
           src="/placerholder-dashboard.png"
           alt="Eclipse Proxy Dashboard"
-          width={1600}
-          height={1000}
+          width={2400}
+          height={1500}
           className="w-full h-auto object-cover"
-          sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 800px"
+          sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 1200px"
           priority
         />
       </div>

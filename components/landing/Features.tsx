@@ -41,7 +41,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="p-6 rounded-lg shadow-[0_0_14px_rgba(0,0,0,0.21)] transition-all hover:bg-brand hover:-translate-y-1 bg-white group"
+              className="p-6 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.15)] transition-all hover:bg-brand hover:-translate-y-1 bg-white group"
             >
               <div className="mb-2 text-brand group-hover:text-white">
                 {feature.icon}

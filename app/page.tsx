@@ -1,5 +1,6 @@
 "use client"
-import { Header, Hero, Features, Pricing, Countries, Popular, About, FAQ } from "@/components/landing";
+import { Hero, Features, Pricing, Countries, Popular, About, FAQ } from "@/components/landing";
+import Header from "@/components/Header";
 import ServiceView from "@/components/landing/ServiceView";
 import Footer from "@/components/landing/footer";
 import OurFeatures from "@/components/landing/ourfeatures";

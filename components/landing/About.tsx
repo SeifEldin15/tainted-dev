@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h2 className="text-3xl font-bold text-center mb-12">
         Why 2000+ clients choose CatProxies
       </h2>
@@ -18,7 +18,13 @@ const About = () => {
             Contact Us Now
           </button>
         </div>
-        <div className="h-64 bg-gray-100 rounded-lg">{/* Image placeholder */}</div>
+        <div className="h-64 rounded-lg overflow-hidden">
+          <img 
+            src="/security.jpg" 
+            alt="Security illustration" 
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
 
       {/* Privacy Section */}
@@ -32,7 +38,13 @@ const About = () => {
             Contact Us Now
           </button>
         </div>
-        <div className="h-64 bg-gray-100 rounded-lg md:order-1">{/* Image placeholder */}</div>
+        <div className="h-64 rounded-lg overflow-hidden md:order-1">
+          <img 
+            src="/server.jpg" 
+            alt="Server infrastructure" 
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
 
       {/* Cat Care Support Section */}
@@ -46,7 +58,13 @@ const About = () => {
             Contact Us Now
           </button>
         </div>
-        <div className="h-64 bg-gray-100 rounded-lg">{/* Image placeholder */}</div>
+        <div className="h-64 rounded-lg overflow-hidden">
+          <img 
+            src="/network.jpg" 
+            alt="Network infrastructure" 
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </div>
   );

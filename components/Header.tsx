@@ -1,0 +1,142 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+
+  const navItems = [
+    {
+      label: 'Home',
+      href: '#',
+      dropdownItems: [
+        { label: 'About', href: '/about' },
+        { label: 'Features', href: '/features' },
+        { label: 'Pricing', href: '/pricing' },
+      ]
+    },
+    {
+      label: 'Pricing',
+      href: '#',
+      dropdownItems: [
+        { label: 'Residential', href: '/pricing/residential' },
+        { label: 'IPv6 Datacenter', href: '/pricing/ipv6' },
+        { label: 'IPv4 Datacenter', href: '/pricing/ipv4' },
+      ]
+    },
+    { label: 'Reseller', href: '/reseller' },
+  ]
+
+  return (
+    <header className="relative">
+      <div className="flex justify-between items-center px-4 border-b border-gray-300">
+        <div className="flex items-center">
+          <Link href="/" className="mr-8">
+            <Image src="/image.png" alt="Logo" width={180} height={180} />
+          </Link>
+
+          {/* Desktop menu */}
+          <nav className="hidden lg:flex items-center space-x-6">
+            {navItems.map((item) => (
+              <div key={item.label} className="relative"
+                   onMouseEnter={() => setActiveDropdown(item.label)}
+                   onMouseLeave={() => setActiveDropdown(null)}>
+                <Link
+                  href={item.href}
+                  className="text-gray-700 hover:text-gray-900 font-medium py-6 inline-block"
+                >
+                  {item.label}
+                </Link>
+                
+                {item.dropdownItems && activeDropdown === item.label && (
+                  <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 min-w-[200px]">
+                    {item.dropdownItems.map((dropdownItem) => (
+                      <Link
+                        key={dropdownItem.href}
+                        href={dropdownItem.href}
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                      >
+                        {dropdownItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
+        </div>
+
+        {/* Auth buttons */}
+        <div className="hidden lg:flex items-center space-x-4">
+          <Link href="/login" className="text-gray-700 hover:text-gray-900 font-medium">
+            Login
+          </Link>
+          <Link href="/register" className="bg-brand text-white px-4 py-2 rounded-lg hover:bg-brand/90">
+            Sign Up
+          </Link>
+        </div>
+
+        {/* Mobile menu button */}
+        <button 
+          className="p-2 rounded-lg lg:hidden text-black"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span className="sr-only">Open menu</span>
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      <nav className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden absolute left-0 right-0 top-full w-full bg-white shadow-lg z-50`}>
+        <div className="py-2">
+          {navItems.map((item) => (
+            <div key={item.label}>
+              <Link
+                href={item.href}
+                className="block px-4 py-2 text-base text-gray-600 hover:bg-gray-100"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+              {item.dropdownItems && (
+                <div className="pl-4">
+                  {item.dropdownItems.map((dropdownItem) => (
+                    <Link
+                      key={dropdownItem.href}
+                      href={dropdownItem.href}
+                      className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {dropdownItem.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+          <div className="border-t border-gray-200 mt-2 pt-2">
+            <Link
+              href="/login"
+              className="block px-4 py-2 text-base text-gray-600 hover:bg-gray-100"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Login
+            </Link>
+            <Link
+              href="/signup"
+              className="block px-4 py-2 text-base bg-brand text-white hover:bg-brand/90"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Sign Up
+            </Link>
+          </div>
+        </div>
+      </nav>
+    </header>
+  )
+}
+
+export default Header
