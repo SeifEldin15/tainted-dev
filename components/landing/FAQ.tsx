@@ -71,9 +71,9 @@ const FAQ = () => {
       </div>
 
       <div className="text-center mt-8">
-        <button className="text-[#00D4E1] hover:text-blue-700 font-medium">
+        {/* <button className="text-[#00D4E1] hover:text-blue-700 font-medium">
           Read all FAQs →
-        </button>
+        </button> */}
       </div>
     </div>
   );
