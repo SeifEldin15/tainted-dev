@@ -85,9 +85,9 @@ const RegisterPage = () => {
   return (
     <div className="h-[100svh] w-full flex flex-row items-center px-5">
       {/* background */}
-      <div className="absolute w-full h-full top-0 left-0 right-0 bottom-0 overflow-hidden z-[1]">
+      <div className="absolute w-full h-full top-0 left-0 right-0 bottom-0 overflow-hidden z-[1] bg-black/40">
         <Image
-          className="object-cover object-center w-full h-full opacity-[50%]"
+          className="object-cover object-center w-full h-full opacity-[15%]"
           alt="Background"
           src={"/backgrounds/patternWaves.png"}
           width={1920}
@@ -116,10 +116,12 @@ const RegisterPage = () => {
         }) => (
           <Fragment>
             <Form className="w-full max-w-[500px] mx-auto z-[2]">
-              <Card>
+              <Card className="shadow-lg bg-white/95 backdrop-blur-sm border-0">
                 <CardHeader className="space-y-1">
-                  <CardTitle className="text-2xl">Create an account</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-2xl text-black">
+                    Create an <span className="text-brand">account</span>
+                  </CardTitle>
+                  <CardDescription className="text-gray-600">
                     Enter your email below to create your account.
                   </CardDescription>
                 </CardHeader>
@@ -127,12 +129,12 @@ const RegisterPage = () => {
                   {/* USERNAME */}
                   <div className="grid gap-2">
                     <Label
-                      className="h-[15px] flex flex-row items-center justify-between"
+                      className="h-[15px] flex flex-row items-center justify-between text-black"
                       htmlFor="username"
                     >
                       <span>Username</span>
                       {errors.username ? (
-                        <span className="font-medium pt-1 text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none">
+                        <span className="font-medium pt-1 text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none text-white">
                           {errors?.username}
                         </span>
                       ) : null}
@@ -142,17 +144,18 @@ const RegisterPage = () => {
                       onChange={handleChange("username")}
                       id="username"
                       type="text"
+                      className="border-gray-200 text-black"
                     />
                   </div>
                   {/* EMAIL */}
                   <div className="grid gap-2">
                     <Label
-                      className="h-[15px] flex flex-row items-center justify-between"
+                      className="h-[15px] flex flex-row items-center justify-between text-black"
                       htmlFor="email"
                     >
                       <span>Email</span>
                       {errors.email ? (
-                        <span className="font-medium pt-1 text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none">
+                        <span className="font-medium pt-1 text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none text-white">
                           {errors?.email}
                         </span>
                       ) : null}
@@ -163,17 +166,18 @@ const RegisterPage = () => {
                       id="email"
                       type="email"
                       placeholder="johndoe@eclipseproxy.com"
+                      className="border-gray-200 text-black placeholder:text-gray-500"
                     />
                   </div>
                   {/* PASSWORD */}
                   <div className="grid gap-2">
                     <Label
-                      className="h-[15px] flex flex-row items-center justify-between"
+                      className="h-[15px] flex flex-row items-center justify-between text-black"
                       htmlFor="password"
                     >
                       <span>Password</span>
                       {errors.password ? (
-                        <span className="font-medium pt-1 text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none">
+                        <span className="font-medium pt-1 text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none text-white">
                           {errors?.password}
                         </span>
                       ) : null}
@@ -183,17 +187,18 @@ const RegisterPage = () => {
                       onChange={handleChange("password")}
                       id="password"
                       type="password"
+                      className="border-gray-200 text-black"
                     />
                   </div>
                   {/* CONFIRM PASSWORD */}
                   <div className="grid gap-2">
                     <Label
-                      className="h-[15px] flex flex-row items-center justify-between"
+                      className="h-[15px] flex flex-row items-center justify-between text-black"
                       htmlFor="confirmpassword"
                     >
                       <span>Confirm Password</span>
                       {errors.confirmpassword ? (
-                        <span className="font-medium pt-1 text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none">
+                        <span className="font-medium pt-1 text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none text-white">
                           {errors?.confirmpassword}
                         </span>
                       ) : null}
@@ -203,6 +208,7 @@ const RegisterPage = () => {
                       onChange={handleChange("confirmpassword")}
                       id="confirmpassword"
                       type="password"
+                      className="border-gray-200 text-black"
                     />
                   </div>
                   {/* ACCEPT TOS */}
@@ -216,11 +222,11 @@ const RegisterPage = () => {
                     />
                     <label
                       htmlFor="terms"
-                      className="h-[18px] cursor-pointer items-center text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 justify-between flex flex-row w-full"
+                      className="h-[18px] cursor-pointer items-center text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 justify-between flex flex-row w-full text-black"
                     >
                       Accept terms and conditions
                       {errors.terms ? (
-                        <span className="font-medium pt-1 text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none">
+                        <span className="font-medium pt-1 text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none text-white">
                           {errors?.terms}
                         </span>
                       ) : null}
@@ -233,29 +239,26 @@ const RegisterPage = () => {
                       htmlFor="recaptcha"
                     >
                       {errors.recaptcha ? (
-                        <span className="font-medium pt-1 text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none">
+                        <span className="font-medium pt-1 text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none text-white">
                           {errors?.recaptcha}
                         </span>
                       ) : null}
                     </Label>
                     <div className="h-[80px] w-full flex items-center justify-center">
                       <ReCAPTCHA
-                        sitekey={
-                          process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""
-                        }
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
                         ref={recaptchaRef}
                         onChange={(token) => setFieldValue("recaptcha", token)}
-                        theme="dark" // Add this line to set the dark theme
+                        theme="light"
                       />
                     </div>
                   </div>
                 </CardContent>
-                {/* SUBMIT REGISTER BUTTON */}
                 <CardFooter>
                   <Button
                     onClick={() => handleSubmit()}
                     type="submit"
-                    className="w-full flex flex-row items-center gap-1.5"
+                    className="w-full flex flex-row items-center gap-1.5 bg-brand hover:bg-brand/90 text-white"
                     disabled={isSendingData}
                   >
                     {!isSendingData ? (
@@ -269,12 +272,11 @@ const RegisterPage = () => {
                   </Button>
                 </CardFooter>
                 <CardContent className="grid gap-4">
-                  {/* Already have an account?*/}
                   <div className="flex items-center space-x-2">
                     <Link href={"/login"}>
                       <label
                         htmlFor="terms"
-                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 hover:underline underline-offset-2 cursor-pointer"
+                        className="text-sm font-medium leading-none text-brand peer-disabled:cursor-not-allowed peer-disabled:opacity-70 hover:underline underline-offset-2 cursor-pointer"
                       >
                         Already have an account?
                       </label>
