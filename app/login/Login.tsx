@@ -25,17 +25,17 @@ import ReCAPTCHA from "react-google-recaptcha";
 interface LoginFormValues {
   email: string;
   password: string;
-  recaptcha: string;
+  // recaptcha: string;  // commented out
 }
 
 const LoginPage = () => {
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  // const recaptchaRef = useRef<ReCAPTCHA>(null);  // commented out
   const [isSendingData, setIsSendingData] = useState(false);
 
   const initialValues = {
     email: "",
     password: "",
-    recaptcha: "",
+    // recaptcha: "",  // commented out
   };
 
   //  Functions to run on submit
@@ -157,7 +157,7 @@ const LoginPage = () => {
                       className="border-gray-200 text-black"
                     />
                   </div>
-                  {/* GOOGLE RECAPTCHA */}
+                  {/* GOOGLE RECAPTCHA - Temporarily disabled
                   <div className="grid gap-2">
                     <Label
                       className="h-[15px] flex flex-row items-center justify-center"
@@ -178,6 +178,7 @@ const LoginPage = () => {
                       />
                     </div>
                   </div>
+                  */}
                 </CardContent>
                 {/* SUBMIT LOGIN BUTTON */}
                 <CardFooter>
