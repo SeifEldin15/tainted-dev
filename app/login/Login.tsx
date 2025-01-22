@@ -12,7 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
-import React, { Fragment, useState, useEffect } from "react"; 
+import React, { Fragment, useState, useEffect, useRef } from "react"; 
 import { Formik, Form } from "formik";
 import { loginSchema } from "@/constants/FormSchema";
 import { ArrowRight, Loader } from "lucide-react";
@@ -20,18 +20,22 @@ import Image from "next/image";
 import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
 import { CLIENT_ERROR_RESPONSES } from "@/constants/Messages";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface LoginFormValues {
   email: string;
   password: string;
+  recaptcha: string;
 }
 
 const LoginPage = () => {
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [isSendingData, setIsSendingData] = useState(false);
 
   const initialValues = {
     email: "",
     password: "",
+    recaptcha: "",
   };
 
   //  Functions to run on submit
@@ -152,6 +156,27 @@ const LoginPage = () => {
                       type="password"
                       className="border-gray-200 text-black"
                     />
+                  </div>
+                  {/* GOOGLE RECAPTCHA */}
+                  <div className="grid gap-2">
+                    <Label
+                      className="h-[15px] flex flex-row items-center justify-center"
+                      htmlFor="recaptcha"
+                    >
+                      {errors.recaptcha ? (
+                        <span className="font-medium pt-1 text-[11px] bg-red-500 py-0.5 px-1 rounded-[2px] select-none text-white">
+                          {errors?.recaptcha}
+                        </span>
+                      ) : null}
+                    </Label>
+                    <div className="h-[80px] w-full flex items-center justify-center">
+                      <ReCAPTCHA
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+                        ref={recaptchaRef}
+                        onChange={(token) => setFieldValue("recaptcha", token)}
+                        theme="light"
+                      />
+                    </div>
                   </div>
                 </CardContent>
                 {/* SUBMIT LOGIN BUTTON */}

@@ -28,6 +28,7 @@ export const loginSchema = Yup.object({
   password: Yup.string()
     .required("Required")
     .matches(PASSWORD_REGEX, "Should be more than 8 characters"),
+  recaptcha: Yup.string().required("Required"),
 });
 
 // Form Schema for login form
