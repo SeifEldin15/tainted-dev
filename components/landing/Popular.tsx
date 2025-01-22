@@ -51,18 +51,27 @@ const locations: LocationData[] = [
 
 export default function Popular() {
   return (
-    <section className="py-16">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-4 text-gray-900 text-center">Most popular <span className="text-[#00D4E1] font-bold">proxy locations</span></h2>
-        <p className="text-gray-600 mb-8 max-w-2xl text-center mx-auto">
-          Choose genuine and exclusive residential proxies, ethically sourced and compliant IPs,
-          across more than 120 locations worldwide.
-        </p>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-3 text-gray-900">
+            Most Popular <span className="text-brand">Proxy Locations</span>
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Choose genuine and exclusive residential proxies, ethically sourced and compliant IPs,
+            across more than 120 locations worldwide.
+          </p>
+        </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 w-full place-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {locations.map((location) => (
-            <div key={location.country} className="flex items-center space-x-3">
-              <div className="w-8 h-8 relative">
+            <div 
+              key={location.country} 
+              className="bg-white rounded-2xl shadow-[0_0_22px_rgba(0,0,0,0.14)] p-6
+                       transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(0,0,0,0.12)]
+                       flex items-center space-x-4 group"
+            >
+              <div className="w-12 h-12 relative transition-transform duration-300 group-hover:scale-110">
                 <Image
                   src={location.flag}
                   alt={`${location.country} flag`}
@@ -71,8 +80,8 @@ export default function Popular() {
                 />
               </div>
               <div>
-                <div className="font-medium text-gray-900">{location.country}</div>
-                <div className="text-sm text-gray-500">{location.ips}</div>
+                <div className="font-semibold text-lg text-gray-900">{location.country}</div>
+                <div className="text-brand font-medium">{location.ips}</div>
               </div>
             </div>
           ))}
