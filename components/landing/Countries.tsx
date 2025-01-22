@@ -21,24 +21,33 @@ const countries: Country[] = [
 
 export default function Countries() {
   return (
-    <div className="py-16">
-      <div className="text-center mb-8">
-        <h2 className="text-4xl font-bold mb-2 text-gray-900">Top Proxy <span className="text-[#00D4E1] font-bold">Locations</span></h2>
-        <p className="text-gray-600">Premium proxy IPs from 195 countries</p>
+    <div className="py-16 bg-white">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold mb-3 text-gray-900">
+          Top Proxy <span className="text-brand">Locations</span>
+        </h2>
+        <p className="text-gray-600 text-lg">Premium proxy IPs from 195 countries</p>
       </div>
       
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto px-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto px-4">
         {countries.map((country) => (
-          <div key={country.name} className="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center">
-            <Image
-              src={country.flag}
-              alt={`${country.name} flag`}
-              width={64}
-              height={42}
-              className="mb-2"
-            />
-            <h3 className="font-medium">{country.name}</h3>
-            <p className="text-sm text-gray-600">{country.ipCount}</p>
+          <div 
+            key={country.name} 
+            className="bg-white rounded-2xl shadow-[0_0_22px_rgba(0,0,0,0.14)] p-6 
+                     transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(0,0,0,0.08)]
+                     flex flex-col items-center justify-center group"
+          >
+            <div className="relative w-16 h-12 mb-4 transition-transform duration-300 group-hover:scale-110">
+              <Image
+                src={country.flag}
+                alt={`${country.name} flag`}
+                fill
+                className="object-cover rounded-md"
+                sizes="(max-width: 64px) 100vw, 64px"
+              />
+            </div>
+            <h3 className="font-semibold text-lg mb-1 text-gray-900">{country.name}</h3>
+            <p className="text-brand font-medium">{country.ipCount}</p>
           </div>
         ))}
       </div>
