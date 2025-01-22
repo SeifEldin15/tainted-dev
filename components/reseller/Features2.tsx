@@ -44,7 +44,7 @@ const Features2 = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-[#00D4E1] uppercase font-medium mb-4">FEATURES</p>
-          <h2 className="text-3xl md:text-4xl font-bold">
+          <h2 className="text-3xl md:text-4xl font-bold text-black">
             Proxy Features of our Residential Proxies
           </h2>
         </div>
@@ -66,7 +66,7 @@ const Features2 = () => {
           
           <div className="relative">
             <img
-              src="/images/features-illustration.svg"
+              src="/vpn.jpg"
               alt="Features illustration"
               className="w-full"
             />

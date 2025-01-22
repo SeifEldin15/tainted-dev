@@ -66,7 +66,7 @@ export default function Hero() {
           {/* Right Column - Image */}
           <div className="relative">
             <img
-              src="/images/reseller-hero.png"
+              src="/server2.jpg"
               alt="Team collaboration illustration"
               className="w-full"
             />
