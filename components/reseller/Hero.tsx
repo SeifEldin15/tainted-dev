@@ -7,11 +7,11 @@ export default function Hero() {
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
           {/* Left Column */}
           <div className="max-w-xl lg:max-w-lg">
-            <p className="text-base font-semibold leading-7 text-[#00D4E1]">
+            <p className="text-base font-semibold leading-7 text-brand">
               LIGHTNINGPROXIES RESELLER PROGRAM
             </p>
             <h1 className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              Your <span className="text-[#00D4E1]">Proxy Partnership:</span>
+              Your <span className="text-brand">Proxy Partnership:</span>
               <br />
               LightningProxies
             </h1>
@@ -23,7 +23,7 @@ export default function Hero() {
             <div className="mt-10 flex items-center gap-x-6">
               <Link
                 href="/get-started"
-                className="rounded-md bg-[#00D4E1] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#00bfc9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#00D4E1]"
+                className="rounded-md bg-brand px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#00bfc9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
                 Get Started →
               </Link>
@@ -47,7 +47,7 @@ export default function Hero() {
               ].map((feature) => (
                 <div key={feature} className="flex items-center">
                   <svg
-                    className="h-5 w-5 flex-none text-[#00D4E1]"
+                    className="h-5 w-5 flex-none text-brand"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >

@@ -56,7 +56,7 @@ export function CountryCoreResiSelectField({
                 <CommandItem
                   key={value}
                   value={label}
-                  className="!bg-white !text-black hover:!bg-[#00D4E1] hover:!text-white data-[highlighted]:!bg-[#00D4E1] data-[highlighted]:!text-white cursor-pointer"
+                  className="!bg-white !text-black hover:!bg-brand hover:!text-white data-[highlighted]:!bg-brand data-[highlighted]:!text-white cursor-pointer"
                   onSelect={(newValue) => {
                     setValue(value);
                     if (newValue == "random") {

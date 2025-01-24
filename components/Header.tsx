@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import { useTheme } from '@/contexts/ThemeContext'
+import { Moon, Sun } from 'lucide-react'
 
 type DropdownItem = {
   label: string;
@@ -19,6 +21,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const pathname = usePathname()
+  const { theme, toggleTheme } = useTheme()
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -31,42 +34,39 @@ const Header = () => {
     {
       label: 'Home',
       href: pathname === '/' ? '#' : '/',
-      dropdownItems: [
-        { label: 'About', href: pathname === '/' ? '#about' : '/#about', scroll: pathname === '/' },
-        { label: 'Features', href: pathname === '/' ? '#features' : '/#features', scroll: pathname === '/' },
-        { label: 'Pricing', href: pathname === '/' ? '#pricing' : '/#pricing', scroll: pathname === '/' },
-      ]
+      dropdownItems: pathname === '/' ? [
+        { label: 'About', href: '#about', scroll: true },
+        { label: 'Features', href: '#features', scroll: true },
+        { label: 'Pricing', href: '#pricing', scroll: true },
+      ] : undefined
     },
     {
       label: 'Pricing',
       href: pathname === '/pricing' ? '#' : '/pricing',
-      dropdownItems: [
-        { 
-          label: 'IPv4 Datacenter', 
-          href: pathname === '/pricing' ? '#ipv4' : '/pricing#ipv4',
-          scroll: pathname === '/pricing'
-        },
-        { 
-          label: 'IPv6 Datacenter', 
-          href: pathname === '/pricing' ? '#ipv6' : '/pricing#ipv6',
-          scroll: pathname === '/pricing'
-        },
-        { 
-          label: 'IPv4 Plans', 
-          href: pathname === '/pricing' ? '#ipv4-plans' : '/pricing#ipv4-plans',
-          scroll: pathname === '/pricing'
-        },
+      dropdownItems: pathname === '/pricing' ? [
+        { label: 'IPv4 Datacenter', href: '#ipv4', scroll: true },
+        { label: 'IPv6 Datacenter', href: '#ipv6', scroll: true },
+        { label: 'IPv4 Plans', href: '#ipv4-plans', scroll: true },
+      ] : [
+        { label: 'IPv4 Datacenter', href: '/pricing#ipv4' },
+        { label: 'IPv6 Datacenter', href: '/pricing#ipv6' },
+        { label: 'IPv4 Plans', href: '/pricing#ipv4-plans' },
       ]
     },
     { label: 'Reseller', href: '/reseller' },
   ]
 
   return (
-    <header className="relative border-b border-gray-300">
+    <header className="relative border-b border-gray-300 dark:border-transparent dark:bg-gray-900">
       <div className="flex justify-between items-center max-w-[1350px] mx-auto">
         <div className="flex items-center ">
           <Link href="/" className="mr-8">
-            <Image src="/image.png" alt="Logo" width={180} height={180} />
+            <Image 
+              src={theme === 'dark' ? "/logo-text-side.png" : "/image.png"} 
+              alt="Logo" 
+              width={180} 
+              height={180} 
+            />
           </Link>
 
           {/* Desktop menu */}
@@ -77,18 +77,18 @@ const Header = () => {
                    onMouseLeave={() => setActiveDropdown(null)}>
                 <Link
                   href={item.href}
-                  className="text-gray-700 hover:text-gray-900 font-medium py-6 inline-block"
+                  className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white font-medium py-6 inline-block"
                 >
                   {item.label}
                 </Link>
                 
                 {item.dropdownItems && activeDropdown === item.label && (
-                  <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 min-w-[200px]">
+                  <div className="absolute top-full left-0 bg-white dark:bg-gray-800 shadow-lg rounded-lg py-2 min-w-[200px]">
                     {item.dropdownItems.map((dropdownItem) => (
                       <a
                         key={dropdownItem.href}
                         href={dropdownItem.href}
-                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        className="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                         onClick={(e) => {
                           if (dropdownItem.scroll) {
                             e.preventDefault();
@@ -109,17 +109,17 @@ const Header = () => {
 
         {/* Auth buttons */}
         <div className="hidden lg:flex items-center space-x-4">
-          <Link href="/login" className="text-gray-700 hover:text-gray-900 font-medium">
+          <Link href="/login" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white font-medium">
             Login
           </Link>
-          <Link href="/register" className="bg-brand text-white px-4 py-2 rounded-lg hover:bg-brand/90">
+          <Link href="/register" className="bg-brand text-black px-4 py-2 rounded-lg hover:bg-brand/90">
             Sign Up
           </Link>
         </div>
 
         {/* Mobile menu button */}
         <button 
-          className="p-2 rounded-lg lg:hidden text-black"
+          className="p-2 rounded-lg lg:hidden text-black dark:text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span className="sr-only">Open menu</span>
@@ -127,16 +127,27 @@ const Header = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
+
+        <button
+          onClick={toggleTheme}
+          className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+        >
+          {theme === 'dark' ? (
+            <Sun className="h-5 w-5" />
+          ) : (
+            <Moon className="h-5 w-5" />
+          )}
+        </button>
       </div>
 
       {/* Mobile menu */}
-      <nav className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden absolute left-0 right-0 top-full w-full bg-white shadow-lg z-50`}>
+      <nav className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden absolute left-0 right-0 top-full w-full bg-white dark:bg-gray-800 shadow-lg z-50`}>
         <div className="py-2">
           {navItems.map((item) => (
             <div key={item.label}>
               <Link
                 href={item.href}
-                className="block px-4 py-2 text-base text-gray-600 hover:bg-gray-100"
+                className="block px-4 py-2 text-base text-gray-600 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
@@ -147,7 +158,7 @@ const Header = () => {
                     <Link
                       key={dropdownItem.href}
                       href={dropdownItem.href}
-                      className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100"
+                      className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {dropdownItem.label}
@@ -157,10 +168,10 @@ const Header = () => {
               )}
             </div>
           ))}
-          <div className="border-t border-gray-200 mt-2 pt-2">
+          <div className="border-t border-gray-200 dark:border-gray-700 mt-2 pt-2">
             <Link
               href="/login"
-              className="block px-4 py-2 text-base text-gray-600 hover:bg-gray-100"
+              className="block px-4 py-2 text-base text-gray-600 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
               onClick={() => setIsMenuOpen(false)}
             >
               Login

@@ -256,7 +256,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                         <span>{`Session Time (in 1-120 Minutes)`}</span>
                       </Label>
                       <Input
-                        className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
+                        className="border-gray-300 disabled:opacity-80 focus:ring-brand focus:border-brand"
                         value={values?.stickySession}
                         name="stickySession"
                         onChange={(event) => {
@@ -365,7 +365,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                       <span>Amount To Generate</span>
                     </Label>
                     <Input
-                      className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
+                      className="border-gray-300 disabled:opacity-80 focus:ring-brand focus:border-brand"
                       name="generateAmount"
                       value={values?.generateAmount}
                       onChange={handleChange("generateAmount")}
@@ -376,7 +376,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                   {/* Generate Button & proxy reset button*/}
                   <div className="flex flex-row gap-4">
                     <Button
-                      className="w-full bg-[#00D4E1] text-white hover:bg-[#00D4E1]/90 transition-all duration-300"
+                      className="w-full bg-brand text-white hover:bg-brand/90 transition-all duration-300"
                       onClick={handleResetProxyPass}
                     >
                       Reset Password
@@ -384,7 +384,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                     <Button
                       onClick={() => handleSubmit()}
                       type="submit"
-                      className="w-full bg-[#00D4E1] text-white hover:bg-[#00D4E1]/90 transition-all duration-300"
+                      className="w-full bg-brand text-white hover:bg-brand/90 transition-all duration-300"
                     >
                       Generate Proxies
                     </Button>
@@ -409,7 +409,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 </Label>
                 <div className="flex flex-col md:flex-row gap-2">
                   <Input
-                    className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
+                    className="border-gray-300 disabled:opacity-80 focus:ring-brand focus:border-brand"
                     value={whitelistIps.ip1}
                     onChange={(e) =>
                       setWhitelistIps({ ...whitelistIps, ip1: e.target.value })
@@ -437,7 +437,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 </Label>
                 <div className="flex flex-col md:flex-row gap-2">
                   <Input
-                    className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
+                    className="border-gray-300 disabled:opacity-80 focus:ring-brand focus:border-brand"
                     value={whitelistIps.ip2}
                     onChange={(e) =>
                       setWhitelistIps({ ...whitelistIps, ip2: e.target.value })
@@ -464,7 +464,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 </Label>
                 <div className="flex flex-col md:flex-row gap-2">
                   <Input
-                    className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
+                    className="border-gray-300 disabled:opacity-80 focus:ring-brand focus:border-brand"
                     value={whitelistIps.ip3}
                     onChange={(e) =>
                       setWhitelistIps({ ...whitelistIps, ip3: e.target.value })
@@ -508,7 +508,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Hostname / IP for Pool Access`}</span>
               </Label>
               <Input
-                  className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
+                  className="border-gray-300 disabled:opacity-80 focus:ring-brand focus:border-brand"
                   defaultValue={"core.eclipseproxy.com"}
                   disabled={true}
               />
@@ -522,7 +522,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Port`}</span>
               </Label>
               <Input
-                  className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
+                  className="border-gray-300 disabled:opacity-80 focus:ring-brand focus:border-brand"
                   defaultValue={`9000/10000/11000/12000`}
                   disabled={true}
               />
@@ -536,7 +536,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Your Username`}</span>
               </Label>
               <Input
-                  className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
+                  className="border-gray-300 disabled:opacity-80 focus:ring-brand focus:border-brand"
                   defaultValue={userProxyData?.data?.authorization?.username}
                   disabled={true}
               />
@@ -550,7 +550,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Your Proxy Password`}</span>
               </Label>
               <Input
-                  className="border-gray-300 disabled:opacity-80 focus:ring-[#00D4E1] focus:border-[#00D4E1]"
+                  className="border-gray-300 disabled:opacity-80 focus:ring-brand focus:border-brand"
                   value={userProxyData?.data?.authorization?.password}
                   disabled={true}
               />

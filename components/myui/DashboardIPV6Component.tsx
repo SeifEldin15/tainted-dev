@@ -54,14 +54,14 @@ const DashboardIPV6Component = ({
           >
             {/* box content */}
             <div className="flex flex-row gap-4">
-              <div className="rounded-md bg-[#00D4E1]/10 h-fit p-3 sm:p-5">
-                <CreditCard size={26} className="text-[#00D4E1]" />
+              <div className="rounded-md bg-brand/10 h-fit p-3 sm:p-5">
+                <CreditCard size={26} className="text-brand" />
               </div>
               <div className="flex flex-col justify-between sm:py-1">
                 <div className="text-xl font-semibold text-black sm:text-2xl">
                   Purchase an IPV6 Proxy Plan
                 </div>
-                <div className="text-[#00D4E1]">
+                <div className="text-brand">
                   Pick the length and thread limit you need
                 </div>
               </div>
@@ -71,31 +71,31 @@ const DashboardIPV6Component = ({
               {/* Features */}
               <div className="flex flex-col gap-3">
                 <div className="flex flex-row items-center gap-2">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-black/80">Unlimited Unique IPs</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-black/80">IPv6 Forced</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-black/80">Super Fast Response Time</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-black/80">US IPs</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-black/80">{`/32 IPv6 Network`}</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-black/80">Session Support 3 Hours</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-black/80">
                     IPv6 does NOT work on all website. Make sure your target supposed IPv6 before purchasing.
                   </div>
@@ -114,7 +114,7 @@ const DashboardIPV6Component = ({
                               variant={
                                 threadCount === plan?.threads ? "brand" : "outline"
                               }
-                              className={threadCount === plan?.threads ? "bg-[#00D4E1] text-white hover:bg-[#00D4E1]/90" : "text-gray-900"}
+                              className={threadCount === plan?.threads ? "bg-brand text-white hover:bg-brand/90" : "text-gray-900"}
                           >
                             {plan?.threads === 100000 ? "Unlimited" : plan?.threads}
                           </Button>
@@ -129,7 +129,7 @@ const DashboardIPV6Component = ({
                               key={index}
                               onClick={() => setDays(day)}
                               variant={days === day ? "brand" : "outline"}
-                              className={days === day ? "bg-[#00D4E1] text-white hover:bg-[#00D4E1]/90" : "text-gray-900"}
+                              className={days === day ? "bg-brand text-white hover:bg-brand/90" : "text-gray-900"}
                           >
                             {`${day} Days`}
                           </Button>
@@ -141,7 +141,7 @@ const DashboardIPV6Component = ({
                 <div className="flex w-full flex-row items-center justify-between gap-5 ">
                   <div>
                     <div className="text-sm text-black">Estimate Price:</div>
-                    <div className="text-3xl font-semibold text-[#00D4E1]">
+                    <div className="text-3xl font-semibold text-brand">
                       {`$ ${getIPv6ProxyPrice(threadCount, days)}`}
                     </div>
                   </div>
@@ -150,7 +150,7 @@ const DashboardIPV6Component = ({
                     <Button
                       variant={"brand"}
                       onClick={() => handleCheckout()}
-                      className="flex flex-row items-center gap-2 text-white bg-[#00D4E1] hover:bg-[#00D4E1]/90"
+                      className="flex flex-row items-center gap-2 text-white bg-brand hover:bg-brand/90"
                     >
                       <span>Purchase</span>
                       <ChevronRight size={16} />

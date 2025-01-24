@@ -5,7 +5,7 @@ export default function Join() {
     <div className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-[1300px] mx-auto">
         <div className="text-center">
-          <p className="text-base font-semibold text-[#00D4E1] uppercase">
+          <p className="text-base font-semibold text-brand uppercase">
             GETTING STARTED
           </p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -30,10 +30,10 @@ export default function Join() {
               
               {/* Card content */}
               <div className="flex flex-col items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-[#00D4E1]/10 mb-4">
-                  <step.icon className="w-8 h-8 text-[#00D4E1]" aria-hidden="true" />
+                <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-brand/10 mb-4">
+                  <step.icon className="w-8 h-8 text-brand" aria-hidden="true" />
                 </div>
-                <div className="text-[#00D4E1] font-semibold mb-2">
+                <div className="text-brand font-semibold mb-2">
                   {step.number}
                 </div>
                 <h3 className="text-lg font-medium text-gray-900 mb-2">

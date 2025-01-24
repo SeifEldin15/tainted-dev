@@ -22,7 +22,7 @@ const CoreResidentialPage = ({ session }: any) => {
         <div className="bg-white rounded-lg h-full border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex justify-between p-6 w-full">
           <div className="">
             <h2 className="text-3xl text-gray-900 mb-2">Bulk Pricing</h2>
-            <h3 className="text-xl font-bold text-[#00D4E1]">1 TB+</h3>
+            <h3 className="text-xl font-bold text-brand">1 TB+</h3>
             <p className="text-sm font-medium text-gray-500 mb-4">
               Starting at $1.5/GB, as low as $1/GB 🎉🎉
             </p>
@@ -36,7 +36,7 @@ const CoreResidentialPage = ({ session }: any) => {
 
             <div className="mt-6">
               <button
-                className="bg-[#00D4E1] hover:bg-[#00D4E1]/90 text-white font-semibold py-2 px-4 rounded transition-colors duration-300"
+                className="bg-brand hover:bg-brand/90 text-white font-semibold py-2 px-4 rounded transition-colors duration-300"
                 onClick={() => window.open('https://discord.gg/eclipseproxy', '_blank')}
               >
                 Contact Support

@@ -51,13 +51,13 @@ const locations: LocationData[] = [
 
 export default function Popular() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-3 text-gray-900">
+          <h2 className="text-4xl font-bold mb-3 text-gray-900 dark:text-white">
             Most Popular <span className="text-brand">Proxy Locations</span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             Choose genuine and exclusive residential proxies, ethically sourced and compliant IPs,
             across more than 120 locations worldwide.
           </p>
@@ -67,7 +67,7 @@ export default function Popular() {
           {locations.map((location) => (
             <div 
               key={location.country} 
-              className="bg-white rounded-2xl shadow-[0_0_22px_rgba(0,0,0,0.14)] p-6
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-[0_0_22px_rgba(0,0,0,0.14)] dark:shadow-[0_0_20px_rgba(0,0,0,0.3)] p-6
                        transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(0,0,0,0.12)]
                        flex items-center space-x-4 group"
             >
@@ -80,7 +80,7 @@ export default function Popular() {
                 />
               </div>
               <div>
-                <div className="font-semibold text-lg text-gray-900">{location.country}</div>
+                <div className="font-semibold text-lg text-gray-900 dark:text-white">{location.country}</div>
                 <div className="text-brand font-medium">{location.ips}</div>
               </div>
             </div>

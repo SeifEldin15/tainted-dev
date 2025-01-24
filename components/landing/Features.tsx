@@ -25,14 +25,14 @@ const features = [
 
 export default function Features() {
   return (
-    <section className="py-8 px-4 md:px-6 lg:px-8 bg-white text-black">
+    <section className="py-8 px-4 md:px-6 lg:px-8 bg-white dark:bg-gray-900 text-black dark:text-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
-          <span className="text-black flex items-center justify-center gap-2 mb-1">
+          <span className="text-black dark:text-white flex items-center justify-center gap-2 mb-1">
             <Moon className="h-5 w-5 text-brand" />
             <span className="text-base">Eclipse Features</span>
           </span>
-          <h2 className="text-4xl font-bold tracking-tight">
+          <h2 className="text-4xl font-bold tracking-tight text-black dark:text-white">
             Our <span className="text-brand">Features</span>
           </h2>
         </div>
@@ -41,15 +41,17 @@ export default function Features() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="p-6 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.15)] transition-all hover:bg-brand hover:-translate-y-1 bg-white group"
+              className="p-6 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.15)] dark:shadow-[0_0_20px_rgba(0,0,0,0.3)] 
+                         transition-all hover:bg-brand hover:-translate-y-1 
+                         bg-white dark:bg-gray-800 group"
             >
               <div className="mb-2 text-brand group-hover:text-white">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-black group-hover:text-white">
+              <h3 className="text-xl font-semibold mb-2 text-black dark:text-white group-hover:text-white">
                 {feature.title}
               </h3>
-              <p className="text-base text-gray-600 group-hover:text-white">
+              <p className="text-base text-gray-600 dark:text-gray-300 group-hover:text-white">
                 {feature.description}
               </p>
             </div>

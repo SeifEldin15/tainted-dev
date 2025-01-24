@@ -45,8 +45,8 @@ const CoreDashboardResidentialComponent = ({
           >
             {/* box content */}
             <div className="flex flex-row gap-4">
-              <div className="rounded-md bg-[#00D4E1]/10 p-3 sm:p-5">
-                <CreditCard size={26} className="text-[#00D4E1]" />
+              <div className="rounded-md bg-brand/10 p-3 sm:p-5">
+                <CreditCard size={26} className="text-brand" />
               </div>
               <div className="flex flex-col justify-between sm:py-1">
                 <div className="text-xl font-semibold text-gray-900 sm:text-2xl">
@@ -71,37 +71,37 @@ const CoreDashboardResidentialComponent = ({
               {/* Features */}
               <div className="flex flex-col gap-3">
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-gray-600">Unlimited Threads</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-gray-600">10 Million+ Unique IPs Globally</div>
                 </div>
                 <div className="flex flex-row items-center gap-2">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-gray-600">High Network Speeds</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-gray-600">190+ Countries</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-gray-600">Reliable Connections</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-gray-600">Data <strong>Never</strong> Expires</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-gray-600">
                     Sticky Sessions up to 24 Hours
                   </div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#00D4E1]"></div>
+                  <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
                   <div className="text-gray-600">Authenticated & IP Whitelist</div>
                 </div>
               </div>
@@ -109,7 +109,7 @@ const CoreDashboardResidentialComponent = ({
               <div className="flex w-full flex-row items-center justify-between gap-5 sm:w-fit">
                 <div>
                   <div className="text-sm text-gray-600">Estimate Price:</div>
-                  <div className="text-3xl font-semibold text-[#00D4E1]">
+                  <div className="text-3xl font-semibold text-brand">
                     {`$ ${getCoreResiProxyPrice(Number(value))}`}
                   </div>
                 </div>
@@ -118,7 +118,7 @@ const CoreDashboardResidentialComponent = ({
                   <Button
                     variant={"brand"}
                     onClick={handleCheckout}
-                    className="flex flex-row items-center gap-2 bg-[#00D4E1] hover:bg-[#00D4E1]/90] text-white"
+                    className="flex flex-row items-center gap-2 bg-brand hover:bg-brand/90] text-white"
                   >
                     <span>Purchase</span>
                     <ChevronRight size={16} />

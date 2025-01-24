@@ -6,35 +6,35 @@ import { FaRobot, FaLock, FaKey, FaBolt } from 'react-icons/fa';
 const Features2 = () => {
   const features = [
     {
-      icon: <HiGlobeAlt className="text-[#00D4E1] text-2xl" />,
+      icon: <HiGlobeAlt className="text-brand text-2xl" />,
       title: '3+ million IPs from 100 countries',
     },
     {
-      icon: <MdAutorenew className="text-[#00D4E1] text-2xl" />,
+      icon: <MdAutorenew className="text-brand text-2xl" />,
       title: 'IP rotation - Each request/Sticky sessions',
     },
     {
-      icon: <FaRobot className="text-[#00D4E1] text-2xl" />,
+      icon: <FaRobot className="text-brand text-2xl" />,
       title: 'Ethically-sourced IPs, helping avoid CAPTCHAs and IP blocks',
     },
     {
-      icon: <FaLock className="text-[#00D4E1] text-2xl" />,
+      icon: <FaLock className="text-brand text-2xl" />,
       title: 'HTTP(S)/SOCKS5 Support',
     },
     {
-      icon: <FaKey className="text-[#00D4E1] text-2xl" />,
+      icon: <FaKey className="text-brand text-2xl" />,
       title: 'Easy authentication with User:Password or white-listed IPs',
     },
     {
-      icon: <MdLocationOn className="text-[#00D4E1] text-2xl" />,
+      icon: <MdLocationOn className="text-brand text-2xl" />,
       title: 'Wide set of geolocations at the country-, state-, city-, ISP- (ASN)',
     },
     {
-      icon: <FaBolt className="text-[#00D4E1] text-2xl" />,
+      icon: <FaBolt className="text-brand text-2xl" />,
       title: 'Unlimited Concurrent Connections',
     },
     {
-      icon: <MdSecurity className="text-[#00D4E1] text-2xl" />,
+      icon: <MdSecurity className="text-brand text-2xl" />,
       title: '99% Uptime',
     },
   ];
@@ -43,7 +43,7 @@ const Features2 = () => {
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-[#00D4E1] uppercase font-medium mb-4">FEATURES</p>
+          <p className="text-brand uppercase font-medium mb-4">FEATURES</p>
           <h2 className="text-3xl md:text-4xl font-bold text-black">
             Proxy Features of our Residential Proxies
           </h2>
@@ -56,7 +56,7 @@ const Features2 = () => {
                 key={index}
                 className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors min-h-[80px]"
               >
-                <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-[#00D4E1]/10">
+                <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-brand/10">
                   {feature.icon}
                 </div>
                 <p className="font-medium text-gray-900 text-sm flex items-center">{feature.title}</p>

@@ -109,7 +109,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
       <div className="flex flex-col lg:flex-row gap-6 mt-6 w-full h-full">
         {/* Generator Settings */}
         <div className="bg-white rounded-lg h-full border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full mb-12">
-          <div className="text-[#00D4E1] text-xl font-semibold">Generator Settings</div>
+          <div className="text-brand text-xl font-semibold">Generator Settings</div>
           <div className="h-[1px] bg-gray-100"></div>
           {/* Now The Main things */}
           <Formik
@@ -144,7 +144,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                       onCheckedChange={(eValue) =>
                         setFieldValue("isRotating", eValue)
                       }
-                      className="data-[state=checked]:bg-[#00D4E1]"
+                      className="data-[state=checked]:bg-brand"
                     />
                     <Label
                       className={cn(
@@ -186,7 +186,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                         type="number"
                         max={120}
                         min={1}
-                        className="border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
+                        className="border-gray-300 text-gray-900 bg-white focus:ring-brand/20 focus:border-brand"
                       />
                     </div>
                   )}
@@ -203,7 +203,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                       fieldData={proxySettings?.data?.countries}
                       FieldValue={values?.geoTarget}
                       setFieldValue={setFieldValue}
-                      className="text-gray-900 hover:bg-[#00D4E1]/10"
+                      className="text-gray-900 hover:bg-brand/10"
                     />
                   </div>
                   {/* Region */}
@@ -219,7 +219,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                       fieldData={proxySettings?.data?.region?.data}
                       FieldValue={values?.geoTarget}
                       setFieldValue={setFieldValue}
-                      className="text-gray-900 hover:bg-[#00D4E1]/10"
+                      className="text-gray-900 hover:bg-brand/10"
                     />
                   </div>
                   {/* City */}
@@ -235,7 +235,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                       fieldData={proxySettings?.data?.cities?.data}
                       FieldValue={values?.geoTarget}
                       setFieldValue={setFieldValue}
-                      className="text-gray-900 hover:bg-[#00D4E1]/10"
+                      className="text-gray-900 hover:bg-brand/10"
                     />
                   </div>
                   {/* Protocol */}
@@ -250,7 +250,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                       defaultSelectText="Select Protocol"
                       FieldValue={values?.protocol}
                       setFieldValue={setFieldValue}
-                      className="text-gray-900 hover:bg-[#00D4E1]/10"
+                      className="text-gray-900 hover:bg-brand/10"
                     />
                   </div>
                   {/* Format */}
@@ -265,7 +265,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                       defaultSelectText="Select Format"
                       FieldValue={values?.format}
                       setFieldValue={setFieldValue}
-                      className="text-gray-900 hover:bg-[#00D4E1]/10"
+                      className="text-gray-900 hover:bg-brand/10"
                     />
                   </div>
                   {/* Amount to generate */}
@@ -281,14 +281,14 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                       value={values?.generateAmount}
                       onChange={handleChange("generateAmount")}
                       id="generateAmount"
-                      className="border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
+                      className="border-gray-300 text-gray-900 bg-white focus:ring-brand/20 focus:border-brand"
                       type="number"
                     />
                   </div>
                   {/* Generate Button & proxy reset button*/}
                   <div className="flex flex-row gap-4">
                     <Button
-                      className="bg-[#00D4E1] hover:bg-[#00D4E1]/90 text-white transition-all duration-300"
+                      className="bg-brand hover:bg-brand/90 text-white transition-all duration-300"
                       variant={"attention"}
                       onClick={handleResetProxyPass}
                     >
@@ -297,7 +297,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                     <Button
                       onClick={() => handleSubmit()}
                       type="submit"
-                      className="bg-[#00D4E1] hover:bg-[#00D4E1]/90 text-white transition-all duration-300"
+                      className="bg-brand hover:bg-brand/90 text-white transition-all duration-300"
                       variant={"brand"}
                     >
                       Generate Proxies
@@ -310,7 +310,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
         </div>
         {/* Generated Proxies */}
         <div className="bg-white rounded-lg h-full border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden py-4 px-5 flex flex-col gap-2 w-full">
-          <div className="text-[#00D4E1] text-xl font-semibold">Generated Proxies</div>
+          <div className="text-brand text-xl font-semibold">Generated Proxies</div>
           <div className="h-[1px] bg-gray-100"></div>
           <div className="mt-4 flex flex-col gap-6 h-full">
             {/* Hostname / IP for Pool Access */}
@@ -322,7 +322,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Hostname / IP for Pool Access`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
+                className="disabled:opacity-80 border-gray-300 text-gray-900 bg-white focus:ring-brand/20 focus:border-brand"
                 defaultValue={`ipv4.eclipseproxy.com`}
                 disabled={true}
               />
@@ -336,7 +336,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Port`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
+                className="disabled:opacity-80 border-gray-300 text-gray-900 bg-white focus:ring-brand/20 focus:border-brand"
                 defaultValue={`1111 (http); 1112 (https); 2222 (socks5)`}
                 disabled={true}
               />
@@ -350,7 +350,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Your Username`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
+                className="disabled:opacity-80 border-gray-300 text-gray-900 bg-white focus:ring-brand/20 focus:border-brand"
                 defaultValue={userProxyData?.data?.username}
                 disabled={true}
               />
@@ -364,7 +364,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 <span>{`Your Proxy Password`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
+                className="disabled:opacity-80 border-gray-300 text-gray-900 bg-white focus:ring-brand/20 focus:border-brand"
                 value={userProxyData?.data?.proxy_authkey}
                 disabled={true}
               />
@@ -392,7 +392,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 </Button>
               </Label>
               <Textarea
-                className="disabled:opacity-100 lg:h-full min-h-[200px] lg:min-h-fit flex-1 disabled:cursor-text border-gray-300 text-gray-900 bg-white focus:ring-[#00D4E1]/20 focus:border-[#00D4E1]"
+                className="disabled:opacity-100 lg:h-full min-h-[200px] lg:min-h-fit flex-1 disabled:cursor-text border-gray-300 text-gray-900 bg-white focus:ring-brand/20 focus:border-brand"
                 defaultValue={generatedProxies}
                 placeholder="Click Generate Proxies to generate proxies"
                 disabled={true}

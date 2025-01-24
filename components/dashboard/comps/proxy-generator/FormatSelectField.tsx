@@ -76,12 +76,12 @@ export function FormatSelectField({
                     setFieldValue("format", newValue);
                     setOpen(false);
                   }}
-                  className="!bg-white !text-black hover:!bg-[#00D4E1] hover:!text-white data-[highlighted]:!bg-[#00D4E1] data-[highlighted]:!text-white cursor-pointer"
+                  className="!bg-white !text-black hover:!bg-brand hover:!text-white data-[highlighted]:!bg-brand data-[highlighted]:!text-white cursor-pointer"
                 >
                   <span>{label}</span>
                   <CheckIcon
                     className={cn(
-                      "ml-auto h-4 w-4 text-[#00D4E1]",
+                      "ml-auto h-4 w-4 text-brand",
                       FieldValue === value ? "opacity-100" : "opacity-0"
                     )}
                   />

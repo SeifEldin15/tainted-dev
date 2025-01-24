@@ -48,14 +48,14 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
         title: "Core Residential Bandwidth",
         secondaryValue: "Available bandwidth for core services",
         value: UserData && `${CoreBandwidth}`,
-        icon: <Network className="text-[#00D4E1]" size={24} />,
+        icon: <Network className="text-brand" size={24} />,
       },
       {
         id: 2,
         title: "Residential Bandwidth",
         secondaryValue: "Current available bandwidth",
         value: UserData && `${formatBandwidth(BandwidthRemaining)}`,
-        icon: <Signal className="text-[#00D4E1]" size={24} />,
+        icon: <Signal className="text-brand" size={24} />,
       },
       {
         id: 3,
@@ -63,14 +63,14 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
         secondaryValue: "Total active plans",
         value: getUserPlans(UserData?.data?.user) &&
             getUserPlans(UserData?.data?.user),
-        icon: <Layers className="text-[#00D4E1]" size={20} />,
+        icon: <Layers className="text-brand" size={20} />,
       },
       {
         id: 4,
         title: "Total Spent",
         secondaryValue: "Lifetime spending",
         value: `$ ${roundedSpent}`,
-        icon: <MapPin className="text-[#00D4E1]" size={20} />,
+        icon: <MapPin className="text-brand" size={20} />,
       },
     ];
   } else {
@@ -80,7 +80,7 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
         title: "Core Residential Bandwidth",
         secondaryValue: "Available bandwidth for core services",
         value: UserData && `${CoreBandwidth}`,
-        icon: <Network className="text-[#00D4E1]" size={20} />,
+        icon: <Network className="text-brand" size={20} />,
       },
       {
         id: 2,
@@ -88,14 +88,14 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
         secondaryValue: "Total active plans",
         value: getUserPlans(UserData?.data?.user) &&
             getUserPlans(UserData?.data?.user),
-        icon: <Layers className="text-[#00D4E1]" size={20} />,
+        icon: <Layers className="text-brand" size={20} />,
       },
       {
         id: 3,
         title: "Total Spent",
         secondaryValue: "Lifetime spending",
         value: `$ ${roundedSpent}`,
-        icon: <MapPin className="text-[#00D4E1]" size={20} />,
+        icon: <MapPin className="text-brand" size={20} />,
       },
       {
         id: 4,
@@ -104,7 +104,7 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
         value:
             getUserOrders(UserData?.data?.user) &&
             getUserOrders(UserData?.data?.user),
-        icon: <Users className="text-[#00D4E1]" size={20} />,
+        icon: <Users className="text-brand" size={20} />,
       },
     ];
   }

@@ -9,7 +9,7 @@ const InvoicesPage = ({ session, user }: any) => {
       <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-300">
         <div className="flex flex-col gap-[8px]">
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-[#00D4E1]/10">
+            <div className="p-2 rounded-lg bg-brand/10">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

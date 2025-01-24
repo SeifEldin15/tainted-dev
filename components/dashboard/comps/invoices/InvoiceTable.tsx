@@ -57,7 +57,7 @@ const returnStatusColor = (status: string) => {
   switch (status) {
     case "COMPLETED":
       return (
-        <div className="bg-[#00D4E1]/10 h-full flex items-center justify-center w-fit px-3 text-[#00D4E1] rounded-full pt-1">
+        <div className="bg-brand/10 h-full flex items-center justify-center w-fit px-3 text-brand rounded-full pt-1">
           {status}
         </div>
       );

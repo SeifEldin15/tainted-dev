@@ -8,20 +8,20 @@ import RepeatedCta from "@/components/landing/repeatedcta";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="dark:bg-gray-900">
       <div className="w-full flex justify-center relative pointer-events-none">
       </div>
       <Header />
       <Hero />
-      <div id="features">
+      <div id="features" className="dark:bg-gray-900">
         <Features />
       </div>
-      <div id="pricing">
+      <div id="pricing" className="dark:bg-gray-900">
         <Pricing />
       </div>
       <Countries />
       <Popular />
-      <div id="about">
+      <div id="about" className="dark:bg-gray-900">
         <About />
       </div>
       <FAQ />

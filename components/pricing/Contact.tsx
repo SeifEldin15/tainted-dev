@@ -5,7 +5,7 @@ export default function Contact() {
     <div className="w-full max-w-[1400px] mx-auto p-4 sm:p-6">
       <div className="bg-white p-4 sm:p-8 border border-gray-300 rounded-lg">
         <div className="flex items-start gap-4">
-          <div className="p-3 rounded-lg bg-[#00D4E1]/10">
+          <div className="p-3 rounded-lg bg-brand/10">
             <svg 
               width="24" 
               height="24" 
@@ -30,7 +30,7 @@ export default function Contact() {
             </p>
             <Link 
               href="/contact" 
-              className="inline-flex items-center gap-2 bg-[#00D4E1] text-white px-4 py-2 rounded-lg hover:bg-[#00D4E1]/90 transition-colors"
+              className="inline-flex items-center gap-2 bg-brand text-white px-4 py-2 rounded-lg hover:bg-brand/90 transition-colors"
             >
               Contact Us
               <svg

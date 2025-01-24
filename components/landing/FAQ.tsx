@@ -42,18 +42,20 @@ const FAQ = () => {
   return (
     <div className="w-full max-w-[1330px] mx-auto p-12 p-4">
       <div className="text-center mb-12">
-        <span className="text-[#00D4E1] text-sm font-medium">FAQs</span>
-        <h2 className="text-3xl font-bold mt-2 text-gray-900">All your Questions, <span className="text-[#00D4E1]">Answered</span></h2>
+        <span className="text-brand text-sm font-medium">FAQs</span>
+        <h2 className="text-3xl font-bold mt-2 text-gray-900 dark:text-white">
+          All your Questions, <span className="text-brand">Answered</span>
+        </h2>
       </div>
 
       <div className="space-y-4">
         {faqData.map((faq, index) => (
           <div 
             key={index}
-            className="border-b border-gray-200"
+            className="border-b border-gray-200 dark:border-gray-700"
           >
             <button
-              className="w-full py-5 text-left flex justify-between items-center hover:text-[#00D4E1] text-gray-900"
+              className="w-full py-5 text-left flex justify-between items-center hover:text-brand text-gray-900 dark:text-white"
               onClick={() => toggleFAQ(index)}
             >
               <span className="font-medium">{faq.question}</span>
@@ -62,7 +64,7 @@ const FAQ = () => {
               </span>
             </button>
             {activeIndex === index && (
-              <div className="pb-5 text-gray-600">
+              <div className="pb-5 text-gray-600 dark:text-gray-300">
                 {faq.answer}
               </div>
             )}
@@ -71,7 +73,7 @@ const FAQ = () => {
       </div>
 
       <div className="text-center mt-8">
-        {/* <button className="text-[#00D4E1] hover:text-blue-700 font-medium">
+        {/* <button className="text-brand hover:text-blue-700 font-medium">
           Read all FAQs →
         </button> */}
       </div>

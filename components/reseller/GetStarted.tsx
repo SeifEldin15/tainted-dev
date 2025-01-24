@@ -4,7 +4,7 @@ import { FaTelegramPlane, FaDiscord } from 'react-icons/fa'
 
 const GetStarted = () => {
   return (
-    <div className="relative w-full bg-gradient-to-br from-[#00D4E1] to-blue-600 py-6 sm:py-8 px-3 sm:px-4 rounded-2xl max-w-[320px] sm:max-w-[400px] md:max-w-[1200px] lg:max-w-[1200px] mx-auto mb-8">
+    <div className="relative w-full bg-gradient-to-br from-brand to-blue-600 py-6 sm:py-8 px-3 sm:px-4 rounded-2xl max-w-[320px] sm:max-w-[400px] md:max-w-[1200px] lg:max-w-[1200px] mx-auto mb-8">
       <div className="max-w-4xl mx-auto text-center text-white">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4  mx-auto">
           Get Started with LightningProxies

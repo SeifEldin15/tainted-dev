@@ -35,7 +35,7 @@ const DashboardCard = ({
             <p className="text-xs text-gray-400">{subtitle}</p>
           )}
         </div>
-        <div className="bg-[#00D4E1]/10 p-2.5 rounded-xl">{icon}</div>
+        <div className="bg-brand/10 p-2.5 rounded-xl">{icon}</div>
       </CardHeader>
       <CardContent className="px-5 pb-5">
         {children ? (

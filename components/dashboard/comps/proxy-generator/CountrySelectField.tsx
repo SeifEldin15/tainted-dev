@@ -59,7 +59,7 @@ export function CountrySelectField({
                       : setFieldValue("geoTarget", `_country-${splitValue.toUpperCase()}`);
                     setOpen(false);
                   }}
-                  className="!text-black hover:!bg-[#00D4E1] hover:!text-white !bg-white cursor-pointer"
+                  className="!text-black hover:!bg-brand hover:!text-white !bg-white cursor-pointer"
                 >
                   <img
                     className="w-[18px] "
