@@ -83,7 +83,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="h-[100svh] w-full flex flex-row items-center px-5">
+    <div className="h-[100svh] w-full flex flex-row items-center px-5 dark:bg-gray-800">
       {/* background */}
       <div className="absolute w-full h-full top-0 left-0 right-0 bottom-0 overflow-hidden z-[1] bg-black/40">
         <Image
@@ -116,12 +116,12 @@ const RegisterPage = () => {
         }) => (
           <Fragment>
             <Form className="w-full max-w-[500px] mx-auto z-[2]">
-              <Card className="shadow-lg bg-white/95 backdrop-blur-sm border-0">
+              <Card className="shadow-lg bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border-0">
                 <CardHeader className="space-y-1">
-                  <CardTitle className="text-2xl text-black">
+                  <CardTitle className="text-2xl text-black dark:text-white">
                     Create an <span className="text-brand">account</span>
                   </CardTitle>
-                  <CardDescription className="text-gray-600">
+                  <CardDescription className="text-gray-600 dark:text-gray-300">
                     Enter your email below to create your account.
                   </CardDescription>
                 </CardHeader>
@@ -129,7 +129,7 @@ const RegisterPage = () => {
                   {/* USERNAME */}
                   <div className="grid gap-2">
                     <Label
-                      className="h-[15px] flex flex-row items-center justify-between text-black"
+                      className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                       htmlFor="username"
                     >
                       <span>Username</span>
@@ -144,13 +144,13 @@ const RegisterPage = () => {
                       onChange={handleChange("username")}
                       id="username"
                       type="text"
-                      className="border-gray-200 text-black"
+                      className="border-gray-200 dark:border-transparent text-black dark:text-white dark:bg-gray-700"
                     />
                   </div>
                   {/* EMAIL */}
                   <div className="grid gap-2">
                     <Label
-                      className="h-[15px] flex flex-row items-center justify-between text-black"
+                      className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                       htmlFor="email"
                     >
                       <span>Email</span>
@@ -166,13 +166,13 @@ const RegisterPage = () => {
                       id="email"
                       type="email"
                       placeholder="johndoe@eclipseproxy.com"
-                      className="border-gray-200 text-black placeholder:text-gray-500"
+                      className="border-gray-200 dark:border-transparent text-black dark:text-white dark:bg-gray-700 placeholder:text-gray-500 dark:placeholder:text-gray-400"
                     />
                   </div>
                   {/* PASSWORD */}
                   <div className="grid gap-2">
                     <Label
-                      className="h-[15px] flex flex-row items-center justify-between text-black"
+                      className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                       htmlFor="password"
                     >
                       <span>Password</span>
@@ -187,13 +187,13 @@ const RegisterPage = () => {
                       onChange={handleChange("password")}
                       id="password"
                       type="password"
-                      className="border-gray-200 text-black"
+                      className="border-gray-200 dark:border-transparent text-black dark:text-white dark:bg-gray-700"
                     />
                   </div>
                   {/* CONFIRM PASSWORD */}
                   <div className="grid gap-2">
                     <Label
-                      className="h-[15px] flex flex-row items-center justify-between text-black"
+                      className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                       htmlFor="confirmpassword"
                     >
                       <span>Confirm Password</span>
@@ -208,7 +208,7 @@ const RegisterPage = () => {
                       onChange={handleChange("confirmpassword")}
                       id="confirmpassword"
                       type="password"
-                      className="border-gray-200 text-black"
+                      className="border-gray-200 dark:border-transparent text-black dark:text-white dark:bg-gray-700"
                     />
                   </div>
                   {/* ACCEPT TOS */}
@@ -222,7 +222,7 @@ const RegisterPage = () => {
                     />
                     <label
                       htmlFor="terms"
-                      className="h-[18px] cursor-pointer items-center text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 justify-between flex flex-row w-full text-black"
+                      className="h-[18px] cursor-pointer items-center text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 justify-between flex flex-row w-full text-white"
                     >
                       Accept terms and conditions
                       {errors.terms ? (
@@ -258,7 +258,7 @@ const RegisterPage = () => {
                   <Button
                     onClick={() => handleSubmit()}
                     type="submit"
-                    className="w-full flex flex-row items-center gap-1.5 bg-brand hover:bg-brand/90 text-white"
+                    className="w-full flex flex-row items-center gap-1.5 bg-brand hover:bg-brand/90 !text-black"
                     disabled={isSendingData}
                   >
                     {!isSendingData ? (
