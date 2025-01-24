@@ -34,9 +34,9 @@ const CoreResidentialPage = ({ session }: any) => {
               <span className="text-xl text-gray-500 dark:text-gray-300 ml-2">per GB</span>
             </div>
 
-            <div className="mt-6">
+            <div className="mt-6 ml-24">
               <button
-                className="bg-brand hover:bg-brand/90 text-white font-semibold py-2 px-4 rounded transition-colors duration-300"
+                className="bg-brand hover:bg-brand/90 text-black font-semibold py-2 px-4 rounded transition-colors duration-300"
                 onClick={() => window.open('https://discord.gg/eclipseproxy', '_blank')}
               >
                 Contact Support
