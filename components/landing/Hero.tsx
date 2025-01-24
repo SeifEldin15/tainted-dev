@@ -15,12 +15,12 @@ export default function Hero() {
       
       {/* Call to Action Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 mb-12">
-        <button className="bg-brand text-black px-6 sm:px-8 py-2 rounded-full tracking-wide text-sm sm:text-base hover:bg-[#00bfc9] transition-all duration-200 transform hover:scale-105">
+        <a href="/pricing" className="bg-brand text-black px-6 sm:px-8 py-2 rounded-full tracking-wide text-sm sm:text-base hover:bg-[#00bfc9] transition-all duration-200 transform hover:scale-105">
           View Pricing
-        </button>
-        <button className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-6 sm:px-8 py-2 rounded-full tracking-wide text-sm sm:text-base hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 transform hover:scale-105 border border-gray-200 dark:border-transparent">
+        </a>
+        <a href="/dashboard" className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-6 sm:px-8 py-2 rounded-full tracking-wide text-sm sm:text-base hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 transform hover:scale-105 border border-gray-200 dark:border-transparent">
           Dashboard
-        </button>
+        </a>
       </div>
 
       {/* Hero Image */}
