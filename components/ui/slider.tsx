@@ -21,7 +21,7 @@ const Slider = React.forwardRef<
       <SliderPrimitive.Track className="relative h-1.5 w-full grow overflow-hidden rounded-full bg-primary/20">
         <SliderPrimitive.Range className="absolute h-full bg-primary" />
       </SliderPrimitive.Track>
-      <SliderPrimitive.Thumb className="flex h-8 w-16 cursor-pointer items-center justify-center rounded-md border bg-background bg-brand shadow transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
+      <SliderPrimitive.Thumb className="flex h-8 w-16 cursor-pointer items-center justify-center rounded-md border bg-background text-black bg-brand shadow transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
         <div className="font-semibold ">{`${props?.defaultValue?.[0]} GB`}</div>
       </SliderPrimitive.Thumb>
     </SliderPrimitive.Root>
