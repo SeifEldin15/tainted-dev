@@ -14,6 +14,10 @@ interface PricingCard {
 }
 
 const PricingSection: React.FC = () => {
+  const handleBuyClick = () => {
+    window.location.href = '/dashboard';
+  };
+
   const pricingCards: PricingCard[] = [
     {
       title: "Residential Proxies",
@@ -73,7 +77,10 @@ const PricingSection: React.FC = () => {
                     <span className="text-gray-500 dark:text-gray-400 text-sm">{card.unit}</span>
                   </p>
                 </div>
-                <button className={`${card.buttonColor} text-black px-6 py-2 rounded-md hover:opacity-90`}>
+                <button 
+                  onClick={handleBuyClick}
+                  className={`${card.buttonColor} text-black px-6 py-2 rounded-md hover:opacity-90`}
+                >
                   Buy Now
                 </button>
               </div>
