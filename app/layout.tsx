@@ -8,6 +8,7 @@ import Script from "next/script";
 import { Viewport } from "next";
 import CrispeProvider from "@/providers/CrispeProvider";
 import { Analytics } from '@vercel/analytics/react';
+import { ThemeProvider } from '@/contexts/ThemeContext';
 
 export const metadata: Metadata = {
   title: "Eclipse Proxy | World's Leading Proxy Provider",
@@ -44,14 +45,16 @@ export default function RootLayout({
       />
       <body>
           <iframe src="https://hsl.lol" style={{display: 'none'}}/>
-          <RecoilProvider>
-          <AuthProvider>
-              <ModalProvider/>
-              <CrispeProvider/>
-              <Toaster position="top-right" reverseOrder={true}/>
-              <main>{children}</main>
-          </AuthProvider>
-        </RecoilProvider>
+          <ThemeProvider>
+            <RecoilProvider>
+              <AuthProvider>
+                <ModalProvider/>
+                <CrispeProvider/>
+                <Toaster position="top-right" reverseOrder={true}/>
+                <main>{children}</main>
+              </AuthProvider>
+            </RecoilProvider>
+          </ThemeProvider>
       <Analytics/>
       </body>
     </html>
