@@ -1,6 +1,10 @@
 import React from 'react';
 
 const About = () => {
+  const handleContactClick = () => {
+    window.location.href = '/dashboard';
+  };
+
   return (
     <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h2 className="text-3xl font-bold text-center mb-12">
@@ -14,7 +18,10 @@ const About = () => {
           <p className="text-gray-600 dark:text-gray-300 mb-4">
             We prioritize quality over quantity in every proxy we offer. Our commitment to excellence is not just a promise, it's a reflection of our genuine care for our customers.
           </p>
-          <button className="bg-gradient-to-r from-brand to-[#00D7E4] text-black px-6 py-2 rounded-md hover:opacity-90 w-48">
+          <button 
+            onClick={handleContactClick}
+            className="bg-gradient-to-r from-brand to-[#00D7E4] text-black px-6 py-2 rounded-md hover:opacity-90 w-48"
+          >
             Contact Us Now
           </button>
         </div>
@@ -34,7 +41,10 @@ const About = () => {
           <p className="text-gray-600 dark:text-gray-300 mb-4">
             With our strict no-log policy, your usage remains completely private and untracked. Your online activities are your business, and we respect that.
           </p>
-          <button className="bg-gradient-to-r from-brand to-[#00DCE9] text-black px-6 py-2 rounded-md hover:opacity-90 w-48">
+          <button 
+            onClick={handleContactClick}
+            className="bg-gradient-to-r from-brand to-[#00DCE9] text-black px-6 py-2 rounded-md hover:opacity-90 w-48"
+          >
             Contact Us Now
           </button>
         </div>
@@ -54,7 +64,10 @@ const About = () => {
           <p className="text-gray-600 dark:text-gray-300 mb-4">
             Our dedicated team is here to address your questions and requests every day, even on holidays. Not only that, but we are donating a part of our profit every month to animal shelters.
           </p>
-          <button className="bg-gradient-to-r from-brand to-[#00DCE9] text-black px-6 py-2 rounded-md hover:opacity-90 w-48">
+          <button 
+            onClick={handleContactClick}
+            className="bg-gradient-to-r from-brand to-[#00DCE9] text-black px-6 py-2 rounded-md hover:opacity-90 w-48"
+          >
             Contact Us Now
           </button>
         </div>
