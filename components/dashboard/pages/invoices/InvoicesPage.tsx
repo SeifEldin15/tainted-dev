@@ -6,7 +6,7 @@ import InvoiceTable from "../../comps/invoices/InvoiceTable";
 const InvoicesPage = ({ session, user }: any) => {
   return (
     <div className="flex flex-col gap-3 sm:gap-5 h-full max-w-[1200px] mx-auto p-4">
-      <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-300">
+      <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-300 dark:border-transparent">
         <div className="flex flex-col gap-[8px]">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-lg bg-brand/10">
@@ -25,11 +25,11 @@ const InvoicesPage = ({ session, user }: any) => {
                 />
               </svg>
             </div>
-            <div className="text-[20px] sm:text-[24px] font-semibold text-gray-900">
+            <div className="text-[20px] sm:text-[24px] font-semibold text-gray-900 dark:text-white">
               <span>{`Invoices`}</span>
             </div>
           </div>
-          <div className="text-[13px] text-gray-500">{`Below is a list of all invoices you have created!`}</div>
+          <div className="text-[13px] text-gray-500 dark:text-gray-400">{`Below is a list of all invoices you have created!`}</div>
         </div>
         <div className="mt-6">
           <InvoiceTable tableData={user.invoices} />

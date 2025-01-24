@@ -9,7 +9,7 @@ import Footer from '@/components/landing/footer'
 
 export default function ResellerPage() {
   return (
-    <main>
+    <main className="bg-white dark:bg-gray-900">
       <Header />
       <Hero />
       <Features />

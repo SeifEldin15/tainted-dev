@@ -39,7 +39,7 @@ const DashboardLayout = async ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <div className="flex h-[100svh] w-full flex-row overflow-hidden">
+    <div className="flex h-[100svh] w-full flex-row overflow-hidden dark:bg-gray-900">
       {/* Sidebar */}
       <Sidebar oldcustomer={userData?.oldResiCustomer ?? false}/>
       {/* Dashboard */}
@@ -47,7 +47,7 @@ const DashboardLayout = async ({ children }: { children: React.ReactNode }) => {
         {/* Dashboard Header */}
         <DashboardHeader session={session} />
         {/* Page Content */}
-        <div className="dashboard-page-height w-full p-3 sm:p-5 overflow-x-hidden noScrollBar">
+        <div className="dashboard-page-height w-full p-3 sm:p-5 overflow-x-hidden noScrollBar dark:bg-gray-900">
           {/* min width 1200px */}
           <div className="h-full max-w-[1200px] mx-auto">
             {/* current Page Rendering  */}

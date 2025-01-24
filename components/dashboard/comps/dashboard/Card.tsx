@@ -27,15 +27,15 @@ const DashboardCard = ({
   subtitle,
 }: DashboardCardProps) => {
   return (
-    <Card className="bg-white rounded-lg h-full border border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+    <Card className="bg-white dark:bg-gray-800 rounded-lg h-full border border-gray-300 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
       <CardHeader className="px-5 pt-5 flex flex-row items-start justify-between space-y-0 pb-2">
         <div className="space-y-1.5">
-          <p className="text-sm font-medium text-gray-500">{title}</p>
+          <p className="text-sm font-medium text-gray-500 dark:text-gray-400">{title}</p>
           {subtitle && (
-            <p className="text-xs text-gray-400">{subtitle}</p>
+            <p className="text-xs text-gray-400 dark:text-gray-500">{subtitle}</p>
           )}
         </div>
-        <div className="bg-brand/10 p-2.5 rounded-xl">{icon}</div>
+        <div className="bg-brand/10 dark:bg-brand/20 p-2.5 rounded-xl">{icon}</div>
       </CardHeader>
       <CardContent className="px-5 pb-5">
         {children ? (
@@ -45,7 +45,7 @@ const DashboardCard = ({
             {value !== null ? (
               <>
                 <div className="flex items-end gap-2">
-                  <div className="text-2xl font-bold text-gray-900">{value}</div>
+                  <div className="text-2xl font-bold text-gray-900 dark:text-white">{value}</div>
                   {trend !== undefined && (
                     <div className={cn(
                       "text-sm font-medium flex items-center gap-0.5",
@@ -56,11 +56,11 @@ const DashboardCard = ({
                   )}
                 </div>
                 {secondaryValue && (
-                  <div className="text-sm text-gray-500">{secondaryValue}</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">{secondaryValue}</div>
                 )}
               </>
             ) : (
-              <Skeleton className="h-8 w-1/2" />
+              <Skeleton className="h-8 w-1/2 dark:bg-gray-700" />
             )}
           </div>
         )}

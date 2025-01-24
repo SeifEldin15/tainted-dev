@@ -38,8 +38,8 @@ const CoreDashboardResidentialComponent = ({
           <div
             className={cn(
               isBackgroundTransparent
-                ? "border border-gray-300 bg-transparent"
-                : "mt-10 border border-gray-300 bg-white",
+                ? "border border-transparent bg-transparent"
+                : "mt-10 border border-transparent dark:bg-gray-800 bg-white",
               "relative flex w-full flex-col rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden p-6"
             )}
           >
@@ -49,10 +49,10 @@ const CoreDashboardResidentialComponent = ({
                 <CreditCard size={26} className="text-brand" />
               </div>
               <div className="flex flex-col justify-between sm:py-1">
-                <div className="text-xl font-semibold text-gray-900 sm:text-2xl">
+                <div className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
                   Purchase Core Residential Bandwidth
                 </div>
-                <div className="text-gray-500">Pay as You Go</div>
+                <div className="text-gray-500 dark:text-gray-400">Pay as You Go</div>
               </div>
             </div>
             {/* Slider */}
@@ -72,43 +72,43 @@ const CoreDashboardResidentialComponent = ({
               <div className="flex flex-col gap-3">
                 <div className="flex flex-row items-center gap-2.5">
                   <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-gray-600">Unlimited Threads</div>
+                  <div className="text-gray-600 dark:text-gray-300">Unlimited Threads</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
                   <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-gray-600">10 Million+ Unique IPs Globally</div>
+                  <div className="text-gray-600 dark:text-gray-300">10 Million+ Unique IPs Globally</div>
                 </div>
                 <div className="flex flex-row items-center gap-2">
                   <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-gray-600">High Network Speeds</div>
+                  <div className="text-gray-600 dark:text-gray-300">High Network Speeds</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
                   <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-gray-600">190+ Countries</div>
+                  <div className="text-gray-600 dark:text-gray-300">190+ Countries</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
                   <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-gray-600">Reliable Connections</div>
+                  <div className="text-gray-600 dark:text-gray-300">Reliable Connections</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
                   <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-gray-600">Data <strong>Never</strong> Expires</div>
+                  <div className="text-gray-600 dark:text-gray-300">Data <strong>Never</strong> Expires</div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
                   <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-gray-600">
+                  <div className="text-gray-600 dark:text-gray-300">
                     Sticky Sessions up to 24 Hours
                   </div>
                 </div>
                 <div className="flex flex-row items-center gap-2.5">
                   <div className="h-2.5 w-2.5 rounded-full bg-brand"></div>
-                  <div className="text-gray-600">Authenticated & IP Whitelist</div>
+                  <div className="text-gray-600 dark:text-gray-300">Authenticated & IP Whitelist</div>
                 </div>
               </div>
               {/* Caluclated Pricing */}
               <div className="flex w-full flex-row items-center justify-between gap-5 sm:w-fit">
                 <div>
-                  <div className="text-sm text-gray-600">Estimate Price:</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Estimate Price:</div>
                   <div className="text-3xl font-semibold text-brand">
                     {`$ ${getCoreResiProxyPrice(Number(value))}`}
                   </div>
@@ -123,7 +123,7 @@ const CoreDashboardResidentialComponent = ({
                     <span>Purchase</span>
                     <ChevronRight size={16} />
                   </Button>
-                  <div className="mt-1 text-xs text-gray-600">
+                  <div className="mt-1 text-xs text-gray-600 dark:text-gray-400">
                     {`*Prices are in USD`}
                   </div>
                 </div>

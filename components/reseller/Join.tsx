@@ -2,16 +2,16 @@ import { CalendarDays, Network, Wallet, ShoppingCart } from 'lucide-react'
 
 export default function Join() {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
       <div className="max-w-[1300px] mx-auto">
         <div className="text-center">
           <p className="text-base font-semibold text-brand uppercase">
             GETTING STARTED
           </p>
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
             How to join LightningProxies Reseller Program?
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-500">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-500 dark:text-gray-400">
             Follow these simple steps to start your reselling journey with us
           </p>
         </div>
@@ -30,16 +30,16 @@ export default function Join() {
               
               {/* Card content */}
               <div className="flex flex-col items-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-brand/10 mb-4">
+                <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-brand/10 dark:bg-brand/20 mb-4">
                   <step.icon className="w-8 h-8 text-brand" aria-hidden="true" />
                 </div>
                 <div className="text-brand font-semibold mb-2">
                   {step.number}
                 </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">
+                <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
                   {step.name}
                 </h3>
-                <p className="text-base text-gray-500">{step.description}</p>
+                <p className="text-base text-gray-500 dark:text-gray-400">{step.description}</p>
               </div>
             </div>
           ))}

@@ -18,20 +18,20 @@ const CoreResidentialPage = ({ session }: any) => {
       </div>
 
       {/* banner */}
-      <div className="flex items-center justify-center text-black mt-4">
-        <div className="bg-white rounded-lg h-full border border-gray-300 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex justify-between p-6 w-full">
+      <div className="flex items-center justify-center text-black dark:text-white mt-4">
+        <div className="bg-white dark:bg-gray-800 rounded-lg h-full border border-gray-300 dark:border-transparent shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex justify-between p-6 w-full">
           <div className="">
-            <h2 className="text-3xl text-gray-900 mb-2">Bulk Pricing</h2>
+            <h2 className="text-3xl text-gray-900 dark:text-white mb-2">Bulk Pricing</h2>
             <h3 className="text-xl font-bold text-brand">1 TB+</h3>
-            <p className="text-sm font-medium text-gray-500 mb-4">
+            <p className="text-sm font-medium text-gray-500 dark:text-gray-300 mb-4">
               Starting at $1.5/GB, as low as $1/GB 🎉🎉
             </p>
           </div>
 
           <div className="flex flex-col">
             <div className="flex items-center">
-              <span className="text-6xl font-extrabold text-gray-900">$1.00</span>
-              <span className="text-xl text-gray-500 ml-2">per GB</span>
+              <span className="text-6xl font-extrabold text-gray-900 dark:text-white">$1.00</span>
+              <span className="text-xl text-gray-500 dark:text-gray-300 ml-2">per GB</span>
             </div>
 
             <div className="mt-6">

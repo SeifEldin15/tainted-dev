@@ -4,7 +4,7 @@ import { FaTelegramPlane, FaDiscord } from 'react-icons/fa'
 
 const GetStarted = () => {
   return (
-    <div className="relative w-full bg-gradient-to-br from-brand to-blue-600 py-6 sm:py-8 px-3 sm:px-4 rounded-2xl max-w-[320px] sm:max-w-[400px] md:max-w-[1200px] lg:max-w-[1200px] mx-auto mb-8">
+    <div className="relative w-full bg-gradient-to-br from-brand to-blue-600 dark:from-brand/80 dark:to-blue-800 py-6 sm:py-8 px-3 sm:px-4 rounded-2xl max-w-[320px] sm:max-w-[400px] md:max-w-[1200px] lg:max-w-[1200px] mx-auto mb-8">
       <div className="max-w-4xl mx-auto text-center text-white">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4  mx-auto">
           Get Started with LightningProxies
@@ -20,17 +20,17 @@ const GetStarted = () => {
 
         <Link 
           href="/register" 
-          className="inline-block bg-white text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all"
+          className="inline-block bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 dark:hover:bg-gray-700 transition-all"
         >
           Get Started →
         </Link>
 
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mt-8 sm:mt-12 px-2">
-          <Link href="mailto:support@lightningproxies.com" className="flex items-center gap-2 opacity-90 hover:opacity-100">
+          <Link href="mailto:support@lightningproxies.com" className="flex items-center gap-2 opacity-90 hover:opacity-100 transition-opacity">
             <MdMail className="text-lg sm:text-xl" />
             <span className="text-sm sm:text-base">Mail to Us</span>
           </Link>
-          <span className="opacity-50 hidden sm:block">•</span>
+          <span className="opacity-50 hidden sm:block dark:opacity-30">•</span>
           <Link href="/telegram" className="flex items-center gap-2 opacity-90 hover:opacity-100">
             <FaTelegramPlane className="text-lg sm:text-xl" />
             <span className="text-sm sm:text-base">Telegram</span>

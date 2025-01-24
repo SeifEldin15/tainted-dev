@@ -6,9 +6,11 @@ import DashboardCard from "../../comps/dashboard/Card";
 import DashboardChart from "../../comps/dashboard/DashboardChart";
 import Annoucements from "../../comps/dashboard/Annoucements";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const DashboardPage = ({ session, proxieData, userData }: any) => {
   const [UserData, setUserData] = useState<any>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     (async () => {
@@ -17,6 +19,10 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
       setUserData(data);
     })();
   }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
 
   let BandwidthUsed = UserData?.data?.proxyUsage?.data?.total_bandwidth
       ?.toString()
@@ -110,17 +116,17 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
   }
 
   return (
-    <div className="flex flex-col gap-3 sm:gap-5 h-full ">
+    <div className="flex flex-col gap-3 sm:gap-5 h-full dark:bg-gray-900">
       {/* Accouments */}
       <Annoucements />
       {/* Greetings Text */}
       <div className="flex flex-col gap-[10px]">
-        <div className="text-[20px] sm:text-[24px] font-semibold text-gray-900">
+        <div className="text-[20px] sm:text-[24px] font-semibold text-gray-900 dark:text-white">
           <span>{`Welcome, `}</span>
           <span>{`${session?.user?.username.replace("eclipse_", "")}!`}</span>
           <span>{`🌞`}</span>
         </div>
-        <div className="text-xs text-gray-900">{`Thank you for being a customer!`}</div>
+        <div className="text-xs text-gray-900 dark:text-gray-300">{`Thank you for being a customer!`}</div>
       </div>
       {/* Dashboard Content */}
       <div className="flex flex-col gap-[16px] pb-3 sm:pb-5">

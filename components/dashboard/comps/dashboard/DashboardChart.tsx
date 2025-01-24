@@ -11,6 +11,7 @@ const DashboardChart = ({ chartData }: any) => {
           fontSize={12}
           tickLine={false}
           axisLine={false}
+          className="dark:text-white"
         />
         <YAxis
           stroke="#888888"
@@ -18,6 +19,7 @@ const DashboardChart = ({ chartData }: any) => {
           tickLine={false}
           axisLine={false}
           tickFormatter={(value) => `${value} MB`}
+          className="dark:text-white"
         />
         <Bar dataKey="total" fill={"#00ecfc"} radius={[4, 4, 0, 0]} />
       </BarChart>

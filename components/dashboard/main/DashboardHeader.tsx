@@ -16,14 +16,14 @@ const DashboardHeader = ({ session }: any) => {
   };
 
   return (
-    <div className="h-[60px] bg-white flex items-center border-b border-gray-300">
+    <div className="h-[60px] bg-white dark:bg-gray-900 flex items-center border-b border-gray-300 dark:border-transparent">
       <div className="h-full px-4 w-full flex flex-row justify-between sm:justify-end items-center">
         {/* Close sidebar btn */}
         <div className="sm:hidden">
           <Button
             onClick={() => setSidebar(true)}
             variant="ghost"
-            className="px-2 hover:bg-gray-100"
+            className="px-2 hover:bg-gray-100 dark:hover:bg-gray-800"
           >
             <Menu size={20} />
           </Button>
@@ -33,20 +33,20 @@ const DashboardHeader = ({ session }: any) => {
           <div className="h-full flex items-center">
             <div
               onClick={() => openLogoutModal()}
-              className="flex flex-row items-center h-[48px] px-3 rounded-lg gap-3 cursor-pointer hover:bg-gray-100 transition-colors"
+              className="flex flex-row items-center h-[48px] px-3 rounded-lg gap-3 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             >
               {/* image */}
               <img
-                className="h-[38px] w-[38px] rounded-full border border-gray-300"
+                className="h-[38px] w-[38px] rounded-full border border-gray-300 dark:border-gray-700"
                 alt="user image"
                 src={session?.user?.image}
               />
               {/* name and role */}
               <div className="flex flex-col">
-                <div className="text-[15px] font-medium text-gray-900">
+                <div className="text-[15px] font-medium text-gray-900 dark:text-white">
                   {session?.user?.username.replace("eclipse_", "")}
                 </div>
-                <div className="text-[13px] text-gray-500">
+                <div className="text-[13px] text-gray-500 dark:text-gray-400">
                   {session?.user?.role}
                 </div>
               </div>

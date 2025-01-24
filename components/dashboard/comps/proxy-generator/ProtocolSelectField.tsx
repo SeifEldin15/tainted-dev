@@ -48,18 +48,18 @@ export function ProtocolSelectField({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between hover:!bg-[#ffffff] hover:!text-gray-600 text-gray-600 border-gray-200"
+          className="w-full justify-between !bg-white dark:!bg-gray-700 !text-gray-600 dark:!text-white hover:!text-gray-600 dark:hover:!text-white border-gray-200 dark:border-transparent"
         >
           {FieldValue ? FieldValue : defaultSelectText}
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="max-w-[360px] p-0 border-gray-200 bg-white">
-        <Command className="bg-white !bg-white">
-          <CommandInput placeholder="Search ..." className="h-9" />
+      <PopoverContent className="max-w-[360px] p-0 border-gray-200 !bg-white dark:!bg-gray-700 dark:border-transparent">
+        <Command className="!bg-white dark:!bg-gray-700">
+          <CommandInput placeholder="Search ..." className="h-9 !bg-white dark:!bg-gray-700 !text-black dark:!text-white" />
           <CommandEmpty>No Results</CommandEmpty>
-          <CommandGroup className="bg-white !bg-white">
-            <ScrollArea className="h-[300px] bg-white">
+          <CommandGroup className="!bg-white dark:!bg-gray-700">
+            <ScrollArea className="h-[300px] !bg-white dark:!bg-gray-700">
               {data.map(({ label, value }: any) => (
                 <CommandItem
                   key={value}
@@ -68,7 +68,7 @@ export function ProtocolSelectField({
                     setFieldValue("protocol", newValue);
                     setOpen(false);
                   }}
-                  className="!bg-white !text-black hover:!bg-brand hover:!text-white data-[highlighted]:!bg-brand data-[highlighted]:!text-white cursor-pointer"
+                  className="!bg-white dark:!bg-gray-700 !text-black dark:!text-white hover:!bg-brand hover:!text-white data-[highlighted]:!bg-brand data-[highlighted]:!text-white cursor-pointer"
                 >
                   <span>{label}</span>
                   <CheckIcon

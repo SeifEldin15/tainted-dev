@@ -182,9 +182,9 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
       </div>
       <div className="flex flex-col lg:flex-row gap-6 mt-2 w-full">
         {/* Generator Settings */}
-        <div className="bg-white rounded-lg border border-gray-300 py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full shadow-sm hover:shadow-md transition-all duration-300">
-          <div className="text-[16px] text-black">Generator Settings</div>
-          <div className="h-[1px] bg-gray-200"></div>
+        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-transparent py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full shadow-sm hover:shadow-md transition-all duration-300">
+          <div className="text-[16px] text-black dark:text-white">Generator Settings</div>
+          <div className="h-[1px] bg-gray-200 dark:bg-gray-700"></div>
           {/* Now The Main things */}
           <Formik
             onSubmit={onSubmit}
@@ -208,7 +208,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
                     <Label
                       className={cn(
                         !values?.isRotating ? "opacity-100" : "opacity-40",
-                        "h-[15px] flex flex-row items-center justify-between text-black"
+                        "h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                       )}
                     >
                       <span>Sticky</span>
@@ -222,7 +222,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
                     <Label
                       className={cn(
                         values?.isRotating ? "opacity-100" : "opacity-40",
-                        "h-[15px] flex flex-row items-center justify-between text-black"
+                        "h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                       )}
                     >
                       <span>Rotating</span>
@@ -232,7 +232,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
                   {values?.isRotating == false && (
                     <div className="grid gap-2">
                       <Label
-                        className="h-[15px] flex flex-row items-center justify-between text-black"
+                        className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                         htmlFor="stickySession"
                       >
                         <span>{`Session Time (in 1-120 Minutes)`}</span>
@@ -259,14 +259,14 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
                         type="number"
                         max={120}
                         min={1}
-                        className="border-gray-200"
+                        className="border-gray-200 dark:border-transparent bg-gray-50 dark:bg-gray-700 text-black dark:text-white"
                       />
                     </div>
                   )}
                   {/* Format */}
                   <div className="grid gap-2">
                     <Label
-                      className="h-[15px] flex flex-row items-center justify-between text-black"
+                      className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                       htmlFor="email"
                     >
                       <span>Format</span>
@@ -280,7 +280,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
                   {/* Amount to generate */}
                   <div className="grid gap-2">
                     <Label
-                      className="h-[15px] flex flex-row items-center justify-between text-black"
+                      className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                       htmlFor="generateAmount"
                     >
                       <span>Amount To Generate</span>
@@ -291,7 +291,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
                       onChange={handleChange("generateAmount")}
                       id="generateAmount"
                       type="number"
-                      className="border-gray-200"
+                      className="border-gray-200 dark:border-transparent bg-gray-50 dark:bg-gray-700 text-black dark:text-white"
                     />
                   </div>
                   {/* Generate Button & proxy reset button*/}
@@ -319,20 +319,20 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
 
           {/* Whitelist IPs */}
           <div className="my-2">
-            <div className="text-[16px] text-black mb-2">Whitelist IPs</div>
-            <div className="h-[1px] bg-gray-200 mb-4"></div>
+            <div className="text-[16px] text-black dark:text-white mb-2">Whitelist IPs</div>
+            <div className="h-[1px] bg-gray-200 dark:bg-gray-700 mb-4"></div>
 
             <div className="flex flex-col gap-2">
               <div className="grid gap-2">
                 <Label
-                  className="h-[15px] flex flex-row items-center justify-between"
+                  className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                   htmlFor="stickySession"
                 >
                   <span>{`IP 1`}</span>
                 </Label>
                 <div className="flex flex-col md:flex-row gap-2">
                   <Input
-                    className="disabled:opacity-80 bg-gray-50 text-black border-gray-200"
+                    className="disabled:opacity-80 bg-gray-50 dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-transparent"
                     value={whitelistIps.ip1}
                     onChange={(e) =>
                       setWhitelistIps({ ...whitelistIps, ip1: e.target.value })
@@ -353,14 +353,14 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
               </div>
               <div className="grid gap-2">
                 <Label
-                  className="h-[15px] flex flex-row items-center justify-between"
+                  className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                   htmlFor="stickySession"
                 >
                   <span>{`IP 2`}</span>
                 </Label>
                 <div className="flex flex-col md:flex-row gap-2">
                   <Input
-                    className="disabled:opacity-80 bg-gray-50 text-black border-gray-200"
+                    className="disabled:opacity-80 bg-gray-50 dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-transparent"
                     value={whitelistIps.ip2}
                     onChange={(e) =>
                       setWhitelistIps({ ...whitelistIps, ip2: e.target.value })
@@ -380,14 +380,14 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
               </div>
               <div className="grid gap-2">
                 <Label
-                  className="h-[15px] flex flex-row items-center justify-between"
+                  className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                   htmlFor="stickySession"
                 >
                   <span>{`IP 3`}</span>
                 </Label>
                 <div className="flex flex-col md:flex-row gap-2">
                   <Input
-                    className="disabled:opacity-80 bg-gray-50 text-black border-gray-200"
+                    className="disabled:opacity-80 bg-gray-50 dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-transparent"
                     value={whitelistIps.ip3}
                     onChange={(e) =>
                       setWhitelistIps({ ...whitelistIps, ip3: e.target.value })
@@ -410,7 +410,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
                 onClick={addWhitelistIp}
                 size={"default"}
                 type="button"
-                className="flex flex-row items-center gap-2 rounded-sm my-2"
+                className="flex flex-row items-center gap-2 rounded-sm my-2 bg-brand text-black hover:bg-brand/90 transition-all duration-300"
               >
                 <span>Save</span>
               </Button>
@@ -418,20 +418,20 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
           </div>
         </div>
         {/* Generated Proxies */}
-        <div className="bg-white rounded-lg border border-gray-300 py-4 px-5 flex flex-col gap-2 w-full shadow-sm hover:shadow-md transition-all duration-300">
-          <div className="text-[16px] text-black">Generator Settings</div>
-          <div className="h-[1px] bg-gray-200"></div>
+        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-transparent py-4 px-5 flex flex-col gap-2 w-full shadow-sm hover:shadow-md transition-all duration-300">
+          <div className="text-[16px] text-black dark:text-white">Generator Settings</div>
+          <div className="h-[1px] bg-gray-200 dark:bg-gray-700"></div>
           <div className="mt-4 flex flex-col gap-6 h-full">
             {/* Hostname / IP for Pool Access */}
             <div className="grid gap-2">
               <Label
-                className="h-[15px] flex flex-row items-center justify-between text-black"
+                className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                 htmlFor="stickySession"
               >
                 <span>{`Hostname / IP for Pool Access`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 bg-gray-50 text-black border-gray-200"
+                className="disabled:opacity-80 bg-gray-50 dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-transparent"
                 defaultValue={`ipv4dc.eclipseproxy.com`}
                 disabled={true}
               />
@@ -439,13 +439,13 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
             {/* Port */}
             <div className="grid gap-2">
               <Label
-                className="h-[15px] flex flex-row items-center justify-between text-black"
+                className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                 htmlFor="stickySession"
               >
                 <span>{`Port`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 bg-gray-50 text-black border-gray-200"
+                className="disabled:opacity-80 bg-gray-50 dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-transparent"
                 defaultValue={`9999`}
                 disabled={true}
               />
@@ -453,13 +453,13 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
             {/* Your Username */}
             <div className="grid gap-2">
               <Label
-                className="h-[15px] flex flex-row items-center justify-between text-black"
+                className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                 htmlFor="stickySession"
               >
                 <span>{`Your Username`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 bg-gray-50 text-black border-gray-200"
+                className="disabled:opacity-80 bg-gray-50 dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-transparent"
                 defaultValue={userProxyData?.username}
                 disabled={true}
               />
@@ -467,13 +467,13 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
             {/* Your Proxy Password */}
             <div className="grid gap-2">
               <Label
-                className="h-[15px] flex flex-row items-center justify-between text-black"
+                className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                 htmlFor="stickySession"
               >
                 <span>{`Your Proxy Password`}</span>
               </Label>
               <Input
-                className="disabled:opacity-80 bg-gray-50 text-black border-gray-200"
+                className="disabled:opacity-80 bg-gray-50 dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-transparent"
                 value={userProxyData?.proxy_key}
                 disabled={true}
               />
@@ -481,7 +481,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
             {/* Generated Proxies */}
             <div className="flex flex-col gap-2 h-full">
               <Label
-                  className="h-[15px] flex flex-row items-center justify-between text-black"
+                  className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                   htmlFor="stickySession"
               >
                 <span>{`Generated Proxies`}</span>
@@ -495,7 +495,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
                       }
                       size={"xs"}
                       type="button"
-                      className="flex flex-row items-center gap-2 rounded-sm"
+                      className="flex flex-row items-center gap-2 rounded-sm bg-brand text-black hover:bg-brand/90 transition-all duration-300"
                   >
                     <DownloadCloud size={12}/>
                     <span>Save as file</span>
@@ -508,7 +508,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
                       }
                       size={"xs"}
                       type="button"
-                      className="flex flex-row items-center gap-2 rounded-sm"
+                      className="flex flex-row items-center gap-2 rounded-sm bg-brand text-black hover:bg-brand/90 transition-all duration-300"
                   >
                     <Clipboard size={12}/>
                     <span>Copy to Clipboard</span>
@@ -516,7 +516,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
                 </div>
               </Label>
               <Textarea
-                  className="disabled:opacity-100 lg:h-full min-h-[200px] lg:min-h-[100px] flex-1 disabled:cursor-text bg-gray-50 text-black border-gray-200"
+                  className="disabled:opacity-100 lg:h-full min-h-[200px] lg:min-h-[100px] flex-1 disabled:cursor-text bg-gray-50 dark:bg-gray-700 text-black dark:text-white border-gray-200 dark:border-transparent"
                 defaultValue={generatedProxies}
                 placeholder="Click Generate Proxies to generate proxies"
                 disabled={true}

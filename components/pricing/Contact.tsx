@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Contact() {
   return (
     <div className="w-full max-w-[1400px] mx-auto p-4 sm:p-6">
-      <div className="bg-white p-4 sm:p-8 border border-gray-300 rounded-lg">
+      <div className="bg-white dark:bg-gray-800 p-4 sm:p-8 border border-gray-300 dark:border-transparent rounded-lg">
         <div className="flex items-start gap-4">
           <div className="p-3 rounded-lg bg-brand/10">
             <svg 
@@ -24,8 +24,8 @@ export default function Contact() {
           </div>
           
           <div className="flex-1">
-            <h3 className="text-xl font-semibold mb-2 text-gray-900">Custom Made Plan</h3>
-            <p className="text-gray-600 mb-4">
+            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Custom Made Plan</h3>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
               EclipseProxy can cater to your specific needs! Terabytes of bandwidth, thousands of threads, or months long plans! We can offer bulk pricing and more, contact us at any time!
             </p>
             <Link 

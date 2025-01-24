@@ -40,11 +40,11 @@ const Features2 = () => {
   ];
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-brand uppercase font-medium mb-4">FEATURES</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-black">
+          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
             Proxy Features of our Residential Proxies
           </h2>
         </div>
@@ -54,12 +54,14 @@ const Features2 = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 transition-colors min-h-[80px]"
+                className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors min-h-[80px]"
               >
                 <div className="w-12 h-12 shrink-0 flex items-center justify-center rounded-lg bg-brand/10">
                   {feature.icon}
                 </div>
-                <p className="font-medium text-gray-900 text-sm flex items-center">{feature.title}</p>
+                <p className="font-medium text-gray-900 dark:text-white text-sm flex items-center">
+                  {feature.title}
+                </p>
               </div>
             ))}
           </div>

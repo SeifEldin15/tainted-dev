@@ -40,11 +40,11 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
       <div
         className={cn(
           sidebar ? "left-0 " : "left-[-100%]",
-          "sm:left-0 fixed sm:relative top-0 z-[100] w-full sm:w-[260px] max-w-[260px] bg-white h-full duration-300 "
+          "sm:left-0 fixed sm:relative top-0 z-[100] w-full sm:w-[260px] max-w-[260px] bg-white dark:bg-gray-900 h-full duration-300"
         )}
       >
         {/* Logo */}
-        <div className="h-[60px] overflow-hidden py-2 flex items-center bg-white border-b border-gray-300">
+        <div className="h-[60px] overflow-hidden py-2 flex items-center bg-white dark:bg-gray-900 border-b border-gray-300 dark:border-transparent">
           <div className="flex flex-row items-center relative justify-between w-full px-3 h-full">
             {/* Logo */}
             <div className="w-[140px]">
@@ -52,12 +52,21 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
                 <a href="https://eclipseproxy.com">
                   <Image
                     alt="Eclipse Logo"
-                    className="w-[150px]"
+                    className="w-[150px] dark:hidden"
                     src="/image.png"
                     width={600}
                     height={160}
                     draggable="false"
-                    style={{ paddingLeft: "5px" }} // Adjust the padding value as needed
+                    style={{ paddingLeft: "5px" }}
+                  />
+                  <Image
+                    alt="Eclipse Logo"
+                    className="w-[150px] hidden dark:block"
+                    src="/logo-text-side.png"
+                    width={600}
+                    height={160}
+                    draggable="false"
+                    style={{ paddingLeft: "5px" }}
                   />
                 </a>
               </div>
@@ -72,7 +81,7 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
             </Button>
           </div>
         </div>
-        <div className="flex flex-col h-full p-3 border-r border-gray-300">
+        <div className="flex flex-col h-full p-3 border-r border-gray-300 dark:border-transparent">
           {/* Buttons Categories */}
           <div className="flex flex-col gap-1">
             {/* catergory */}
@@ -110,8 +119,8 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
                         }
                         className={cn(
                           currentPageOpen == linkName
-                            ? "bg-brand/10 text-black hover:bg-brand/20 hover:text-black"
-                            : "text-black hover:bg-brand/10 hover:text-black",
+                            ? "bg-brand/10 text-black dark:text-white hover:bg-brand/20 hover:text-black dark:hover:text-white"
+                            : "text-black dark:text-white hover:bg-brand/10 hover:text-black dark:hover:text-white",
                           "group flex justify-start flex-row items-center gap-2 font-normal duration-100 w-full"
                         )}
                       >
@@ -127,7 +136,7 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
                           {title}
                         </span>
                         {badge && (
-                          <span className="flex flex-row items-center gap-1 text-[10px] px-1.5 bg-brand/[0.2] text-black rounded-full">
+                          <span className="flex flex-row items-center gap-1 text-[10px] px-1.5 bg-brand/[0.2] text-black dark:text-white rounded-full">
                             <span>{badge?.title}</span>
                             {badge?.icon}
                           </span>
@@ -137,7 +146,7 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
                     {dynamicIndices.includes(index) && (
                       <div className="relative my-1 select-none">
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="w-[90%] border-t border-gray-300" />
+                          <span className="w-[90%] border-t border-gray-300 dark:border-transparent" />
                         </div>
                       </div>
                     )}

@@ -23,7 +23,7 @@ const ShowIPv4Plans = ({ PlansData }: any) => {
   return (
     <div className="h-full w-full">
       <div className="flex flex-col gap-[10px]">
-        <div className="text-[20px] sm:text-[24px] font-semibold text-black">
+        <div className="text-[20px] sm:text-[24px] font-semibold text-black dark:text-white">
           <span>{`IPv4 Plans`}</span>
         </div>
         <div className="text-[13px] text-grayText">{`Select any of your plans to begin generating proxies!`}</div>
@@ -44,8 +44,8 @@ const ShowIPv4Plans = ({ PlansData }: any) => {
                   isPlanExpired && "opacity-50",
                   selectedPlan?.username === plan?.username
                     ? "border-brand shadow-xl shadow-brand/5"
-                    : "border-gray-300",
-                  "bg-white rounded-lg select-none cursor-pointer border transition-all duration-300 shadow-sm hover:shadow-md relative overflow-hidden"
+                    : "border-transparent",
+                  "bg-white dark:bg-gray-800 rounded-lg select-none cursor-pointer border transition-all duration-300 shadow-sm hover:shadow-md relative overflow-hidden"
                 )}
                 key={index}
                 onClick={() => {
@@ -70,7 +70,7 @@ const ShowIPv4Plans = ({ PlansData }: any) => {
                   )
                 }
                 {/* top div */}
-                <div className="flex flex-row gap-3 items-center py-3 px-3 border-b border-black/10">
+                <div className="flex flex-row gap-3 items-center py-3 px-3 border-b border-black/10 dark:border-white/10">
                   <div className="p-3 bg-brand/10 rounded-md">
                     <ZapIcon
                       fill={
@@ -87,14 +87,14 @@ const ShowIPv4Plans = ({ PlansData }: any) => {
                     />
                   </div>
                   <div className="flex flex-col gap-1">
-                    <div className="text-sm text-black/60">Username</div>
-                    <div className="text-sm text-black">{plan?.username}</div>
+                    <div className="text-sm text-black/60 dark:text-white/60">Username</div>
+                    <div className="text-sm text-black dark:text-white">{plan?.username}</div>
                   </div>
                 </div>
                 {/* plan details */}
                 <div className="flex flex-col gap-1 p-3">
                   <div className="flex flex-row justify-between items-center">
-                    <div className="text-xs text-black/60">Status</div>
+                    <div className="text-xs text-black/60 dark:text-white/60">Status</div>
                     <div
                       className={cn(
                         isPlanExpired
@@ -110,27 +110,27 @@ const ShowIPv4Plans = ({ PlansData }: any) => {
                     </div>
                   </div>
                   <div className="flex flex-row justify-between items-center">
-                    <div className="text-xs text-black/60">Key</div>
-                    <div className="text-xs px-1.5 py-1 rounded-md bg-brand/10 text-black select-text">
+                    <div className="text-xs text-black/60 dark:text-white/60">Key</div>
+                    <div className="text-xs px-1.5 py-1 rounded-md bg-brand/10 text-black dark:text-white select-text">
                       {isPlanExpired ? "Expired Key" : plan?.proxy_key}
                     </div>
                   </div>
                   <div className="flex flex-row justify-between items-center">
-                    <div className="text-xs text-black/60">Threads</div>
-                    <div className="text-xs px-1.5 py-1 text-black">{plan?.threadCount}</div>
+                    <div className="text-xs text-black/60 dark:text-white/60">Threads</div>
+                    <div className="text-xs px-1.5 py-1 text-black dark:text-white">{plan?.threadCount}</div>
                   </div>
                   <div className="flex flex-row justify-between items-center">
-                    <div className="text-xs text-black/60">Days</div>
-                    <div className="text-xs px-1.5 py-1 text-black">{plan?.daysCount}</div>
+                    <div className="text-xs text-black/60 dark:text-white/60">Days</div>
+                    <div className="text-xs px-1.5 py-1 text-black dark:text-white">{plan?.daysCount}</div>
                   </div>
                   <div className="flex flex-row justify-between items-center">
-                    <div className="text-xs text-black/60">Created At</div>
-                    <div className="text-xs px-1.5 py-1 text-black">
+                    <div className="text-xs text-black/60 dark:text-white/60">Created At</div>
+                    <div className="text-xs px-1.5 py-1 text-black dark:text-white">
                       {moment(plan?.created_at).format("LL")}
                     </div>
                   </div>
                   <div className="flex flex-row justify-between items-center">
-                    <div className="text-xs text-black/60">
+                    <div className="text-xs text-black/60 dark:text-white/60">
                       {
                         // expired at
                         isPlanExpired ? "Expired At" : "Expires At"
