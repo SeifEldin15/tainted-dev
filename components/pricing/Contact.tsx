@@ -30,7 +30,7 @@ export default function Contact() {
             </p>
             <Link 
               href="/contact" 
-              className="inline-flex items-center gap-2 bg-brand text-white px-4 py-2 rounded-lg hover:bg-brand/90 transition-colors"
+              className="inline-flex items-center gap-2 bg-brand text-black px-4 py-2 rounded-lg hover:bg-brand/90 transition-colors"
             >
               Contact Us
               <svg
