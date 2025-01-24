@@ -130,7 +130,7 @@ const Header = () => {
 
         <button
           onClick={toggleTheme}
-          className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+          className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-200"
         >
           {theme === 'dark' ? (
             <Sun className="h-5 w-5" />
