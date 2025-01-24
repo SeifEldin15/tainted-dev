@@ -29,7 +29,7 @@ export default function Contact() {
               EclipseProxy can cater to your specific needs! Terabytes of bandwidth, thousands of threads, or months long plans! We can offer bulk pricing and more, contact us at any time!
             </p>
             <Link 
-              href="/contact" 
+              href="/dashboard" 
               className="inline-flex items-center gap-2 bg-brand text-black px-4 py-2 rounded-lg hover:bg-brand/90 transition-colors"
             >
               Contact Us
