@@ -78,9 +78,9 @@ const IPV4 = () => {
                 <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 ml-1">USD</span>
               </div>
             </div>
-            <button className="w-full sm:w-auto bg-brand text-white px-4 sm:px-6 py-2 rounded-lg hover:bg-brand/90 transition-colors">
+            <a href="/dashboard" className="w-full sm:w-auto bg-brand text-black px-4 sm:px-6 py-2 rounded-lg hover:bg-brand/90 transition-colors">
               Login to buy →
-            </button>
+            </a>
           </div>
         </div>
       </div>
