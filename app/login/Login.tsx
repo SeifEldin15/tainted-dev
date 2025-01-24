@@ -72,7 +72,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="h-[100svh] w-full flex flex-row items-center px-5">
+    <div className="h-[100svh] w-full flex flex-row items-center px-5 dark:bg-gray-800">
       {/* background */}
       <div className="absolute w-full h-full top-0 left-0 right-0 bottom-0 overflow-hidden z-[1] bg-black/40">
         <Image
@@ -104,12 +104,12 @@ const LoginPage = () => {
         }) => (
           <Fragment>
             <Form className="w-full max-w-[500px] mx-auto z-[2]">
-              <Card className="shadow-lg bg-white/95 backdrop-blur-sm border-0">
+              <Card className="shadow-lg bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border-0">
                 <CardHeader className="space-y-1">
-                  <CardTitle className="text-2xl text-black">
+                  <CardTitle className="text-2xl text-black dark:text-white">
                     Login to <span className="text-brand">the account</span>
                   </CardTitle>
-                  <CardDescription className="text-gray-600">
+                  <CardDescription className="text-gray-600 dark:text-gray-300">
                     Enter your email & password to login.
                   </CardDescription>
                 </CardHeader>
@@ -117,7 +117,7 @@ const LoginPage = () => {
                   {/* EMAIL */}
                   <div className="grid gap-2">
                     <Label
-                      className="h-[15px] flex flex-row items-center justify-between text-black"
+                      className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                       htmlFor="email"
                     >
                       <span>Email</span>
@@ -133,13 +133,13 @@ const LoginPage = () => {
                       id="email"
                       type="email"
                       placeholder="johndoe@eclipseproxy.com"
-                      className="border-gray-200 text-black placeholder:text-gray-500"
+                      className="border-gray-200 dark:border-transparent text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 dark:bg-gray-700"
                     />
                   </div>
                   {/* PASSWORD */}
                   <div className="grid gap-2">
                     <Label
-                      className="h-[15px] flex flex-row items-center justify-between text-black"
+                      className="h-[15px] flex flex-row items-center justify-between text-black dark:text-white"
                       htmlFor="password"
                     >
                       <span>Password</span>
@@ -154,7 +154,7 @@ const LoginPage = () => {
                       onChange={handleChange("password")}
                       id="password"
                       type="password"
-                      className="border-gray-200 text-black"
+                      className="border-gray-200 dark:border-transparent text-black dark:text-white dark:bg-gray-700"
                     />
                   </div>
                   {/* GOOGLE RECAPTCHA */}
@@ -184,7 +184,7 @@ const LoginPage = () => {
                   <Button
                     onClick={() => handleSubmit()}
                     type="submit"
-                    className="w-full flex flex-row items-center gap-1.5 bg-brand hover:bg-brand/90 text-white"
+                    className="w-full flex flex-row items-center gap-1.5 bg-brand hover:bg-brand/90 !text-black"
                     disabled={isSendingData}
                   >
                     {!isSendingData ? (
