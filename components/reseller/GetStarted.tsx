@@ -19,7 +19,7 @@ const GetStarted = () => {
         </p>
 
         <Link 
-          href="/register" 
+          href="/dashboard" 
           className="inline-block bg-white dark:bg-gray-800 text-gray-900 dark:text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 dark:hover:bg-gray-700 transition-all"
         >
           Get Started →
