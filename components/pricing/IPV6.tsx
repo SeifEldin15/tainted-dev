@@ -104,7 +104,7 @@ const IPV6 = () => {
               {plan.pricing.map((price, priceIndex) => (
                 <button
                   key={priceIndex}
-                  className="w-full bg-brand py-2 sm:py-3 px-3 sm:px-4 mb-2 sm:mb-3 text-sm sm:text-base border border-gray-200 dark:border-gray-700 rounded-lg hover:border-brand transition-colors text-gray-900"
+                  className="w-full bg-brand hover:bg-brand/90 transition py-2 sm:py-3 px-3 sm:px-4 mb-2 sm:mb-3 text-sm sm:text-base border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900"
                 >
                   {price.duration} - {price.price}$
                 </button>
