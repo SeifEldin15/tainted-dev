@@ -320,7 +320,7 @@ const IPv6GeneratorPage = ({ userProxyData }: any) => {
                   {/* Generate Button & proxy reset button*/}
                   <div className="flex flex-row gap-4">
                     <Button
-                      className="w-full text-white"
+                      className="w-full !text-black"
                       variant={"brand"}
                       onClick={handleResetProxyPass}
                     >
@@ -329,7 +329,7 @@ const IPv6GeneratorPage = ({ userProxyData }: any) => {
                     <Button
                       onClick={() => handleSubmit()}
                       type="submit"
-                      className="w-full text-white"
+                      className="w-full !text-black"
                       variant={"brand"}
                     >
                       Generate Proxies
@@ -358,7 +358,7 @@ const IPv6GeneratorPage = ({ userProxyData }: any) => {
                     <Button
                       onClick={updateWhitelistIps}
                       type="submit"
-                      className="w-full text-white"
+                      className="w-full !text-black"
                       variant={"brand"}
                     >
                       Update Whitelist IPs
@@ -447,7 +447,7 @@ const IPv6GeneratorPage = ({ userProxyData }: any) => {
                     }
                     size={"xs"}
                     type="button"
-                    className="flex flex-row items-center gap-2 rounded-sm bg-brand text-black hover:bg-brand/90 transition-all duration-300"
+                    className="flex flex-row items-center gap-2 rounded-sm bg-brand !text-black hover:bg-brand/90 transition-all duration-300"
                   >
                     <DownloadCloud size={12} />
                     <span>Save as file</span>
@@ -460,7 +460,7 @@ const IPv6GeneratorPage = ({ userProxyData }: any) => {
                     }
                     size={"xs"}
                     type="button"
-                    className="flex flex-row items-center gap-2 rounded-sm bg-brand text-black hover:bg-brand/90 transition-all duration-300"
+                    className="flex flex-row items-center gap-2 rounded-sm bg-brand !text-black hover:bg-brand/90 transition-all duration-300"
                   >
                     <Clipboard size={12} />
                     <span>Copy to Clipboard</span>

@@ -114,7 +114,7 @@ const DashboardIPV6Component = ({
                               variant={
                                 threadCount === plan?.threads ? "brand" : "outline"
                               }
-                              className={threadCount === plan?.threads ? "bg-brand text-white hover:bg-brand/90" : "text-gray-900"}
+                              className={threadCount === plan?.threads ? "bg-brand !text-black hover:bg-brand/90" : "text-gray-900"}
                           >
                             {plan?.threads === 100000 ? "Unlimited" : plan?.threads}
                           </Button>
@@ -129,7 +129,7 @@ const DashboardIPV6Component = ({
                               key={index}
                               onClick={() => setDays(day)}
                               variant={days === day ? "brand" : "outline"}
-                              className={days === day ? "bg-brand text-white hover:bg-brand/90" : "text-gray-900"}
+                              className={days === day ? "bg-brand !text-black hover:bg-brand/90" : "text-gray-900"}
                           >
                             {`${day} Days`}
                           </Button>

@@ -376,7 +376,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                   {/* Generate Button & proxy reset button*/}
                   <div className="flex flex-row gap-4">
                     <Button
-                      className="w-full bg-brand text-white hover:bg-brand/90 transition-all duration-300"
+                      className="w-full bg-brand !text-black hover:bg-brand/90 transition-all duration-300"
                       onClick={handleResetProxyPass}
                     >
                       Reset Password
@@ -384,7 +384,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                     <Button
                       onClick={() => handleSubmit()}
                       type="submit"
-                      className="w-full bg-brand text-white hover:bg-brand/90 transition-all duration-300"
+                      className="w-full bg-brand !text-black hover:bg-brand/90 transition-all duration-300"
                     >
                       Generate Proxies
                     </Button>
@@ -487,7 +487,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                 onClick={addWhitelistIp}
                 size={"default"}
                 type="button"
-                className="flex flex-row items-center gap-2 rounded-sm my-2 bg-brand text-black hover:bg-brand/90 transition-all duration-300"
+                className="flex flex-row items-center gap-2 rounded-sm my-2 bg-brand !text-black hover:bg-brand/90 transition-all duration-300"
               >
                 <span>Save</span>
               </Button>
@@ -572,7 +572,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                       }
                       size={"xs"}
                       type="button"
-                      className="flex flex-row items-center gap-2 rounded-sm bg-brand text-black hover:bg-brand/90 transition-all duration-300"
+                      className="flex flex-row items-center gap-2 rounded-sm bg-brand !text-black hover:bg-brand/90 transition-all duration-300"
                   >
                     <DownloadCloud size={12}/>
                     <span>Save as file</span>
@@ -585,7 +585,7 @@ const ProxyGeneratorPage = ({ proxySettings, userProxyData }: any) => {
                       }
                       size={"xs"}
                       type="button"
-                      className="flex flex-row items-center gap-2 rounded-sm bg-brand text-black hover:bg-brand/90 transition-all duration-300"
+                      className="flex flex-row items-center gap-2 rounded-sm bg-brand !text-black hover:bg-brand/90 transition-all duration-300"
                   >
                     <Clipboard size={12}/>
                     <span>Copy to Clipboard</span>

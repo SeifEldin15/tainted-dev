@@ -124,6 +124,7 @@ const DashboardIPV4Component = ({
                               variant={
                                 threadCount === plan?.threads ? "brand" : "outline"
                               }
+                              className={threadCount === plan?.threads ? "!text-black" : ""}
                           >
                             {plan?.threads}
                           </Button>
@@ -138,6 +139,7 @@ const DashboardIPV4Component = ({
                               key={index}
                               onClick={() => setDays(day)}
                               variant={days === day ? "brand" : "outline"}
+                              className={days === day ? "!text-black" : ""}
                           >
                             {`${day} Days`}
                           </Button>
@@ -147,12 +149,12 @@ const DashboardIPV4Component = ({
                 </div>
 
                 {/* custom plan */}
-                <div className="flex w-full items-center gap-5 mb-4">
+                <div className="flex w-full items-center gap-5 mb-4 text-black dark:text-white">
                   <div>
                     <Label>Custom Threads (Min 400)</Label>
                     <Input
                         type="number"
-                        className=""
+                        className="!text-black dark:!text-white bg-white dark:bg-gray-700"
                         value={threadCount}
                         onChange={(e) => setThreadCount(parseInt(e.target.value))}
                         min={400}
@@ -162,7 +164,7 @@ const DashboardIPV4Component = ({
                     <Label>Custom Days</Label>
                     <Input
                         type="number"
-                        className=""
+                        className="!text-black dark:!text-white bg-white dark:bg-gray-700"
                         value={days}
                         onChange={(e) => setDays(parseInt(e.target.value))}
                         min={1}
@@ -186,9 +188,9 @@ const DashboardIPV4Component = ({
                     <Button
                         variant={"brand"}
                         onClick={() => handleCheckout()}
-                        className="flex flex-row items-center gap-2"
+                        className="flex flex-row items-center gap-2 !text-black"
                     >
-                      <span>Purchase</span>
+                      <span className="!text-black">Purchase</span>
                       <ChevronRight size={16}/>
                     </Button>
                     <div className="mt-1 text-xs text-black/50 dark:text-white/50">
