@@ -22,7 +22,7 @@ const Annoucements = () => {
                 </div>
                 <Link href={annoucement?.link}>
                   <Button
-                    className="w-fit rounded-sm"
+                    className="w-fit rounded-sm !text-black"
                     size={"xs"}
                     variant={"brand"}
                   >
