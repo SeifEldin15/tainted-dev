@@ -118,7 +118,7 @@ const CoreDashboardResidentialComponent = ({
                   <Button
                     variant={"brand"}
                     onClick={handleCheckout}
-                    className="flex flex-row items-center gap-2 bg-brand hover:bg-brand/90] text-white"
+                    className="flex flex-row items-center gap-2 bg-brand hover:bg-brand/90] !text-black"
                   >
                     <span>Purchase</span>
                     <ChevronRight size={16} />
