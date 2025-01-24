@@ -75,16 +75,16 @@ const IPV4Plan = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {plans.map((plan, index) => (
-            <div key={index} className="border border-gray-200 dark:border-transparent bg-white dark:bg-gray-700 rounded-lg p-4 sm:p-6">
+            <div key={index} className="border border-gray-200 dark:border-transparent bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6">
               <h3 className="text-xl sm:text-2xl text-cyan-400 mb-3 sm:mb-4">{plan.threads} Threads</h3>
               <div className="space-y-2 sm:space-y-3">
-                <button className="w-full py-2 px-3 sm:px-4 text-sm sm:text-base rounded border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white transition hover:bg-gray-50 dark:hover:bg-gray-600">
+                <button className="bg-brand w-full py-2 px-3 sm:px-4 text-sm sm:text-base rounded border border-gray-200 dark:border-gray-600 text-gray-900 transition hover:bg-gray-50 dark:hover:bg-gray-600">
                   1 Day - ${plan.pricing.day}
                 </button>
-                <button className="w-full py-2 px-3 sm:px-4 text-sm sm:text-base rounded border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white transition hover:bg-gray-50 dark:hover:bg-gray-600">
+                <button className="w-full py-2 bg-brand px-3 sm:px-4 text-sm sm:text-base rounded border border-gray-200 dark:border-gray-600 text-gray-900 transition hover:bg-gray-50 dark:hover:bg-gray-600">
                   1 Week - ${plan.pricing.week}
                 </button>
-                <button className="w-full py-2 px-3 sm:px-4 text-sm sm:text-base rounded border border-gray-200 dark:border-gray-600 text-gray-900 dark:text-white transition hover:bg-gray-50 dark:hover:bg-gray-600">
+                <button className="w-full py-2 bg-brand px-3 sm:px-4 text-sm sm:text-base rounded border border-gray-200 dark:border-gray-600 text-gray-900 transition hover:bg-gray-50 dark:hover:bg-gray-600">
                   1 Month - ${plan.pricing.month}
                 </button>
               </div>
