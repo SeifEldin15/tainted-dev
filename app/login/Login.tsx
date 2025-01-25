@@ -25,49 +25,46 @@ import ReCAPTCHA from "react-google-recaptcha";
 interface LoginFormValues {
   email: string;
   password: string;
-  recaptcha: string;
+  // recaptcha: string;  // commented out
 }
 
 const LoginPage = () => {
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  // const recaptchaRef = useRef<ReCAPTCHA>(null);  // commented out
   const [isSendingData, setIsSendingData] = useState(false);
 
   const initialValues = {
     email: "",
     password: "",
-    recaptcha: "",
+    // recaptcha: "",  // commented out
   };
 
   //  Functions to run on submit
   const onSubmit = async (values: LoginFormValues) => {
-    // console.log("LOGIN :", values);
+    try {
+      setIsSendingData(true);
+      
+      console.log('Attempting login with values:', values);
 
-    // set is sending data to true
-    setIsSendingData(true);
+      const loginStatus = await signIn("credentials", {
+        redirect: false,
+        callbackUrl: "/dashboard",
+        email: values.email,
+        password: values.password,
+      });
 
-    const loginStatus = await signIn("credentials", {
-      redirect: false,
-      callbackUrl: "/dashboard",
-      email: values?.email,
-      password: values?.password,
-    });
+      console.log("Login status:", loginStatus);
 
-    if (loginStatus?.status === 200) {
-      toast.success("Login successful");
-      // @ts-ignore
-      // redirect user to dashboard
-      window.location.href = loginStatus?.url;
-
-      // set is sending data to false
+      if (loginStatus?.status === 200) {
+        toast.success("Login successful");
+        window.location.href = loginStatus?.url || "/dashboard";
+      } else if (loginStatus?.status === 401) {
+        toast.error(CLIENT_ERROR_RESPONSES?.loginFailed?.message);
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      toast.error("An error occurred during login");
+    } finally {
       setIsSendingData(false);
-    } else if (
-      loginStatus?.status === 401 &&
-      loginStatus?.error === "CredentialsSignin"
-    ) {
-      // set is sending data to false
-      setIsSendingData(false);
-      // show error message to user
-      toast.error(CLIENT_ERROR_RESPONSES?.loginFailed?.message);
     }
   };
 
@@ -91,6 +88,7 @@ const LoginPage = () => {
         onSubmit={onSubmit}
         validationSchema={loginSchema}
         initialValues={initialValues}
+        enableReinitialize
       >
         {({
           values,
@@ -103,7 +101,7 @@ const LoginPage = () => {
           resetForm,
         }) => (
           <Fragment>
-            <Form className="w-full max-w-[500px] mx-auto z-[2]">
+            <Form noValidate className="w-full max-w-[500px] mx-auto z-[2]">
               <Card className="shadow-lg bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border-0">
                 <CardHeader className="space-y-1">
                   <CardTitle className="text-2xl text-black dark:text-white">
@@ -157,7 +155,7 @@ const LoginPage = () => {
                       className="border-gray-200 dark:border-transparent text-black dark:text-white dark:bg-gray-700"
                     />
                   </div>
-                  {/* GOOGLE RECAPTCHA */}
+                  {/* Comment out GOOGLE RECAPTCHA section
                   <div className="grid gap-2">
                     <Label
                       className="h-[15px] flex flex-row items-center justify-center"
@@ -178,11 +176,11 @@ const LoginPage = () => {
                       />
                     </div>
                   </div>
+                  */}
                 </CardContent>
                 {/* SUBMIT LOGIN BUTTON */}
                 <CardFooter>
                   <Button
-                    onClick={() => handleSubmit()}
                     type="submit"
                     className="w-full flex flex-row items-center gap-1.5 bg-brand hover:bg-brand/90 !text-black"
                     disabled={isSendingData}
