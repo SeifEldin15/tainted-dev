@@ -84,19 +84,6 @@ const RegisterPage = () => {
 
   return (
     <div className="h-[100svh] w-full flex flex-row items-center px-5 dark:bg-gray-800">
-      {/* background */}
-      <div className="absolute w-full h-full top-0 left-0 right-0 bottom-0 overflow-hidden z-[1] bg-black/40">
-        <Image
-          className="object-cover object-center w-full h-full opacity-[15%]"
-          alt="Background"
-          src={"/backgrounds/patternWaves.png"}
-          width={1920}
-          height={1080}
-          draggable={false}
-          unoptimized={true}
-          priority
-        />
-      </div>
       {/* REGISTER FORM */}
       <Formik
         innerRef={formikRef}
