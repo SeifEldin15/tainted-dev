@@ -18,7 +18,7 @@ const DashboardHeader = ({ session }: any) => {
   };
 
   return (
-    <div className="h-[60px] bg-white dark:bg-gray-900 flex items-center border-b border-gray-300 dark:border-transparent">
+    <div className="h-[60px] bg-white dark:bg-gray-900 flex items-center border-b border-gray-300 dark:border-gray-700">
       <div className="h-full px-4 w-full flex flex-row justify-between sm:justify-end items-center">
         {/* Close sidebar btn */}
         <div className="sm:hidden">

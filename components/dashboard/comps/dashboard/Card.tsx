@@ -27,7 +27,7 @@ const DashboardCard = ({
   subtitle,
 }: DashboardCardProps) => {
   return (
-    <Card className="bg-white dark:bg-gray-800 rounded-lg h-full border border-gray-300 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+    <Card className="bg-white dark:bg-gray-800 rounded-lg h-full border border-gray-300 dark:border-gray-600 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
       <CardHeader className="px-5 pt-5 flex flex-row items-start justify-between space-y-0 pb-2">
         <div className="space-y-1.5">
           <p className="text-sm font-medium text-gray-500 dark:text-gray-400">{title}</p>
