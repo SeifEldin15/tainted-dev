@@ -52,21 +52,21 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
       {
         id: 1,
         title: "Core Residential Bandwidth",
-        secondaryValue: "Available bandwidth for core services",
+        secondaryValue: "",
         value: UserData && `${CoreBandwidth}`,
         icon: <Network className="text-brand" size={24} />,
       },
       {
         id: 2,
         title: "Residential Bandwidth",
-        secondaryValue: "Current available bandwidth",
+        secondaryValue: "",
         value: UserData && `${formatBandwidth(BandwidthRemaining)}`,
         icon: <Signal className="text-brand" size={24} />,
       },
       {
         id: 3,
         title: "Active Datacenter Plans",
-        secondaryValue: "Total active plans",
+        secondaryValue: "",
         value: getUserPlans(UserData?.data?.user) &&
             getUserPlans(UserData?.data?.user),
         icon: <Layers className="text-brand" size={20} />,
@@ -74,7 +74,7 @@ const DashboardPage = ({ session, proxieData, userData }: any) => {
       {
         id: 4,
         title: "Total Spent",
-        secondaryValue: "Lifetime spending",
+        secondaryValue: "",
         value: `$ ${roundedSpent}`,
         icon: <MapPin className="text-brand" size={20} />,
       },
