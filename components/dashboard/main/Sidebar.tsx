@@ -40,11 +40,11 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
       <div
         className={cn(
           sidebar ? "left-0 " : "left-[-100%]",
-          "sm:left-0 fixed sm:relative top-0 z-[100] w-full sm:w-[260px] max-w-[260px] bg-white dark:bg-gray-900 h-full duration-300"
+          "sm:left-0 fixed sm:relative top-0 z-[100] w-full sm:w-[260px] max-w-[260px] bg-white dark:bg-gray-900 h-full duration-300 dark:border-r dark:border-gray-700 border-r-[0.5px]"
         )}
       >
         {/* Logo */}
-        <div className="h-[60px] overflow-hidden py-2 flex items-center bg-white dark:bg-gray-900 border-b border-gray-300 dark:border-transparent">
+        <div className="h-[60px] overflow-hidden py-2 flex items-center bg-white dark:bg-gray-900 border-b border-gray-300 dark:border-gray-700">
           <div className="flex flex-row items-center relative justify-between w-full px-3 h-full">
             {/* Logo */}
             <div className="w-[140px]">
@@ -81,7 +81,7 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
             </Button>
           </div>
         </div>
-        <div className="flex flex-col h-full p-3 border-r border-gray-300 dark:border-transparent">
+        <div className="flex flex-col h-full p-3 border-r-[0.5px] border-gray-300 dark:border-gray-800">
           {/* Buttons Categories */}
           <div className="flex flex-col gap-1">
             {/* catergory */}
@@ -146,7 +146,7 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
                     {dynamicIndices.includes(index) && (
                       <div className="relative my-1 select-none">
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="w-[90%] border-t border-gray-300 dark:border-transparent" />
+                          <span className="w-[90%] border-t border-gray-300 dark:border-gray-700" />
                         </div>
                       </div>
                     )}
