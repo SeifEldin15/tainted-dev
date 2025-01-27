@@ -1,10 +1,10 @@
 "use client"
-import { Hero, Features, Pricing, Countries, Popular, About, FAQ } from "@/components/landing";
+import { Hero, Features, Pricing, Countries, About, FAQ } from "@/components/landing";
 import Header from "@/components/Header";
-import ServiceView from "@/components/landing/ServiceView";
+// import ServiceView from "@/components/landing/ServiceView";
 import Footer from "@/components/landing/footer";
-import OurFeatures from "@/components/landing/ourfeatures";
-import RepeatedCta from "@/components/landing/repeatedcta";
+// import OurFeatures from "@/components/landing/ourfeatures";
+// import RepeatedCta from "@/components/landing/repeatedcta";
 import { BottomBanner } from "@/components/Popup"
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
           <Pricing />
         </div>
         <Countries />
-        <Popular />
+        {/* <Popular /> */}
         <div id="about" className="dark:bg-gray-900">
           <About />
         </div>
