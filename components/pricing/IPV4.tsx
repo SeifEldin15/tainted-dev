@@ -7,7 +7,7 @@ const IPV4 = () => {
 
   return (
     <div className="w-full max-w-[1400px] mx-auto p-4 sm:p-6">
-      <div className="bg-white dark:bg-gray-800 p-4 sm:p-8 border border-gray-200 dark:border-transparent rounded-lg">
+      <div className="bg-white dark:bg-gray-800 p-4 sm:p-8 border border-gray-200 dark:border-transparent rounded-lg shadow-lg">
         <div className="mb-4">
           <span className="text-brand text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 rounded-full bg-brand/10">
             Residential IPv4 Proxies

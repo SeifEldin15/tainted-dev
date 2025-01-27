@@ -39,7 +39,7 @@ const IPV4Plan = () => {
 
   return (
     <div className="w-full max-w-[1400px] mx-auto p-4 sm:p-6">
-      <div className="bg-white dark:bg-gray-800 p-4 sm:p-8 border border-gray-200 dark:border-transparent rounded-lg">
+      <div className="bg-white dark:bg-gray-800 p-4 sm:p-8 border border-gray-200 dark:border-transparent rounded-lg shadow-lg">
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-6">
           <div className="bg-brand/10 p-1.5 rounded">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-brand">
@@ -73,10 +73,10 @@ const IPV4Plan = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {plans.map((plan, index) => (
             <div key={index} className="border border-gray-200 dark:border-transparent bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6">
-              <h3 className="text-xl sm:text-2xl text-cyan-400 mb-3 sm:mb-4">{plan.threads} Threads</h3>
+              <h3 className="text-lg sm:text-xl text-brand font-semibold mb-3 sm:mb-4">{plan.threads} Threads</h3>
               <div className="space-y-2 sm:space-y-3">
                 <button className="bg-brand hover:bg-brand/90 transition w-full py-2 px-3 sm:px-4 text-sm sm:text-base rounded border border-gray-200 dark:border-gray-600 text-gray-900">
                   1 Day - ${plan.pricing.day}

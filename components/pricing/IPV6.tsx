@@ -63,7 +63,7 @@ const IPV6 = () => {
 
   return (
     <div className="w-full max-w-[1400px] mx-auto p-4 sm:p-6">
-      <div className="bg-white dark:bg-gray-800 p-4 sm:p-8 border border-gray-200 dark:border-transparent rounded-lg">
+      <div className="bg-white dark:bg-gray-800 p-4 sm:p-8 border border-gray-200 dark:border-transparent rounded-lg shadow-lg">
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-6">
           <div className="bg-brand/10 p-1.5 rounded">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-brand">
