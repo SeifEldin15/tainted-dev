@@ -28,10 +28,10 @@ export default function Features() {
     <section className="py-8 px-4 md:px-6 lg:px-8 bg-white dark:bg-gray-900 text-black dark:text-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
-          <span className="text-black dark:text-white flex items-center justify-center gap-2 mb-1">
+          {/* <span className="text-black dark:text-white flex items-center justify-center gap-2 mb-1">
             <Moon className="h-5 w-5 text-brand" />
             <span className="text-base">Eclipse Features</span>
-          </span>
+          </span> */}
           <h2 className="text-4xl font-bold tracking-tight text-black dark:text-white">
             Our <span className="text-brand">Features</span>
           </h2>
