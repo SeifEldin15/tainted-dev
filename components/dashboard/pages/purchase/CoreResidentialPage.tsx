@@ -19,7 +19,7 @@ const CoreResidentialPage = ({ session }: any) => {
 
       {/* banner */}
       <div className="flex items-center justify-center text-black dark:text-white mt-4">
-        <div className="bg-white dark:bg-gray-800 rounded-lg h-full border border-gray-300 dark:border-transparent shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex justify-between p-6 w-full">
+        <div className="bg-white dark:bg-gray-800 rounded-lg h-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex justify-between p-6 w-full">
           <div className="">
             <h2 className="text-3xl text-gray-900 dark:text-white mb-2">Bulk Pricing</h2>
             <h3 className="text-xl font-bold text-brand">1 TB+</h3>

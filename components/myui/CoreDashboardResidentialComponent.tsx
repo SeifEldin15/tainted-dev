@@ -40,7 +40,7 @@ const CoreDashboardResidentialComponent = ({
               isBackgroundTransparent
                 ? "border border-transparent bg-transparent"
                 : "mt-10 border border-transparent dark:bg-gray-800 bg-white",
-              "relative flex w-full flex-col rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden p-6"
+              "relative flex w-full flex-col rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden p-6"
             )}
           >
             {/* box content */}
