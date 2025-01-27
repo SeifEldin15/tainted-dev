@@ -150,24 +150,30 @@ const Header = () => {
       </div>
 
       {/* Mobile menu */}
-      <nav className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden absolute left-0 right-0 top-full w-full bg-white dark:bg-gray-800 shadow-lg z-50`}>
-        <div className="py-2">
+      <nav 
+        className={`
+          lg:hidden absolute left-0 right-0 top-full w-full bg-white dark:bg-gray-800 shadow-lg z-50
+          transform transition-all duration-300 ease-in-out
+          ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}
+        `}
+      >
+        <div className="py-2 space-y-1">
           {navItems.map((item) => (
-            <div key={item.label}>
+            <div key={item.label} className="border-b border-gray-100 dark:border-gray-700 last:border-0">
               <Link
                 href={item.href}
-                className="block px-4 py-2 text-base text-gray-600 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="block px-6 py-3 text-base font-medium text-gray-600 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </Link>
               {item.dropdownItems && (
-                <div className="pl-4">
+                <div className="pl-4 bg-gray-50 dark:bg-gray-700/50">
                   {item.dropdownItems.map((dropdownItem) => (
                     <Link
                       key={dropdownItem.href}
                       href={dropdownItem.href}
-                      className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      className="block px-6 py-2 text-sm text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {dropdownItem.label}
@@ -177,7 +183,7 @@ const Header = () => {
               )}
             </div>
           ))}
-          <div className="border-t border-gray-200 dark:border-gray-700 mt-2 pt-2">
+          <div className="border-t border-gray-200 dark:border-gray-700 mt-2 pt-2 px-4 space-y-2">
             <button
               onClick={toggleTheme}
               className="flex items-center justify-between w-full px-4 py-2 text-base text-gray-600 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
