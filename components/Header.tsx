@@ -57,7 +57,7 @@ const Header = () => {
 
   return (
     <header className="relative border-b border-gray-300 dark:border-transparent dark:bg-gray-900">
-      <div className="flex justify-between items-center max-w-[1350px] mx-auto">
+      <div className="flex justify-between items-center max-w-[1350px] mx-auto px-4 py-4 md:px-6 md:py-2">
         <div className="flex items-center ">
           <Link href="/" className="mr-8">
             <Image 
