@@ -93,8 +93,14 @@ const Header = () => {
                   {item.label}
                 </Link>
                 
-                {item.dropdownItems && activeDropdown === item.label && (
-                  <div className="absolute top-full left-0 bg-white dark:bg-gray-800 shadow-lg rounded-lg py-2 min-w-[200px]">
+                {item.dropdownItems && (
+                  <div 
+                    className={`absolute top-full left-0 bg-white dark:bg-gray-800 shadow-lg rounded-lg py-2 min-w-[200px]
+                      transform transition-all duration-200 ease-in-out origin-top
+                      ${activeDropdown === item.label 
+                        ? 'opacity-100 scale-y-100' 
+                        : 'opacity-0 scale-y-0 pointer-events-none'}`}
+                  >
                     {item.dropdownItems.map((dropdownItem) => (
                       <a
                         key={dropdownItem.href}
