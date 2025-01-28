@@ -75,7 +75,7 @@ const IPV4Plan = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {plans.map((plan, index) => (
-            <div key={index} className="border border-gray-200 dark:border-transparent bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6">
+            <div key={index} className="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-lg p-4 sm:p-6">
               <h3 className="text-lg sm:text-xl text-brand font-semibold mb-3 sm:mb-4">{plan.threads} Threads</h3>
               <div className="space-y-2 sm:space-y-3">
                 <button className="bg-brand hover:bg-brand/90 transition w-full py-2 px-3 sm:px-4 text-sm sm:text-base rounded border border-gray-200 dark:border-gray-600 text-gray-900">
