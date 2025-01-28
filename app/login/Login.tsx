@@ -25,70 +25,59 @@ import ReCAPTCHA from "react-google-recaptcha";
 interface LoginFormValues {
   email: string;
   password: string;
-  // recaptcha: string;  // commented out
+  recaptcha: string;
 }
 
 const LoginPage = () => {
-  // const recaptchaRef = useRef<ReCAPTCHA>(null);  // commented out
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [isSendingData, setIsSendingData] = useState(false);
 
   const initialValues = {
     email: "",
     password: "",
-    // recaptcha: "",  // commented out
+    recaptcha: "",
   };
 
   //  Functions to run on submit
   const onSubmit = async (values: LoginFormValues) => {
-    try {
-      setIsSendingData(true);
-      
-      console.log('Attempting login with values:', values);
+    // console.log("LOGIN :", values);
 
-      const loginStatus = await signIn("credentials", {
-        redirect: false,
-        callbackUrl: "/dashboard",
-        email: values.email,
-        password: values.password,
-      });
+    // set is sending data to true
+    setIsSendingData(true);
 
-      console.log("Login status:", loginStatus);
+    const loginStatus = await signIn("credentials", {
+      redirect: false,
+      callbackUrl: "/dashboard",
+      email: values?.email,
+      password: values?.password,
+    });
 
-      if (loginStatus?.status === 200) {
-        toast.success("Login successful");
-        window.location.href = loginStatus?.url || "/dashboard";
-      } else if (loginStatus?.status === 401) {
-        toast.error(CLIENT_ERROR_RESPONSES?.loginFailed?.message);
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      toast.error("An error occurred during login");
-    } finally {
+    if (loginStatus?.status === 200) {
+      toast.success("Login successful");
+      // @ts-ignore
+      // redirect user to dashboard
+      window.location.href = loginStatus?.url;
+
+      // set is sending data to false
       setIsSendingData(false);
+    } else if (
+      loginStatus?.status === 401 &&
+      loginStatus?.error === "CredentialsSignin"
+    ) {
+      // set is sending data to false
+      setIsSendingData(false);
+      // show error message to user
+      toast.error(CLIENT_ERROR_RESPONSES?.loginFailed?.message);
     }
   };
 
   return (
     <div className="h-[100svh] w-full flex flex-row items-center px-5 dark:bg-gray-800">
-      {/* background */}
-      <div className="absolute w-full h-full top-0 left-0 right-0 bottom-0 overflow-hidden z-[1] bg-black/40">
-        <Image
-          className="object-cover object-center w-full h-full opacity-[15%]"
-          alt="Background"
-          src={"/backgrounds/patternWaves.png"}
-          width={1920}
-          height={1080}
-          draggable={false}
-          unoptimized={true}
-          priority
-        />
-      </div>
       {/* REGISTER FORM */}
       <Formik
         onSubmit={onSubmit}
         validationSchema={loginSchema}
         initialValues={initialValues}
-        enableReinitialize
       >
         {({
           values,
@@ -101,7 +90,7 @@ const LoginPage = () => {
           resetForm,
         }) => (
           <Fragment>
-            <Form noValidate className="w-full max-w-[500px] mx-auto z-[2]">
+            <Form className="w-full max-w-[500px] mx-auto z-[2]">
               <Card className="shadow-lg bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border-0">
                 <CardHeader className="space-y-1">
                   <CardTitle className="text-2xl text-black dark:text-white">
@@ -155,7 +144,7 @@ const LoginPage = () => {
                       className="border-gray-200 dark:border-transparent text-black dark:text-white dark:bg-gray-700"
                     />
                   </div>
-                  {/* Comment out GOOGLE RECAPTCHA section
+                  {/* GOOGLE RECAPTCHA */}
                   <div className="grid gap-2">
                     <Label
                       className="h-[15px] flex flex-row items-center justify-center"
@@ -176,11 +165,11 @@ const LoginPage = () => {
                       />
                     </div>
                   </div>
-                  */}
                 </CardContent>
                 {/* SUBMIT LOGIN BUTTON */}
                 <CardFooter>
                   <Button
+                    onClick={() => handleSubmit()}
                     type="submit"
                     className="w-full flex flex-row items-center gap-1.5 bg-brand hover:bg-brand/90 !text-black"
                     disabled={isSendingData}
