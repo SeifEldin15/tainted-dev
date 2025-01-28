@@ -1,13 +1,33 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function BottomBanner() {
-  const [isVisible, setIsVisible] = useState(true)
+  const [mounted, setMounted] = useState(false)
+  const [isVisible, setIsVisible] = useState(() => {
+    // Check localStorage on initial render
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('bottomBannerClosed') !== 'true'
+    }
+    return true
+  })
 
+  useEffect(() => {
+    setMounted(true)
+    const bannerClosed = localStorage.getItem('bottomBannerClosed') === 'true'
+    setIsVisible(!bannerClosed)
+  }, [])
+
+  if (!mounted) return null
   if (!isVisible) return null
+
+  const handleClose = () => {
+    setIsVisible(false)
+    // Save the user's choice to localStorage
+    localStorage.setItem('bottomBannerClosed', 'true')
+  }
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-[9999] bg-gray-800 p-4">
@@ -27,7 +47,7 @@ export function BottomBanner() {
           <Button variant="default" className="text-black bg-brand hover:bg-brand/90 dark:bg-brand dark:text-black dark:hover:bg-brand/90">
             Claim my $1 trial
           </Button>
-          <Button variant="ghost" size="icon" className="shrink-0" onClick={() => setIsVisible(false)}>
+          <Button variant="ghost" size="icon" className="shrink-0" onClick={handleClose}>
             <X className="h-5 w-5" />
             <span className="sr-only">Close banner</span>
           </Button>
