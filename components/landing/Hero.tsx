@@ -1,9 +1,6 @@
 import Image from 'next/image'
-import { useTheme } from '@/contexts/ThemeContext'
 
 export default function Hero() {
-  const { theme } = useTheme()
-  
   return (
     <div className="flex flex-col items-center text-center max-w-4xl mx-auto px-4 py-24">
       <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold mb-4 text-gray-800 dark:text-white">
@@ -25,15 +22,28 @@ export default function Hero() {
 
       {/* Hero Image */}
       <div className="w-full max-w-4xl rounded-lg overflow-hidden shadow-[0_0_50px_rgba(0,169,180,0.2),_0_0_100px_rgba(0,169,180,0.1),_0_0_150px_rgba(0,169,180,0.2)] mt-6">
-        <Image
-          src={theme === 'dark' ? "/placerholder-dashboard - Copy.png" : "/placerholder-dashboard.png"}
-          alt="Eclipse Proxy Dashboard"
-          width={2400}
-          height={1500}
-          className="w-full h-auto object-cover"
-          sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 1200px"
-          priority
-        />
+        <div className="hidden dark:block">
+          <Image
+            src="/placerholder-dashboard - Copy.png"
+            alt="Eclipse Proxy Dashboard Dark"
+            width={2400}
+            height={1500}
+            className="w-full h-auto object-cover"
+            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 1200px"
+            priority
+          />
+        </div>
+        <div className="block dark:hidden">
+          <Image
+            src="/placerholder-dashboard.png"
+            alt="Eclipse Proxy Dashboard Light"
+            width={2400}
+            height={1500}
+            className="w-full h-auto object-cover"
+            sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 1200px"
+            priority
+          />
+        </div>
       </div>
     </div>
   )
