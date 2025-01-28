@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <div className="relative overflow-hidden bg-white dark:bg-gray-900 py-16 sm:py-24">
+    <div className="relative overflow-hidden bg-white dark:bg-gray-900 py-16 sm:py-24 z-0">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
           {/* Left Column */}
