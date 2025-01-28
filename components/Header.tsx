@@ -60,12 +60,24 @@ const Header = () => {
       <div className="flex justify-between items-center max-w-[1350px] mx-auto px-4 py-4 md:px-6 md:py-2">
         <div className="flex items-center ">
           <Link href="/" className="mr-8">
-            <Image 
-              src={theme === 'dark' ? "/logo-text-side.png" : "/image.png"} 
-              alt="Logo" 
-              width={180} 
-              height={180} 
-            />
+            <div className="hidden dark:block">
+              <Image 
+                src="/logo-text-side.png"
+                alt="Logo Dark"
+                width={180}
+                height={180}
+                priority
+              />
+            </div>
+            <div className="block dark:hidden">
+              <Image 
+                src="/image.png"
+                alt="Logo Light"
+                width={180}
+                height={180}
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop menu */}
