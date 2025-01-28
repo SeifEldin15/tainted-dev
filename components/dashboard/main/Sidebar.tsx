@@ -44,7 +44,7 @@ const Sidebar = ({ oldcustomer }: { oldcustomer: boolean }) => {
         )}
       >
         {/* Logo */}
-        <div className="h-[60px] overflow-hidden py-2 flex items-center bg-white dark:bg-gray-900 border-b border-gray-300 dark:border-gray-700">
+        <div className="h-[60px] overflow-hidden py-2 flex items-center bg-white dark:bg-gray-900">
           <div className="flex flex-row items-center relative justify-between w-full px-3 h-full">
             {/* Logo */}
             <div className="w-[140px]">
