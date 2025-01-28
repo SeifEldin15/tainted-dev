@@ -41,17 +41,18 @@ export default function Features() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="p-6 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.15)] dark:shadow-[0_0_20px_rgba(0,0,0,0.3)] 
+              className={`p-6 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.15)] dark:shadow-[0_0_20px_rgba(0,0,0,0.3)] 
                          transition-all hover:bg-brand hover:-translate-y-1 
-                         bg-white dark:bg-gray-800 group"
+                         bg-white dark:bg-gray-800 group
+                         ${index === 2 ? 'dark:bg-[#00ffff] dark:bg-opacity-90' : ''}`}
             >
-              <div className="mb-2 text-brand group-hover:text-white">
+              <div className={`mb-2 ${index === 2 ? 'text-brand dark:text-black' : 'text-brand group-hover:text-white'}`}>
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-black dark:text-white group-hover:text-white">
+              <h3 className={`text-xl font-semibold mb-2 ${index === 2 ? 'text-black dark:text-black' : 'text-black dark:text-white group-hover:text-white'}`}>
                 {feature.title}
               </h3>
-              <p className="text-base text-gray-600 dark:text-gray-300 group-hover:text-white">
+              <p className={`text-base ${index === 2 ? 'text-black dark:text-black' : 'text-gray-600 dark:text-gray-300 group-hover:text-white'}`}>
                 {feature.description}
               </p>
             </div>
