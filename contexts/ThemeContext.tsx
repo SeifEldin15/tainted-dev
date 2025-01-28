@@ -14,6 +14,25 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
+    // Inject script into <head> to prevent theme flash
+    const script = document.createElement('script');
+    script.innerHTML = `
+      (function() {
+        try {
+          const savedTheme = localStorage.getItem('theme');
+          if (savedTheme) {
+            document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+          } else {
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.classList.toggle('dark', systemPrefersDark);
+          }
+        } catch (e) {}
+      })()
+    `;
+    document.head.appendChild(script);
+  }, []);
+
+  useEffect(() => {
     // Check if user has a saved preference
     const savedTheme = localStorage.getItem('theme') as Theme;
     

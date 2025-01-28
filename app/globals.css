@@ -153,6 +153,15 @@ body {
   font-weight: var(--default-font-weight);
   letter-spacing: var(--default-letter-spacing);
 }
+/* Prevent flash by setting initial states */
+html {
+  visibility: visible;
+  background: #ffffff;
+}
+
+html.dark {
+  background: #111827; /* This is the dark:bg-gray-900 color */
+}
 
 a {
   color: inherit;

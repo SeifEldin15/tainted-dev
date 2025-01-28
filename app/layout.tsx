@@ -29,33 +29,45 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      {/* Clarity Analtics */}
-      <Script
-        id="clarityTagId"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-          (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "m6ssctt04h");`,
-        }}
-      />
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* This script must be first in the head */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function getInitialTheme() {
+                  try {
+                    const savedTheme = localStorage.getItem('theme');
+                    if (savedTheme) {
+                      return savedTheme;
+                    }
+                    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  } catch (e) {
+                    return 'light';
+                  }
+                }
+                const theme = getInitialTheme();
+                document.documentElement.classList.toggle('dark', theme === 'dark');
+                document.documentElement.style.colorScheme = theme;
+              })();
+            `,
+          }}
+        />
+      </head>
       <body>
-          <iframe src="https://hsl.lol" style={{display: 'none'}}/>
-          <ThemeProvider>
-            <RecoilProvider>
-              <AuthProvider>
-                <ModalProvider/>
-                <CrispeProvider/>
-                <Toaster position="top-right" reverseOrder={true}/>
-                <main>{children}</main>
-              </AuthProvider>
-            </RecoilProvider>
-          </ThemeProvider>
-      <Analytics/>
+        <iframe src="https://hsl.lol" style={{display: 'none'}}/>
+        <ThemeProvider>
+          <RecoilProvider>
+            <AuthProvider>
+              <ModalProvider/>
+              <CrispeProvider/>
+              <Toaster position="top-right" reverseOrder={true}/>
+              <main>{children}</main>
+            </AuthProvider>
+          </RecoilProvider>
+        </ThemeProvider>
+        <Analytics/>
       </body>
     </html>
   );
