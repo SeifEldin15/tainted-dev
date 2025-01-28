@@ -136,9 +136,7 @@ const Header = () => {
               </svg>
             </div>
             <div 
-              className={`absolute top-1 w-5 h-5 rounded-full bg-white shadow transform transition-transform duration-300 ${
-                theme === 'dark' ? 'translate-x-8' : 'translate-x-1'
-              }`}
+              className={`absolute top-1 w-5 h-5 rounded-full bg-white shadow transform transition-none dark:translate-x-8 translate-x-1`}
             />
           </button>
           <Link href="/login" className="text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white font-medium">
@@ -213,9 +211,7 @@ const Header = () => {
                   </svg>
                 </div>
                 <div 
-                  className={`absolute top-1 w-5 h-5 rounded-full bg-white shadow transform transition-transform duration-300 ${
-                    theme === 'dark' ? 'translate-x-8' : 'translate-x-1'
-                  }`}
+                  className={`absolute top-1 w-5 h-5 rounded-full bg-white shadow transform transition-none dark:translate-x-8 translate-x-1`}
                 />
               </div>
             </button>
