@@ -182,7 +182,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
       </div>
       <div className="flex flex-col lg:flex-row gap-6 mt-2 w-full">
         {/* Generator Settings */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-transparent py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full shadow-sm hover:shadow-md transition-all duration-300">
+        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-transparent py-4 px-5 flex flex-col gap-2 lg:max-w-[400px] w-full shadow-[0_2px_10px] shadow-black/10 hover:shadow-[0_2px_10px] hover:shadow-black/20 transition-all duration-300">
           <div className="text-[16px] text-black dark:text-white">Generator Settings</div>
           <div className="h-[1px] bg-gray-200 dark:bg-gray-700"></div>
           {/* Now The Main things */}
@@ -418,7 +418,7 @@ const IPv4GeneratorPage = ({ userProxyData }: any) => {
           </div>
         </div>
         {/* Generated Proxies */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-transparent py-4 px-5 flex flex-col gap-2 w-full shadow-sm hover:shadow-md transition-all duration-300">
+        <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-300 dark:border-transparent py-4 px-5 flex flex-col gap-2 w-full shadow-[0_2px_10px] shadow-black/10 hover:shadow-[0_2px_10px] hover:shadow-black/20 transition-all duration-300">
           <div className="text-[16px] text-black dark:text-white">Generator Settings</div>
           <div className="h-[1px] bg-gray-200 dark:bg-gray-700"></div>
           <div className="mt-4 flex flex-col gap-6 h-full">

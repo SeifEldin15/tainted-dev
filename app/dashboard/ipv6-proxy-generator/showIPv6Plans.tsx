@@ -45,7 +45,7 @@ const ShowIPv6Plans = ({ PlansData }: any) => {
                   selectedPlan?.username === plan?.username
                     ? "border-brand shadow-xl shadow-brand/5"
                     : "border-transparent",
-                  "bg-white dark:bg-gray-800 rounded-lg select-none cursor-pointer border transition-all duration-300 shadow-sm hover:shadow-md relative overflow-hidden"
+                  "bg-white dark:bg-gray-800 rounded-lg select-none cursor-pointer border transition-all duration-300 shadow-[0_2px_10px] shadow-black/10 hover:shadow-[0_2px_10px] hover:shadow-black/20 relative overflow-hidden"
                 )}
                 key={index}
                 onClick={() => {
